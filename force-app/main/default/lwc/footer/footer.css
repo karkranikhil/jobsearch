@@ -1,0 +1,128 @@
+.textRight{
+    text-align: right;
+}
+
+.secondary_button{
+    padding:4px 20px;
+    background:#fff;
+    color:#3787FF;
+    margin:16px 0px;
+    border:1px solid #3787FF;
+    font-size: 16px;
+    border-radius: 6px;
+}
+footer{
+    background:#F8F8F8;
+    padding:80px 0px 26px 0px;
+    margin-top:60px;
+    color:#2B2B2B;
+
+}
+
+footer hr{
+    padding:0px;
+    height:1px;
+    border:none;
+    background:#C6C6C6;
+    font-size:16px;
+    margin-top: 20px!important;
+    margin-bottom: 20px!important;
+}
+
+footer .helpYou img{
+    margin:10px 0px;
+    width:122px;
+    height:42px;
+    float: left;
+}
+
+footer .helpYou p{
+    margin:10px 0px;
+    width:122px;
+    height:42px;
+}
+footer .helpYou strong{
+    float: left;
+    clear: both;
+    margin: 10px 0px;
+}
+
+footer .helpYou p{
+    clear: both;
+    width: 75%;
+    margin: 20px 0px;
+}
+
+footer ul li{
+    margin:20px 0px;
+    cursor: pointer;
+}
+footer ul li:hover{
+    text-decoration: underline;
+}
+footer ul p{
+    font-weight: bold;
+}
+
+footer ul li a{
+    font-size:14px;
+    color:#2B2B2B;
+}
+footer .followUs img{
+    margin: 8px;
+    width: 24px;
+    height: 24px;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    footer{
+        margin-top: 20px;
+        padding: 20px 5%;
+    }
+
+    footer .helpYou p{
+        width: 93%;
+    }
+    footer li{
+        margin: 10px 0px;
+    }
+    .forTab {
+        width: 33%;
+    }
+ 
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+
+    footer{
+        padding: 40px 0px 26px 0px;
+        margin-top: 20px;
+    }
+    footer .primary_textlink{
+        display: none;
+    }
+    footer .textRight{
+        text-align:left;
+    }
+    .displayBlock{
+        display:block
+    }
+    .widthAuto, footer p{
+        width: auto;
+    }
+
+    footer ul{
+        margin-top: 20px
+    }
+   
+
+    
+}
+.mainWraper {
+    width: 1440px;
+    margin: 0 auto;
+}

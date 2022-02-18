@@ -1,0 +1,298 @@
+<template>
+    <div class="">
+        <div class="">
+            <div class=" ">
+                <div>
+                    <div>
+                        <div class=" employerPostaJob custom-form-group">
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_4-of-12">
+                                    <span>
+                                        <div class="input-group">
+                                            <lightning-input type="text" name="company" value={accountName}
+                                                onchange={handleChange} label="Company" disabled>
+                                            </lightning-input>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-size_4-of-12">
+                                    <span>
+                                        <div class="input-group">
+                                            <lightning-input type="text" name="jobTitle" value={jobTitle}
+                                                onchange={handleChange} label="Job Title" placeholder="Enter Job Title"
+                                                required>
+                                            </lightning-input>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-size_4-of-12">
+                                    <span>
+                                        <div class="input-group" if:true={showCombobox}>
+                                            <lightning-input type="text" name="companyWebsite" value={accountWebsite}
+                                                onchange={handleChange} label="Company Website" placeholder="Enter Company Website"
+                                                disabled>
+                                            </lightning-input>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="clearSpace"></div>
+
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-large-size_4-of-12">
+                                    <span>
+                                        <div class="input-group" if:true={showCombobox}>
+                                            <lightning-combobox name="employmentType" onchange={handleChange}
+                                                value={employmentType} placeholder="Enter Employment Type"
+                                                options={empTypePicklist.data.values} label="Employment Type" required>
+                                            </lightning-combobox>
+                                        </div>
+                                    </span>
+                                </div>
+
+                                <div class="slds-col slds-large-size_4-of-12">
+                                    <span>
+                                        <div class="input-group" if:true={showCombobox}>
+                                            <lightning-combobox name="industryType" onchange={handleChange}
+                                                value={industryType} placeholder="Enter Industry Type"
+                                                options={industryTypePicklist.data.values} label="Industry Type"
+                                                required>
+                                            </lightning-combobox>
+                                        </div>
+                                    </span>
+                                </div>
+
+                                <div class="slds-col slds-large-size_4-of-12">
+                                    <span>
+                                        <div class="slds-form-element" onmouseup={onMouseUp}>
+                                            <label class="slds-form-element__label slds-grid" for="input">
+                                                <span class="slds-col">Salary Range in $</span>
+
+                                            </label>
+                                            <div class="slds-form-element__control">
+                                                <div class="slds-slider">
+                                                    <section class="range-slider">
+                                                        <div id="slider" class="slider" onmousemove={onMouseMove}
+                                                            ontouchmove={onMouseMove} onmousedown={handleMouseDown}>
+                                                            <div class="range" data-name="range"></div>
+                                                            <div class="thumb start" data-name="start"
+                                                                ontouchstart={handleMouseDown} ontouchend={onMouseUp}>
+                                                            </div>
+                                                            <div class="thumb end" data-name="end"
+                                                                ontouchstart={handleMouseDown} ontouchend={onMouseUp}>
+                                                            </div>
+                                                        </div>
+                                                        <span class="slds-slider__value" aria-hidden="true">{start} -
+                                                            {end} </span>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-large-size_4-of-12">
+                                    <span>
+                                        <div class="input-group" if:true={showCombobox}>
+                                            <lightning-combobox name="jobStatus" onchange={handleChange}
+                                                value={jobStatus} label="Job Status" placeholder="Enter Job Status"
+                                                options={jobStatusPicklist.data.values}>
+                                            </lightning-combobox>
+
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-large-size_4-of-12">
+                                    <span>
+                                        <div class="input-group" if:true={showCombobox}>
+                                            <lightning-combobox name="location" value={location} onchange={handleChange}
+                                                label="Location" placeholder="Enter Location"
+                                                options={locationPicklist.data.values} required>
+                                            </lightning-combobox>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class=" slds-grid  slds-wrap slds-size_12-of-12 slds-p-bottom_xx-small">
+                                <h3> Add Required Skills</h3>
+                            </div>
+
+                            <div class=" slds-grid  slds-wrap slds-size_12-of-12 slds-p-bottom_xx-small">
+                                <div class="slds-col slds-large-size_8-of-12">
+                                    <span>
+                                        <div class="">
+                                            <lightning-input value={inputVar} onchange={handleSkillChange}>
+                                            </lightning-input>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-large-size_4-of-12 slds-p-top_medium">
+                                    <span>
+                                        <div class="slds-p-top_xx-small">
+                                            <lightning-button-icon icon-name="utility:add" onclick={handleSkillsClick}>
+                                            </lightning-button-icon>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class=" slds-grid  slds-wrap slds-size_12-of-12 slds-p-bottom_xx-medium">
+                                <template for:each={pills} for:item="acc">
+                                    <lightning-pill key={acc} label={acc} value={acc} onremove={handleRemovePills}>
+                                    </lightning-pill> &nbsp; &nbsp;
+                                </template>
+                            </div>
+
+                            <div class=" slds-grid  slds-wrap slds-size_12-of-12 slds-p-bottom_large">
+
+                                <h3> Job Description</h3>
+                            </div>
+                            <div class=" slds-grid  slds-wrap slds-size_12-of-12">
+                                <div class="slds-size_12-of-12">
+
+                                    <lightning-input-rich-text name="jobDescription" value={jobDescription}
+                                        placeholder="Enter Job Description" onchange={handleChange}>
+                                    </lightning-input-rich-text>
+
+
+                                </div>
+                            </div>
+
+
+                            <div class=" slds-grid  slds-wrap slds-size_12-of-12 slds-p-bottom_large">
+
+                                <h3> Job Responsibilities</h3>
+                            </div>
+                            <div class=" slds-grid  slds-wrap slds-size_12-of-12">
+                                <div class="slds-size_12-of-12">
+
+                                    <lightning-input-rich-text name="jobResponsibilities"
+                                        placeholder="Enter Job Responsibilities" value={jobResponsibilities}
+                                        onchange={handleChange}>
+                                    </lightning-input-rich-text>
+                                </div>
+                            </div>
+
+                            <div class="clearSpace"></div>
+                            <div class="add-event">
+                                <b class="slds-p-right_x-large"> Want to add Event? &nbsp;&nbsp;</b>
+
+                                <button class="secondary_button add-event" name="yes"
+                                    onclick={handleEventButton}>Yes</button> &nbsp;&nbsp;
+                                <button class="secondary_button add-event" name="no"
+                                    onclick={handleEventButton}>No</button>&nbsp;&nbsp;
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <template if:true={showEvent}>
+            <div class="form-content customForm">
+                <div class="custom-form-group">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div class="input-group">
+                                    <lightning-input type="text" name="eventName" onchange={handleEventChange}
+                                        value={eventName} label="Event Name" placeholder="Enter Event Name">
+                                    </lightning-input>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div class="input-group">
+                                    <lightning-input type="file" accept={acceptedFormats} label="Event Image Upload"
+                                        name="eventFile" onchange={handleUploadFinished}>
+                                    </lightning-input>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div class="input-group">
+                                    <lightning-input type="url" label="Virtual Link" onchange={handleEventChange}
+                                        name="virtualLink" value={virtualLink} placeholder="Enter Vitual Link">
+                                    </lightning-input>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div class="input-group">
+                                    <lightning-input type="date" name="eventDate" label="Event Date" value={eventDate}
+                                        placeholder="Select Event Date" onchange={handleEventChange}>
+                                    </lightning-input>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div class="input-group">
+                                    <lightning-input type="time" name="startTime" label="Start Time" value={startTime}
+                                        placeholder="Enter Start Time" onchange={handleEventChange}>
+                                    </lightning-input>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div class="input-group">
+                                    <lightning-input type="time" name="endTime" label="End Time" value={endTime}
+                                        placeholder="Enter End Time" onchange={handleEventChange}>
+                                    </lightning-input>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-large-size_12-of-12">
+                            <span>
+                                <div class="input-group">
+                                    <lightning-input-address address-label="Location" street-label="Street"
+                                        city-label="City" country-label="Country" province-label="Province"
+                                        postal-code-label="PostalCode" street="" city="" country="" province=""
+                                        postal-code="" show-address-lookup onchange={onAddressChange}>
+                                    </lightning-input-address>
+
+                                </div>
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-large-size_12-of-12">
+                            <span>
+                                <div class="input-group">
+                                    <lightning-textarea label="Event Description" onchange={handleEventChange}
+                                        value={eventDescription} name="eventDescription"
+                                        placeholder="Enter Event Description">
+                                    </lightning-textarea>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <div class="clearSpace"></div>
+        <div class="formControls">
+            <div class="textRight">
+                <button class=" secondary_button">Cancel</button>
+                <button class=" primary_button" onclick={handleSave}>Post Job</button>
+
+            </div>
+        </div>
+    </div>
+
+</template>

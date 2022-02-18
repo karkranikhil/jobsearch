@@ -1,0 +1,52 @@
+<template>
+    <div class="slds-grid slds-wrap slds-gutters">
+        <template for:each={cardData} for:item="card">
+            <div key={card.Ida} class="slds-col slds-size_4-of-12">
+                <br /><br />
+                <article class="slds-card jobCategories">
+                    <div class="slds-grid slds-card__header imgSet">
+                        <img src={card.ownerImg} alt="title image">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div
+                                class="slds-grid slds-grid_vertical-align-center slds-size_3-of-4 slds-medium-size_2-of-3">
+                                <div class="slds-media__figure">
+                                    <span class="slds-icon_container slds-icon-utility-salesforce1">
+                                        <svg class="slds-icon slds-icon_small slds-icon-text-default"
+                                            aria-hidden="true">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#salesforce1">
+                                            </use>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </header>
+                    </div>
+                    <div class="slds-card__body slds-card__body_inner">
+                        <span class="slds-avatar slds-avatar_profile-image-large cardImage"> <img /> </span>
+                        <b> {card.owner}</b>
+                        <p class="content">{card.body} </p>
+                    </div>
+                    <footer class="slds-card__footer">
+                        <ul class="slds-list_horizontal slds-has-inline-block-links_space spaceAround">
+                            <li>
+                                <lightning-icon icon-name="utility:user" size="x-small" alternative-text="task"
+                                    title="task"></lightning-icon>
+                                {card.view}
+                            </li>
+                            <li>
+                                <lightning-icon icon-name="utility:date_time" size="x-small" alternative-text="task"
+                                    title="task"></lightning-icon>
+                                {card.birthday}
+                            </li>
+                            <li>
+                                <lightning-icon icon-name="utility:checkin" size="x-small" alternative-text="task"
+                                    title="task"></lightning-icon>
+                                {card.location}
+                            </li>
+                        </ul>
+                    </footer>
+                </article>
+            </div>
+        </template>
+    </div>
+</template>

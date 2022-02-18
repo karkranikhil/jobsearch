@@ -1,0 +1,74 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner size="medium" alternative-text="Loading......"></lightning-spinner>
+    </template>
+    <lightning-layout>
+        <lightning-layout-item size="12">
+            <div style="margin: 0 auto; text-align: center; font-weight: 300; font-size: 18px">
+                <h1>Registration</h1>
+                <p>Registration screen for a new employer </p>
+                <p>&nbsp;</p>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <lightning-layout class="blockView">
+        <lightning-layout-item size="12">
+            <lightning-input class="slds-p-around_small" name="firstName" type="text" label="First Name"
+                placeholder="Enter First Name" onchange={handleChange}>
+            </lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="12">
+            <lightning-input class="slds-p-around_small" name="lastName" type="text" label="Last Name"
+                placeholder="Enter Last Name" onchange={handleChange}>
+            </lightning-input>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <lightning-layout class="blockView">
+        <lightning-layout-item size="12">
+            <lightning-input class="slds-p-around_small" name="Designation" label="Designation"
+                placeholder="Select an Designation" onchange={handleChange}></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="12">
+            <lightning-input class="slds-p-around_small" name="Company_Name" label="Company Name"
+                placeholder="Select an Company" onchange={handleChange}></lightning-input>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <lightning-layout>
+        <lightning-layout-item size="12">
+            <lightning-input class="slds-p-around_small" type="tel" label="Phone Number" name="phone"
+                placeholder="0987654321" onchange={handleChange}></lightning-input>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <lightning-layout>
+        <lightning-layout-item size="12">
+            <lightning-input class="slds-p-around_small" type="email" name="email" label="Work Email"
+                placeholder="Enter Email Address" onchange={handleChange}></lightning-input>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <lightning-layout>
+        <lightning-layout-item size="12">
+            <div style="margin: 0 auto; text-align: center; font-weight: 300; font-size: 18px">
+                <p>&nbsp;</p>
+                <lightning-button variant="brand" label="Register" title="Primary action" onclick={handleClick}
+                    class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+
+    <lightning-layout class="registerButtonCustom">
+        <lightning-layout-item size="12">
+            <div class="blockView" style="margin: 0 auto; text-align: center; font-weight: 300; font-size: 18px">
+                <p>&nbsp;</p>
+                <p>OR</p>
+                <p>&nbsp;</p>
+                <p>Don't Have an account? <a href="/eportal/s/login">Sign In</a></p>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+
+</template>

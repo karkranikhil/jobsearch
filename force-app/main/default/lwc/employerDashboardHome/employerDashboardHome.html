@@ -1,0 +1,31 @@
+<template>
+    <div if:true={showSpinner}>
+        <div class="backdrop">
+            <div class="spinner">
+                <lightning-spinner alternative-text="Loading..." variant="brand">
+                </lightning-spinner>
+            </div>
+        </div>
+    </div>
+    <div class="mainWraper">
+    <div class="slds-grid slds-wrap slds-p-top--large set-margin ">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_2-of-12 slds-large-size_2-of-12 sticky-container">
+            <c-employer-sidebar stage-num={stageNo} onchild={handleStageChange} onsidebarclick={handleSidebarClick}>
+            </c-employer-sidebar>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_10-of-12 slds-large-size_10-of-12 ">
+           
+                <template if:true={isStage1}>
+                    <c-job-employer-dashboard onchild={handleStageChange}></c-job-employer-dashboard>
+                </template>
+
+                
+            <template if:true={isStage2}>
+                
+                <c-job-post-a-job onchild={handleStageChange}></c-job-post-a-job>
+            </template>
+
+        </div>
+    </div>
+</div>
+</template>

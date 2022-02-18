@@ -1,0 +1,9 @@
+@font-face{
+   src: url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Twinkle+Star&display=swap') format('TrueType');
+   font-family: 'Lato', sans-serif;
+   font-family: 'Twinkle Star', cursive;
+}
+
+.test{
+   font-family: 'Twinkle Star';
+}

@@ -1,0 +1,189 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner></lightning-spinner>
+    </template>
+    <div class="form-content">
+        <h3 class="sub-section slds-m-bottom_large">Contact Information</h3>
+        <div class="custom-form-group">
+            <div class="slds-grid slds-gutters">
+                <!-- <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+                        <div class="input-group">
+                            <lightning-input type="text" name="name" value={communication} onchange={handleChange}
+                                label="Contact Text" placeholder="Enter Contact Text">
+                            </lightning-input>
+                        </div>
+                    </span>
+                </div> -->
+                <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+                        <div class="input-group" if:true={showCombobox}>
+                            <lightning-combobox name="communication" value={communication}
+                                label="Preferred Method of Communication" options={communicationPicklist.data.values}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+                        </div>
+                    </span>
+                </div>
+                <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+                        <div class="input-group">
+                            <lightning-input type="phone" label="Mobile" value={mobile} onchange={handlePhoneInputMask}
+                                name="mobile" placeholder="Mobile Number" pattern="^\(\d{3}\)\s\d{3}-\d{4}$"
+                                message-when-pattern-mismatch="Not a valid mobile number"
+                                message-when-value-missing="Mobile number is required">
+                            </lightning-input>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="slds-grid slds-gutters">
+
+                <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+                        <div class="input-group">
+                            <lightning-input type="email" name="email" value={email} label="Email" placeholder="Email"
+                                onchange={handleChange}>
+                            </lightning-input>
+                        </div>
+                    </span>
+                </div>
+                <!-- <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+                        <div class="input-group" if:true={showCombobox}>
+                            <lightning-combobox name="Country" value={country} label="Country"
+                                placeholder="Select Country" options={countryPicklist.data.values}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+                        </div>
+                    </span>
+                </div> -->
+            </div>
+            <!-- <div class="slds-grid slds-gutters">
+
+                <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+                        <div class="input-group" if:true={showCombobox}>
+                            <lightning-combobox name="City" value={city} label="State" placeholder="Select City"
+                                options={statePicklist.data.values} onchange={handleChange}>
+                            </lightning-combobox>
+                        </div>
+                    </span>
+                </div>
+                <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+                        <div class="input-group">
+                            <lightning-input type="number" value={zipcode} label="Zip Code" onchange={handleChange}
+                                name="zip" placeholder="Zip Code">
+                            </lightning-input>
+                        </div>
+                    </span>
+                </div>
+            </div> -->
+
+            <!--<div class="slds-grid slds-gutters">
+                <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+                        <div class="input-group">-->
+            <!-- <lightning-input type="text" name="desiredOccupation" value={desiredOccupation} onchange={handleChange} label="Desired Occupation"
+                                placeholder="Enter Desired Occupation">
+                            </lightning-input> -->
+
+            <!-- <lightning-input label="Desired Occupation" type="search"
+                                onkeyup={handleKeyChange} placeholder="Enter Desired Occupation" value={selectedTitleName}
+                                onfocus={setShowTitles} class="inputField">
+                            </lightning-input>
+
+
+                            <template if:true={showTitles}>
+                                <template if:true={titles}>
+                                    <div class="searchList">
+                                        <template for:each={titles} for:item="title" for:index="index">
+                                            <c-record-list key={title} record={title} onselect={handleSelectTitle}
+                                                class="searchListField" iconname={iconname} fieldname={searchfield}>
+                                            </c-record-list>
+
+                                        </template>
+                                    </div>
+                                </template>
+                            </template> -->
+
+            <!--</div>
+                    </span>
+                </div>
+                <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+                        <div class="input-group" if:true={showCombobox}>
+                            <lightning-combobox name="requiredWages" value={requiredWages} label="Required Wages"
+                                placeholder="Select Required Wages" options={wagesPicklist.data.values}
+                                onchange={handleChange}>
+                            </lightning-combobox>
+                        </div>
+                    </span>
+                </div>
+            </div>-->
+            <div class="input-group">
+                <!-- <lightning-textarea name="currentAddress" label="Current Address" value={currentAddress}
+                    onchange={handleChange} placeholder="Current address"></lightning-textarea> -->
+                <lightning-input-address address-label="Current Address" class="address" street-label="Street"
+                    city-label="City" country-label="Country" province-label="State"
+                    postal-code-label="Zip Code" street={street} city={city} country={country}
+                    province={state} postal-code={zipcode} required
+                    field-level-help="Provide Current Address" show-address-lookup
+                    onchange={handleAddressChange}>
+                </lightning-input-address>
+            </div>
+            <lightning-input type="checkbox" name="handleMailingCheckboxChange" class="slds-p-vertical_large"
+                                value={currentIsPermanent} label="Same as Current Address" onchange={handleChange}>
+                            </lightning-input>
+                            <div class="input-group">
+                                <!-- <lightning-textarea name="permanentAddress" label="Permanent Address"
+                                    value={permanentAddress} onchange={handleChange} placeholder="Permanent address">
+                                </lightning-textarea> -->
+                                <lightning-input-address address-label="Permanent Address" class="address" street-label="Street"
+                                    city-label="City" country-label="Country" province-label="State"
+                                    postal-code-label="Zip Code" street={pStreet} city={pCity} country={pCountry}
+                                    province={pState} postal-code={pZipcode} required
+                                    field-level-help="Provide Permanent Address" onchange={handlePAddressChange}
+                                    show-address-lookup disabled={currentIsPermanent}>
+                                </lightning-input-address>
+                                
+                            </div>
+                            <!-- <p><b>Note :</b> You must fill all the mandatory field to proceed further</p> -->
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+                        
+                    </span>
+                </div>
+                
+                <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+                        
+                    </span>
+                </div>
+            </div>
+            
+        </div>
+        <!-- <div class="app-card-footer p-b-0">
+            <lightning-button variant="brand-outline" onclick={handlePreviousButton} label="Previous"
+                title="Previous" class="slds-m-right_small">
+            </lightning-button>
+            <lightning-button variant="brand" label="Save and Next" title="Next" name="next"
+                onclick={handleSaveButton}>
+            </lightning-button>
+        </div> -->
+        <div class="formControls">
+
+            <span onclick={handleBack} class="textBluePrimary" data-page='Contact_Information'>
+                <lightning-icon icon-name="utility:back" alternative-text="Approved" title="Approved"></lightning-icon>
+                &nbsp; Back
+            </span>
+            <div class="textRight">
+                <button class=" primary_button " data-page='Contact_Information' onclick={handleSave}>Save</button>
+                <button class=" secondary_button " data-page='Contact_Information' onclick={handleNext}>Next</button>
+            </div>
+        </div>
+    </div>
+
+</template>

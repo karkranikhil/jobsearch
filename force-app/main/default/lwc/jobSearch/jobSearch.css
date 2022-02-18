@@ -1,0 +1,75 @@
+.jobSearchArea{
+    position: relative;
+    margin-top: 20px;
+
+}
+.jobSearchArea .jobSearchInputs{ 
+    position: absolute;
+    top: 30%;
+}
+
+.jobSearchArea img{
+    width: 100%;
+}
+
+.findingJobsSection{
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #BDBDBD;
+    height: 50px;
+    padding: 0px 12px;
+    --sds-c-icon-color-foreground-default: #3787FF;
+    margin-right: 16px;
+    position:relative;
+
+}
+.findingJobsSection lightning-icon{
+    margin-top: 7px;
+}
+
+
+.findingJobsSection input{
+    border: none;
+    width: 90%;
+    padding: 16px 10px;
+}
+
+.searchIcon{
+    --sds-c-icon-color-foreground-default: #000;
+}
+.searchBut{
+    background: #DADADA;
+    border: none;
+    border-radius: 10px;
+    padding: 9px 11px;
+    text-align: center;
+    margin-top: 1px;
+}
+
+
+.searchList, .searchListRegion{
+    background: #fff;
+    float: left;
+    width: max-content;
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    font-size: 16px;
+    border: 1px solid #5e9bf3;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.searchListField, .searchListRegionField{
+    margin: 10px 20px;
+    display: block;
+}
+.searchListField:hover, .searchListRegionField:hover{
+    color:#5e9bf3;
+    cursor: pointer;
+
+}
+*, input{
+    outline:none!important
+}

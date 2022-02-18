@@ -1,0 +1,95 @@
+<template>
+    <lightning-spinner alternative-text="Loading..." if:true={showSpinner} variant="brand">
+    </lightning-spinner>
+    <div class="mainWraper">
+        <div class="slds-wrap slds-grid  textCenter">
+            <div class="pageTitle slds-col slds-size_12-of-12 ">
+                <h1>My Jobs</h1>
+            </div>
+        </div>
+        <lightning-tabset>
+            <lightning-tab label="Job Saved">
+                <div if:true={savedData}>
+                    <div class="slds-wrap slds-grid" if:false={showSpinner}>
+                        <template for:each={savedData} for:item="rec">
+                            <div class="slds-col slds-size_12-of-12 jobPublish" key={rec.Id}>
+                                <header class="slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_1-of-12 textCenter"><img src={jobIcon} /></div>
+                                    <div class="slds-col slds-size_4-of-12">
+                                        <lightning-icon icon-name="utility:checkin" alternative-text="Approved"
+                                            title="Approved">
+                                        </lightning-icon>
+                                        {rec.Location__c}
+                                    </div>
+                                    <div class="slds-col slds-size_4-of-12"></div>
+                                    <div class="slds-col slds-size_3-of-12 textRight">03/02/2021 &nbsp; &nbsp;| &nbsp;
+                                        &nbsp;{rec.Category__c}
+                                    </div>
+                                </header>
+                                <div class="slds-grid slds-wrap bodySection">
+                                    <div class="slds-col slds-size_1-of-12">&nbsp;</div>
+                                    <div class="slds-col slds-size_11-of-12 jobPublishDetails">
+                                        <span>Title : <b>{rec.title__c}</b></span>
+                                        <span>Company : <b><a
+                                                    class="textBluePrimary">{rec.Company_Name__c}</a></b></span>
+                                        <span>Salary Range : <b>{rec.Salary_Range__c} $ Per Month </b></span>
+                                        <span>Category : <b>IT Company </b></span>
+                                        <span>Status :<b>Saved</b></span>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="slds-col slds-size_1-of-12">&nbsp;</div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <div if:false={savedData}>
+                    No Saved Jobs!
+                </div>
+
+            </lightning-tab>
+            <lightning-tab label="Job Applied">
+                <div class="slds-wrap slds-grid" if:false={showSpinner}>
+                    <div if:true={appliedData}>
+                        <div class="slds-wrap slds-grid">
+                            <template for:each={appliedData} for:item="rec">
+                                <div class="slds-col slds-size_12-of-12 jobPublish" key={rec.Id}>
+                                    <header class="slds-grid slds-wrap">
+                                        <div class="slds-col slds-size_1-of-12 textCenter"><img src={jobIcon} /></div>
+                                        <div class="slds-col slds-size_4-of-12">
+                                            <lightning-icon icon-name="utility:checkin" alternative-text="Approved"
+                                                title="Approved">
+                                            </lightning-icon>
+                                            {rec.Location__c}
+                                        </div>
+                                        <div class="slds-col slds-size_4-of-12"></div>
+                                        <div class="slds-col slds-size_3-of-12 textRight">03/02/2021 &nbsp; &nbsp;|
+                                            &nbsp;
+                                            &nbsp;{rec.Category__c}
+                                        </div>
+                                    </header>
+                                    <div class="slds-grid slds-wrap bodySection">
+                                        <div class="slds-col slds-size_1-of-12">&nbsp;</div>
+                                        <div class="slds-col slds-size_11-of-12 jobPublishDetails">
+                                            <span>Title : <b>{rec.title__c}</b></span>
+                                            <span>Company : <b><a
+                                                        class="textBluePrimary">{rec.Company_Name__c}</a></b></span>
+                                            <span>Salary Range : <b>{rec.Salary_Range__c} $ Per Month </b></span>
+                                            <span>Category : <b>IT Company </b></span>
+                                            <span>Status :<b>Applied</b></span>
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="slds-col slds-size_1-of-12">&nbsp;</div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <div if:false={appliedData}>
+                        No Applied Jobs!
+                    </div>
+                </div>
+            </lightning-tab>
+        </lightning-tabset>
+    </div>
+</template>

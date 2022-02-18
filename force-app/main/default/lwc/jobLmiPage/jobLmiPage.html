@@ -1,0 +1,133 @@
+<template>
+    <div>
+        <lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner>
+        <c-job-search onchild={handleSearch}></c-job-search>
+    </div>
+    <div class="mainWraper jobLmiPage">
+        <div style={showLMI}>
+            <div class="pageTitle slds-col slds-size_12-of-12 ">
+                <h1>LMI (Labor Market Information)</h1>
+            </div>
+            <div class="">
+                <div class="slds-col slds-size_1-of-1 slds-p-around_medium">
+                    <div class="slds-grid slds-wrap">
+                        <template if:false={isLoading}>
+                            <template if:true={showTable}>
+                                <div class="slds-m-aroung_small">
+                                    <div class="slds-grid slds-wrap slds-size_12-of-12  itemsCenter">
+                                        <div class="slds-grid slds-wrap slds-size_6-of-12  ">
+                                            Total items {totalRecords}
+                                        </div>
+                                        <div class="slds-size_6-of-12   ">
+                                            <button class="secondary_button exportBtn" onclick={handleExport}>
+                                                <lightning-icon icon-name="utility:download" alternative-text="Approved"
+                                                    title="Approved">
+                                                </lightning-icon>Export
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <c-job-lmi-table columns={columnAnalysis} table-data={dataTable}
+                                        hide-checkbox="true">
+                                    </c-job-lmi-table>
+                                </div>
+                            </template>
+                            <template if:false={showTable}>
+                                <b>No Data Found</b>
+                            </template>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+            <div class="verticalGap"></div>
+            <h3>Demographic Details</h3>
+            <div class="verticalGap"></div>
+            <div class=" slds-wrap  slds-grid">
+                <div class="slds-col slds-size_6-of-12">
+                    <div class="demographic">
+                        <strong>1. Occupation Age Breakdown</strong>
+                        <template if:true={showDoughnutChart}>
+                            <c-doughnut-chart chart-class="doughnutChart1" values={ageBreakDownValues}
+                                labels={ageBreakDownLabels}></c-doughnut-chart>
+                        </template>
+                        <template if:false={showDoughnutChart}>
+                            <p>No Data Available to Display</p>
+                        </template>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_6-of-12">
+                    <div class="demographic">
+                        <strong>2. Occupation Race Breakdown</strong>
+                        <template if:true={showDoughnutChart}>
+                            <c-doughnut-chart chart-class="doughnutChart2" values={raceBreakDownValues}
+                                labels={raceBreakDownLabels}></c-doughnut-chart>
+                        </template>
+                        <template if:false={showDoughnutChart}>
+                            <p>No Data Available to Display</p>
+                        </template>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_6-of-12">
+                    <div class="demographic">
+                        <strong>3. Occupation Gender Breakdown</strong>
+                        <template if:true={showDoughnutChart}>
+                            <c-doughnut-chart chart-class="doughnutChart3" values={genderBreakDownValues}
+                                labels={genderBreakDownLabels}></c-doughnut-chart>
+                        </template>
+                        <template if:false={showDoughnutChart}>
+                            <p>No Data Available to Display</p>
+                        </template>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_6-of-12">
+                    <div class="demographic">
+                        <strong>4. National Education Attainment</strong>
+                        <template if:true={showDoughnutChart}>
+                            <c-doughnut-chart chart-class="doughnutChart4" values={educationalAttainmentBreakDownValues}
+                                labels={educationalAttainmentBreakDownLabels}></c-doughnut-chart>
+                        </template>
+                        <template if:false={showDoughnutChart}>
+                            <p>No Data Available to Display</p>
+                        </template>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_12-of-12">
+                    <div class="demographic">
+                        <strong>5. Occupational Gap</strong>
+                        <template if:true={showOccupationGapChart}>
+                            <c-diverging-horizontal-bar-chart chart-class="occupationGapChart"
+                                values={occupationalGapValues} labels={occupationalGapLabels}
+                                colors={occupationalGapColors}></c-diverging-horizontal-bar-chart>
+                        </template>
+                        <template if:false={showOccupationGapChart}>
+                            <p>No Data Available to Display</p>
+                        </template>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_12-of-12">
+                    <div class="demographic">
+                        <strong>6. Skill Gap</strong>
+                        <template if:true={showSkillGapChart}>
+                            <c-diverging-horizontal-bar-chart chart-class="skillGapChart" values={skillGapValues}
+                                colors={skillGapColors} labels={skillGapLabels}></c-diverging-horizontal-bar-chart>
+                        </template>
+                        <template if:false={showSkillGapChart}>
+                            <p>No Data Available to Display</p>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style={showOccupation}>
+            <c-job-lmi-occupation-wages onback={handleBackFromOccupation}>
+            </c-job-lmi-occupation-wages>
+        </div>
+        <template if:true={showMapView}>
+            <c-job-lmi-map-view onback={handleBackFromMapView}></c-job-lmi-map-view>
+        </template>
+        <div class="verticalGap"></div>
+        <c-lmi-extra-links onshowoccupationwages={handleShowOccupation} onshowmapview={handleShowMapView}>
+        </c-lmi-extra-links>
+        <div class="verticalGap"></div>
+    </div>
+</template>

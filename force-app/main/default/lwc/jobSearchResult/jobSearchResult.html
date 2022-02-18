@@ -1,0 +1,26 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+
+    <c-job-search onchild={handleSearch}></c-job-search>
+
+    <div class="mainWraper slds-wrap slds-grid">
+
+        <div class="slds-grid slds-size_12-of-12 slds-wrap  filterSection ">
+            <div class="slds-col slds-size_7-of-12">
+                <b> {totalJobsfound} Job results Found</b>
+            </div>
+
+        </div>
+        <div class="slds-align_absolute-center" if:true={showNoData}>
+            <img src={NoDataFound}>
+        </div>
+
+        <div class="searchResultData">
+            <c-popular-jobs jobs={jobs} total-jobs={totalJobsfound} onviewmore={viewMore}></c-popular-jobs>
+        </div>
+
+    </div>
+
+</template>

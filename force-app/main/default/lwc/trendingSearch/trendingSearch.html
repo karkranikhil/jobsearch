@@ -1,0 +1,25 @@
+<template>
+    <div class="trendingSearchBg">
+    
+        <div class="mainWraper slds-grid trendingSearch">
+
+            <div class="slds-col slds-size_1-of-12  rightSpace">
+                <img src={trendingSearches} />
+            </div>
+            <div class="slds-col slds-size_5-of-12 widthAuto">
+                <p>Don’t know where to start?</p>
+                <h1>Trending Searches</h1>
+            </div>
+            <div class="slds-col slds-size_6-of-12 ">
+
+                <ul>
+                    <li onclick={handlechange} data-name="Cashiers">Cashiers</li>
+                    <li onclick={handlechange} data-name="Tellers">Tellers</li>
+                    <li onclick={handlechange} data-name="Sales Engineers">Sales Engineers</li>
+                    <li onclick={handlechange} data-name="Software Developers">Software Developers</li>
+                    <li onclick={handlechange} data-name="" class="bgBlueSecondary"><a >More</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>

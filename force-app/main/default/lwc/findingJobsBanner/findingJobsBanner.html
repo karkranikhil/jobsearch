@@ -1,0 +1,80 @@
+<template>
+    <div class="findingJobsImg">
+        <img src={bannerBg} />
+    </div>
+    <div class="mainWraper slds-grid  slds-wrap slds-is-relative findingJobsBanner textCenter">
+        <div class="pageTitle slds-col slds-size_12-of-12 ">
+            <h1>Be Ready to find your&nbsp;
+                <strong class="primary_textlink">Job</strong> now
+            </h1>
+            <p>Finding jobs from all around the world. Tell us what you’re looking for and we’ll get work for you.</p>
+        </div>
+        <div class="slds-grid slds-grid_align-center slds-size_12-of-12 displayBlock">
+            <div class="slds-col slds-size_4-of-12 findingJobsSection widthAuto">
+                <lightning-icon icon-name="utility:case" class="sdsIconColor" alternative-text="Approved"
+                    title="Approved"></lightning-icon>
+                <span>
+                    <div class="input-group">
+                        <lightning-input label="" type="search" onkeyup={handleKeyChange}
+                            placeholder="Enter Desired Occupation" value={selectedTitleName} onfocus={setShowTitles}
+                            class="inputField topSpace">
+                        </lightning-input>
+                        <template if:true={showTitles}>
+                            <template if:true={titles}>
+                                <div class="searchList">
+                                    <template for:each={titles} for:item="title" for:index="index">
+                                        <c-record-list key={title} record={title} onselect={handleSelectTitle}
+                                            class="searchListField" iconname={iconname} fieldname={searchfield}>
+                                        </c-record-list>
+                                    </template>
+                                </div>
+                            </template>
+                        </template>
+                    </div>
+                </span>
+            </div>
+
+            <div class="slds-col slds-size_4-of-12  widthAuto findingJobsSection job-location">
+                <lightning-icon icon-name="utility:checkin" class="sdsIconColor " alternative-text="Approved"
+                    title="Approved"></lightning-icon>
+                <span>
+                    <div class="input-group">
+                        <lightning-input variant="label-hidden" label="Search Record" type="search"
+                            onchange={handleSearch} placeholder="Enter Region here" value={selectedRegionName}
+                            class="inputField selectedRegionName">
+                        </lightning-input>
+
+                        <template if:true={regions}>
+                            <div class="searchListRegion">
+                                <template for:each={regions} for:item="region">
+                                    <c-record-list key={region.Id} record={region} onselect={handleSelectRegion}
+                                        iconname={iconname} fieldname={searchfield} class="searchListRegionField">
+                                    </c-record-list>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </span>
+            </div>
+
+            <div class="slds-col slds-size_1-of-12  widthAuto">
+                <button class="primary_button searchButton" onclick={onSearch}>
+                    <lightning-icon icon-name="utility:search" class="searchSdsIcon" alternative-text="Approved"
+                        title="Approved"></lightning-icon>
+                </button>
+            </div>
+        </div>
+        <div class="slds-col slds-size_12-of-12 textCenter">
+            <button class="primary_button slds-size_1-of-12 improveSkillsButton" onclick={onButtonClick}>
+                <lightning-icon icon-name="utility:activity" alternative-text="Approved" title="Approved">
+                </lightning-icon>
+                Labor Market Information &nbsp;
+            </button>
+            <button class="primary_button slds-size_1-of-12 improveSkillsButton" onclick={directToCourses}>
+                <lightning-icon icon-name="utility:spinner" alternative-text="Approved" title="Approved">
+                </lightning-icon>
+                Improve Your Skills
+            </button>
+        </div>
+    </div>
+</template>

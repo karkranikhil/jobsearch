@@ -1,0 +1,63 @@
+<template>
+    <div class=" popularJob bgBlueSecondary">
+
+        <div class=" slds-wrap slds-grid mainWraper">
+            <template if:false={isRecommendedJobs}>
+                <div class="pageTitle slds-col slds-size_12-of-12 ">
+                    <h1>Popular Jobs</h1>
+                </div>
+            </template>
+            <template if:true={isRecommendedJobs}>
+                <div class="pageTitle slds-col slds-size_12-of-12 ">
+                    <h1>Recommended Jobs</h1>
+                </div>
+            </template>
+
+            <template for:each={jobs} for:item="job" for:index="index">
+                <div key={job.id} class="slds-col slds-size_6-of-12 slds-wrap popularJobSection" onclick={handleApply}
+                    data-index={index}>
+                    <div data-index={index}>
+                        <div class="slds-col slds-size_12-of-12 ">
+                            <div class="slds-grid sld-wrap ">
+                                <div class="slds-col slds-size_1-of-12 ">
+                                    <img src={jobIcon} data-index={index} />
+                                </div>
+                                <div class="slds-col slds-size_11-of-12 ">
+                                    <sub data-index={index}>Company: {job.company}</sub>
+                                    <h4 data-index={index}>{job.title}</h4>
+                                    <sub data-index={index}>Location: {job.location}</sub>
+                                    <div class="clear"></div>
+                                    <span data-index={index} class="postedTime">Posted 15min ago</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="slds-grid sld-wrap ">
+                            <div class="slds-col slds-size_8-of-12 onlymobile">
+
+
+                                <div class="time" data-index={index}>
+                                    <lightning-icon icon-name="utility:case" alternative-text="Approved"
+                                        title="Approved" data-index={index}>
+                                    </lightning-icon> 3 - 4 Year experience | Full Time
+                                </div>
+                                <p data-index={index}>We are looking for a {job.title} for our team.</p>
+                            </div>
+
+                            <div class="slds-col slds-size_4-of-12 onlymobile textRight knowmoreButton">
+                                <button class="secondary_button" data-index={index}>Know More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+        <template if:true={showViewMore}>
+            <div class="slds-grid slds-grid_align-center slds-size_12-of-12">
+                <button class="primary_button slds-col " onclick={handleViewMore}>View More</button>
+            </div>
+        </template>
+
+    </div>
+</template>

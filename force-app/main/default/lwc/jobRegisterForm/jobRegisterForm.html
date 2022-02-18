@@ -1,0 +1,32 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item size="12">
+            <lightning-input name="firstName" type="text" label="First Name" placeholder="Enter First Name"
+                onchange={handleChange} style="width: 80%; margin: 0 auto; font-size: 1rem; padding: 10px;">
+            </lightning-input>
+            <lightning-input name="lastName" type="text" label="Last Name" placeholder="Enter Last Name"
+                onchange={handleChange} style="width: 80%; margin: 0 auto; font-size: 1rem; padding: 10px;">
+            </lightning-input>
+            <lightning-input name="email" type="email" label="Email Address" placeholder="Enter Email Address"
+                onchange={handleChange} style="width: 80%; margin: 0 auto; font-size: 1rem; padding: 10px;">
+            </lightning-input>
+            <!-- <lightning-input name="password" type="password" label="Password" placeholder="Enter Password"
+                onchange={handleChange} style="width: 80%; margin: 0 auto; font-size: 1rem; padding: 10px;">
+            </lightning-input> -->
+            <div class="slds-align_absolute-center">
+                <lightning-button variant="brand" label="Create Account" title="create account"
+                    onclick={handleRegister}>
+                </lightning-button>
+            </div>
+            <br>
+            <div style="margin: 0 auto; text-align: center; font-weight: 300; font-size: 18px">
+                <p>&nbsp;</p>
+                <p>or Sign In using</p>
+                <p>&nbsp;</p>
+                <div>
+                    <img src={googleIcon} alt="">
+                </div>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

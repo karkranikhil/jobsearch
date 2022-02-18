@@ -1,0 +1,18 @@
+<template>
+    <div class="slds-grid slds-gutters slds-p-bottom_x-large">
+        
+                <div class={summaryClass}>
+                    <lightning-button-icon variant="bare" icon-name={summaryIcon} id="item1" alternative-text={title} title={title} onclick={toggleState}></lightning-button-icon>
+                   <div>
+                       <div class="slds-summary-detail__title">
+                           <h3 class="slds-text-heading_small slds-truncate" title={title}> {title} </h3>
+                       </div>
+                       <div aria-hidden="false" class="slds-summary-detail__content" >
+                        <lightning-datatable key-field="id" columns={columns} data={values} hide-checkbox-column>
+                        </lightning-datatable>
+                       </div>
+                   </div>
+               </div>
+         
+    </div>
+</template>

@@ -1,0 +1,243 @@
+header {
+    left: 0;
+    right: 0px;
+    font-size: 14px;
+    font-family: "Lato", sans-serif;
+    color: #373f41;
+    display: flex;
+    border-bottom: 1px solid #dbe9ff;
+    background: #fff;
+    z-index: 1;
+}
+
+header .topnavBar {
+    padding: 0px 16px;
+    align-items: center;
+    height: 80px;
+}
+
+header a {
+    color: #373f41;
+    padding-left: 1%;
+    font-weight: 500;
+}
+
+header nav a {
+    padding-right: 3%;
+}
+
+header .active {
+    color: #3787ff !important;
+}
+header .line {
+    color: #3787ff;
+    opacity: 0.4;
+    padding-left: 5%;
+}
+
+/* Flash News */
+.bgBlueSecondary {
+    background: #f0f6ff;
+    border: 3px solid #dbe9ff;
+}
+
+.flashNews {
+    padding: 16px;
+    color: #000;
+    margin-top: 0px;
+}
+.flashNews strong {
+    padding: 20px;
+    color: #fff;
+    font-weight: 900;
+    border-radius: 4px;
+    margin: -3px 0px 0px -20px ;
+    border: 2px solid #3787FF;
+}
+.flashNews span {
+    padding-left: 3%;
+}
+
+.newsContent {
+    width: 82%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    padding-left: 2%;
+    margin-bottom: -4px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+/* Profile Header */
+
+.profileHeader,
+.userName {
+    font-weight: 600;
+    color: #6b6c7e;
+}
+.profileHeader .profileImage {
+    border: 2px solid #e8ecf1;
+    border-radius: 100px;
+    margin-left: 16px;
+}
+.profileHeader .userCount {
+    background: #43b100;
+    color: #fff;
+    border-radius: 100px;
+    padding: 1px 6px;
+    margin-left: -5px;
+}
+.profileHeader .notificationIcon {
+    --sds-c-icon-color-foreground-default: #3787ff;
+    width: 15px;
+    height: 15px;
+    margin: 10px;
+}
+
+.notificationPoint {
+    width: 10px;
+    height: 10px;
+    background: #43b100;
+    border-radius: 100px;
+    display: inline-block;
+    border: 1px solid #fff;
+    vertical-align: text-top;
+}
+
+.notificationIcon {
+    cursor: pointer;
+}
+.mobileNav {
+    display: none;
+}
+
+.headerLogo{
+    max-width: 70%;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Mobile */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    header .topnavBar {
+        height: 50px;
+        padding: 0px 16px;
+        align-items: center;
+    }
+
+    .flashNews {
+        margin-top: 0px;
+    }
+    .flashNews strong {
+        width: -webkit-fill-available;
+        padding: 5px;
+        margin-bottom: 8px;
+    }
+
+    .newsContent {
+        line-height: 20px;
+        overflow: auto;
+        white-space: normal;
+        display: inline-block;
+    }
+    .hideforMobile,
+    .profileHeader {
+        display: none;
+    }
+    .mobileNav {
+        display: block;
+        --sds-c-icon-color-foreground-default: #3787ff;
+        width: 100%;
+        text-align: right;
+    }
+    .topnavBar {
+        width: -webkit-fill-available;
+    }
+}
+
+/* Tab */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .flashNews {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .newsContent {
+        line-height: 20px;
+        overflow: auto;
+        white-space: normal;
+        display: inline-block;
+    }
+    .flashNews strong {
+        float: left;
+        width: 130px;
+        margin: -12px 0px 0px 0px;
+    }
+
+    .hideforMobile {
+        width: 150px;
+    }
+    .hideforMobile nav {
+        display: none;
+    }
+    .profileHeader {
+        width: 64%;
+        margin-top: -8x;
+        float: right;
+        margin-right: 10px;
+    }
+}
+/* dorpdown  */
+/* .dropbtn {
+    background-color: #04aa6d;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+} */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    text-align: left;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
+
+.dropdownContentActive {
+    display: block;
+}
+/* .mystyle {
+    width: 100%;
+    padding: 25px;
+    background-color: coral;
+    color: white;
+    font-size: 25px;
+    box-sizing: border-box;
+  } */

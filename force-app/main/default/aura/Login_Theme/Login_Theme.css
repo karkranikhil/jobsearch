@@ -1,0 +1,247 @@
+.THIS {
+    background: #f9f9f9;
+}
+.THIS .forceCommunitySection .cb-section_column:only-child {
+    padding: 0;
+}
+
+.THIS .app-title,
+.THIS .page-title {
+    font-size: 1.5rem;
+  }
+
+  .THIS .section-title {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+  }
+.THIS .brief_card {
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+}
+.THIS .terms-input .slds-textarea {
+    min-height: 140px;
+}
+.THIS .app-container {
+    padding-top: 0;
+}
+.THIS .siteforceContentArea .comm-layout-column:not(:empty) {
+    padding: 0;
+}
+.THIS .slds-list_horizontal .slds-form-element + .slds-form-element {
+    margin-left: 1rem;
+}
+.THIS .controls {
+    margin: 2.5rem -1.5rem -1.5rem;
+    padding: 1.5rem;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.THIS .page-header {
+    padding-bottom: 1rem;
+}
+.THIS .page-title {
+    font-size: 1.4rem;
+}
+.THIS .sub-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #888;
+}
+
+.THIS .page-content p + p {
+    padding-top: 1rem;
+}
+
+.THIS .slds-form-element .slds-form-element__label {
+    font-weight: bold;
+    color: #333;
+}
+
+.THIS .slds-form-element .slds-form-element__label abbr {
+    position: absolute;
+    margin-left: -8px;
+}
+
+.THIS .slds-form__row {
+    margin-bottom: 1rem;
+}
+
+.THIS .horizontal-radio .slds-radio__label .slds-form-element__label,
+.THIS .horizontal-radio .slds-checkbox__label .slds-form-element__label,
+.THIS .check-group .slds-checkbox__label .slds-form-element__label,
+.THIS .radio-group .slds-radio__label .slds-form-element__label {
+    font-weight: normal;
+}
+.THIS .horizontal-radio .slds-radio + .slds-radio {
+    margin-left: 1rem;
+}
+
+.THIS .horizontal-radio .slds-form-element__control {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.THIS .alert {
+    max-width: 420px;
+    margin: 0 auto;
+    border: 2px solid #ddd;
+    padding: 2rem;
+    display: flex;
+}
+.THIS .alert svg {
+    width: 3rem;
+    height: 3rem;
+}
+.THIS .alert .text {
+    margin-left: 1.5rem;
+    flex: 1;
+}
+.THIS .alert h1 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+}
+.THIS .alert .description {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+.THIS .alert .case-no {
+    padding: 0.25rem 0.5rem;
+    display: inline-flex;
+    border: 2px solid #ffd455;
+    margin-bottom: 1rem;
+    background: #fff4d3;
+}
+
+.THIS .shadow-card { 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.THIS .iframe-holder {
+    position: relative;
+    min-width: calc(100% + 4rem);
+    margin-left: -2rem;
+    margin-top: -2rem;
+    padding: 0;
+    border: 0;
+    min-height: calc(100vh - 104px);
+}
+
+.THIS .iframe-holder iframe {
+    border: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* New */
+@font-face{
+    font-family: 'Lato', sans-serif;
+    src: url("@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap')") format('TrueType');
+}
+
+.THIS .ravi{
+    background-image: linear-gradient(to right, #FFFFFF, #DDEBFF)!important;
+
+}
+.THIS .loginPage{
+    border:2px solid #ff0000;
+    background-image: linear-gradient(to right, #FFFFFF, #DDEBFF)!important;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.THIS .loginSection{
+    background: #FFFFFF;
+    border: 2px solid #E4E7FF;
+    box-sizing: border-box;
+    box-shadow: 18px 17px 19px rgba(167, 167, 167, 0.25);
+    border-radius: 4px;
+    padding:50px 80px;
+    margin:0px auto;
+    max-width: 500px;
+    color:#333;
+    
+
+}
+
+.THIS .loginSection h1{
+    font-size:31px;
+    text-align: center;
+}
+
+
+.THIS .loginSection p{
+    font-size:18px;
+    text-align: center;
+    font-weight: 400;
+
+}
+
+.THIS .salesforceIdentityLoginForm2 {
+    margin-top: 35px;
+}
+
+.THIS .salesforceIdentityLoginForm2 .inputBox {
+    width: 100%;
+    margin: 8px 0;
+    height: 100%;
+    padding: 13px 10px;
+    border: 1px solid rgba(55, 135, 255, 0.3);
+    border-radius: 4px;
+}
+
+.THIS .salesforceIdentityLoginForm2 .inputIcon {
+    display: none;
+}
+
+.THIS .salesforceIdentityLoginForm2 .inputBox:focus {
+    border: 1px solid #3787FF;
+}
+
+.THIS .salesforceIdentityLoginForm2 .inputContainer {
+    padding: 0;
+    border: none;
+}
+
+.THIS button.slds-button.slds-button--brand.loginButton.uiButton--none.uiButton {
+    background: #3787FF;
+    border-radius: 4px;
+}
+
+.THIS .slds-box{
+    padding: 6rem 7rem !important;
+    width: 80%;
+    margin: 5% auto !important;
+}
+
+.THIS .backgroundBgcolor::after{
+    content:" ";
+    background:#dcebff;
+    position: fixed;
+    right: 0;
+    width: 10%;
+    height: 100%;
+    top: 0px;
+    
+    
+}
+
+@media screen and (min-width:1024px) and (max-width: 1440px) {
+    .cLogin_Theme .slds-box {
+        padding: 2rem 2rem!important;
+        width: 100%;
+        margin: 5% auto!important;
+    }
+    .cLogin_Theme .backgroundBgcolor:after{
+        display:none
+    }
+}

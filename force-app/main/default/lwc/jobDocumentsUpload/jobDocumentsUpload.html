@@ -1,0 +1,58 @@
+<template>
+    <div if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading..." variant="brand">
+        </lightning-spinner>
+    </div>
+    <div class="form-content document-upload">
+        <div class="pageTitle slds-col slds-size_12-of-12">
+            <h1>Documents to Upload</h1>
+        </div>
+        <div class="mainWraper documentUploads">
+            <h2>Attach the Required documents below:</h2>
+            <template for:each={documentData} for:item="doc" for:index="index">
+                <div key={doc.key}>
+                    <div class="slds-grid slds-gutters slds-align_absolute-center documentSection">
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <h3>{doc.key}. {doc.title}</h3>
+                            </span>
+                        </div>
+                        <div class="slds-col slds-large-size_4-of-12">
+                            <div class="input-group">
+                                <lightning-input type="file" accept={acceptedFormats} name={doc.keyName}
+                                    onchange={handleFileUpload} data-id={doc.key}>
+                                </lightning-input>
+                                <div if:true={doc.showFiles}>
+                                    <lightning-card>
+                                        <div class="slds-grid frileUploadCard">
+
+                                            <div class="fileName">
+                                                {doc.fileName}
+                                            </div>
+                                            <div class="fileActions">
+                                                <lightning-icon icon-name="action:delete" size="small"
+                                                    alternative-text="Delete" title="Delete" data-id={doc.key}
+                                                    class="deleteIcon" onclick={handleDeleteFile}></lightning-icon>
+
+                                                <lightning-icon icon-name="action:preview" size="small"
+                                                    alternative-text="Preview" class="previewIcon" title="Preview"
+                                                    data-id={doc.key} onclick={handlePreviewFile}>
+                                                </lightning-icon>
+
+                                            </div>
+
+                                        </div>
+                                    </lightning-card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <div class="textRight">
+                <lightning-button variant="brand" label="Submit" title="Primary action" onclick={handleSubmit}
+                    class="slds-m-left_x-small textRight"></lightning-button>
+            </div>
+        </div>
+    </div>
+</template>

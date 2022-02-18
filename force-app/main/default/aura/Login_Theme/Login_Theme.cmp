@@ -1,0 +1,32 @@
+<aura:component implements="forceCommunity:themeLayout" description="A custom theme for University of north texas"
+    access="global">
+    <aura:attribute name="newHeader" type="Aura.Component[]" />
+    <aura:attribute name="newFooter" type="Aura.Component[]" />
+    <aura:attribute name="backgroundImageURL" type="String" default="" />
+    <aura:handler name="init" value="{!this}" action="{!c.initialize}" />
+
+
+    <div class="content-container">
+        <div class="newHeader">
+            {!v.newHeader}
+        </div>
+        <div class="content" id="main-content-1">
+            <div class="backgroundBgcolor"
+                style="{!'position: relative; min-height : 100vh; background: url(' + v.backgroundImageURL +') no-repeat #fff center;background-size: inherit; '}">
+                <lightning:layout>
+                    <lightning:layoutItem size="3"></lightning:layoutItem>
+                    <lightning:layoutItem size="6">
+                        <div class=" slds-p-around_large slds-box slds-m-around_large" style='margin-top:5%;background-color: rgba(255, 255, 255);backdrop-filter: blur(5px); border: 2px solid #E4E7FF;
+                            box-shadow: 18px 17px 19px rgb(167 167 167 / 25%);
+                            padding: 6rem 10rem;'>
+                            {!v.body}
+                        </div>
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </div>
+        </div>
+        <div class="newFooter">
+            {!v.newFooter}
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,11 @@
+.fullcalendarjs {
+    max-width: 2000px;
+    margin: 40px auto;
+}
+.slds-modal__content{
+    overflow: initial;
+}
+.fc-center h2 {
+  font-weight: bold;
+  font-size: 20px;
+}

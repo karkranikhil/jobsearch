@@ -1,0 +1,15 @@
+<aura:component implements="forceCommunity:themeLayout" description="A custom theme for Workforce Management" access="global">
+    <aura:attribute name="newHeader" type="Aura.Component[]"/>
+    <aura:attribute name="newFooter" type="Aura.Component[]" />
+    <div class="content-container" >
+        <div class="newHeader">
+            {!v.newHeader}
+        </div>
+        <div class="content" id="main-content-1">
+            {!v.body}
+        </div>
+        <div class="newFooter">
+            {!v.newFooter}
+        </div>
+    </div>
+</aura:component>

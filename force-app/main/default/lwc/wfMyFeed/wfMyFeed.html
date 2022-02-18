@@ -1,0 +1,196 @@
+<template>
+    <div class="slds-grid slds-wrap slds-grid_align-center">
+        <template if:true={showSpinner}>
+            <div class="backdrop">
+                <div class="spinner">
+                    <lightning-spinner alternative-text="Loading..." variant="brand">
+                    </lightning-spinner>
+                </div>
+            </div>
+        </template>
+        <template if:false={showSpinner}>
+            <div class="slds-grid slds-wrap mainWraper">
+                <div class="slds-col slds-size_12-of-12 profileDeetails">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_2-of-12">
+                            <img src={profileUrl} class="slds-avatar profileImage" />
+                            <!-- <span class="count">3</span> -->
+                        </div>
+                        <div class="slds-col slds-size_4-of-12">
+                            <h1>{contactData.Name}</h1>
+                            <p>{contactData.Title} <span>&nbsp; &nbsp;| &nbsp;&nbsp;</span> Age: {contactData.Age}</p>
+                            <ul>
+                                <li>
+                                    <lightning-icon icon-name="utility:email" alternative-text="Approved"
+                                        onclick={handleNotification} title="Approved"></lightning-icon>
+                                    <b>{contactData.Email}</b>
+                                </li>
+                                <li>
+                                    <lightning-icon icon-name="utility:call" alternative-text="Approved"
+                                        onclick={handleNotification} title="Approved"></lightning-icon>
+                                    <b> {contactData.MobNumber}</b>
+                                </li>
+                            </ul>
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label information" for="slider-id-01">
+                                    <span class="slds-slider-label">
+                                        <span class="slds-slider-label__label smallText">Personal Information</span>
+                                        <span class="slds-slider__value smallText"
+                                            aria-hidden="true">{rangeValue}%</span>
+                                    </span>
+                                </label>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-slider ">
+                                        <input type="range" id="slider-id-01a" class="slds-slider__range sliderRange "
+                                            value={rangeValue} disabled />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-12 verticalLine">
+
+                        </div>
+
+                        <div class="slds-col slds-size_5-of-12 slds-p-left_xx-large">
+                            <h3>Salary Expectation</h3>
+                            <p>{contactData.RequiredWages}/year</p>
+                            <h3>Preferences</h3>
+                            <ul class="basicJob">Desired Occupation
+                                <li>
+                                    <a onclick={directToSearch} style="cursor: pointer;">{contactData.DesiredOccupation}
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="basicJob">Preferred Location
+                                <li>
+                                    <a onclick={directToSearch} style="cursor: pointer;">
+
+                                        {contactData.PreferredLocation}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="slds-grid slds-wrap mainWraper">
+                <div class="slds-col slds-size_12-of-12  programReferrals">
+                    <h4>Program Referrals <a>Show All</a></h4>
+                    <ul>
+                        <template if:false={showProgramReferalError}>
+                            <template for:each={contactData.programReferals} for:item="row">
+                                <a key={row.Id} href={row.URL__c} target="_blank">
+                                    <li key={row.Id} class="slds-grid slds-wrap">
+                                        <!-- <template if:false={showProgramReferalError}>
+                                <template for:each={contactData.programReferals} for:item="row"> -->
+                                        <div key={row.Id} class="slds-col slds-size_1-of-12">
+                                            <div class="orangBg">
+                                                <lightning-icon icon-name="utility:stage" class="stageIcon"
+                                                    alternative-text="Approved" title="Approved"></lightning-icon>
+                                            </div>
+                                        </div>
+                                        <div key={row.Id} class="slds-col slds-size_10-of-12">
+                                            <h5>{row.Title__c}</h5>
+                                            <p> Here you can find out where to access information on labor market and
+                                                link
+                                                through
+                                                the
+                                                some website using LMI...</p>
+                                        </div>
+                                        <div key={row.Id} class="slds-col slds-size_1-of-12 ">
+                                            <lightning-icon icon-name="utility:forward" class="forwardIcon"
+                                                alternative-text="Approved" title="Approved"></lightning-icon>
+                                        </div>
+                                    </li>
+                                </a>
+                            </template>
+                        </template>
+                        <template if:true={showProgramReferalError}>
+                            <div class="slds-align-absolute_center">
+                                No Program Referrals Found
+                            </div>
+                        </template>
+                    </ul>
+                </div>
+            </div>
+            <p>&nbsp;</p>
+            <div class="slds-col slds-box slds-size_1-of-1 slds-var-p-around_xx-small" style="display: none;">
+                <div class="slds-grid slds-wrap">
+                    <div
+                        class="slds-col slds-size_11-of-12 slds-text-heading_small slds-text-align_left slds-var-p-around_xx-small">
+                        Program Referrals
+                    </div>
+                    <div
+                        class="slds-col slds-size_1-of-12 slds-text-heading_small slds-text-align_left slds-var-p-around_xx-small">
+                        <lightning-button variant="base" label="Show All" title="show all" onclick={handleClick}
+                            class="slds-m-left_x-small"></lightning-button>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-var-p-around_xx-small">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-box slds-size_1-of-1 slds-var-p-around_xx-small">
+                                <div class="slds-grid">
+                                    <div class="slds-col slds-size_1-of-12">
+                                        <lightning-icon icon-name="utility:trailhead" size="medium"></lightning-icon>
+                                    </div>
+                                    <div class="slds-col slds-size_10-of-12">
+                                        <div class="slds-text-heading_small slds-var-p-around_xxx-small">
+                                            Veteran-Only Jobs provided by Texas Veterans Commissions
+                                        </div>
+                                        <div class="slds-text-color_weak">
+                                            Here you can find out where to access information on labor market and link
+                                            through
+                                            the
+                                            some website using LMI...
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-box slds-size_1-of-1 slds-var-p-around_xx-small">
+                                <div class="slds-grid">
+                                    <div class="slds-col slds-size_1-of-12">
+                                        <lightning-icon icon-name="utility:trailhead" size="medium"></lightning-icon>
+                                    </div>
+                                    <div class="slds-col slds-size_10-of-12">
+                                        <div class="slds-text-heading_small slds-var-p-around_xxx-small">
+                                            Veteran Educaion Program
+                                        </div>
+                                        <div class="slds-text-color_weak">
+                                            Here you can find out where to access information on labor market and link
+                                            through
+                                            the
+                                            some website using LMI...
+                                        </div>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-12">
+                                        <lightning-icon icon-name="utility:forward" size="small"></lightning-icon>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-box slds-size_1-of-1 slds-var-p-around_xx-small">
+                                <div class="slds-grid">
+                                    <div class="slds-col slds-size_1-of-12">
+                                        <lightning-icon icon-name="utility:trailhead" size="medium"></lightning-icon>
+                                    </div>
+                                    <div class="slds-col slds-size_10-of-12">
+                                        <div class="slds-text-heading_small slds-var-p-around_xxx-small">
+                                            Veteran Education Program
+                                        </div>
+                                        <div class="slds-text-color_weak">
+                                            Here you can find out where to access information on labor market and link
+                                            through
+                                            the
+                                            some website using LMI...
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <c-explore-Jobs></c-explore-Jobs>
+
+        </template>
+    </div>
+</template>

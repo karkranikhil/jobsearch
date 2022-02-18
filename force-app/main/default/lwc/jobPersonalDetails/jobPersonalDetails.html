@@ -1,0 +1,382 @@
+<template>
+    <div if:true={showSpinner}>
+        <div class="backdrop">
+            <div class="spinner">
+                <lightning-spinner alternative-text="Loading..." variant="brand">
+                </lightning-spinner>
+            </div>
+        </div>
+    </div>
+    <div class="" if:false={showSpinner}>
+        <div class="">
+            <h3 class="">
+                Personal Details
+            </h3>
+        </div>
+        <div class="">
+            <div class="">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div class="">
+                                <lightning-input type="text" label="First Name" placeholder="First Name" name="fname"
+                                    value={userList.fname} onchange={handleChange}>
+                                </lightning-input>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div class="">
+                                <lightning-input type="text" label="Middle Name" placeholder="Middle Name" name="mname"
+                                    value={userList.mname} onchange={handleChange}>
+                                </lightning-input>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div class="">
+                                <lightning-input type="text" label="Last Name" placeholder="Last Name" name="lname"
+                                    value={userList.lname} onchange={handleChange} required>
+                                </lightning-input>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div class="">
+                                <lightning-input type="text" label="Unique Id/User Name"
+                                    placeholder="Unique Id/User Name" name="userNameOrUniqueId" onchange={handleChange}
+                                    value={userList.userNameOrUniqueId} required>
+                                </lightning-input>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    
+
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div class="">
+                                <lightning-input type="date" label="DOB" class="" placeholder="Date of Birth" name="dob"
+                                    onchange={handleChange} value={userList.dob} required>
+                                </lightning-input>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div class="input-group">
+                                <lightning-combobox name="gender" label="Gender" value={userList.gender}
+                                    options={gendervalues.data.values} placeholder="Select" onchange={handleChange}>
+                                </lightning-combobox>
+                            </div>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <lightning-input type="file" accept={acceptedFormats} label="Upload Resume"
+                                name="resumeUpload" onchange={handleUploadFinished}>
+                            </lightning-input>
+                            <div class="slds-m-top_small">
+                                {userList.resumeFile.fileName}
+                                <lightning-button variant="brand-outline" label="Preview" title="Preview"
+                                    name="previewResume" onclick={handlePreviewFile} class="slds-m-left_x-small">
+                                </lightning-button>
+                                <lightning-button variant="destructive" label="Delete" title="Delete"
+                                    name="deleteResume" onclick={handleDeleteFile} class="slds-m-left_x-small">
+                                </lightning-button>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div class="input-group">
+                                <lightning-combobox name="highestEducation" label="Highest Level of Education Achieved"
+                                    value={userList.highestEducation} placeholder="Select" onchange={handleChange}
+                                    options={highEducationPicklist.data.values}>
+                                </lightning-combobox>
+                            </div>
+                            
+                        </span>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div class="">
+                                <lightning-input type="text" name="ssNumber" label="Social Security Number" class=""
+                                    value={userList.ssNumber} placeholder="xxx-xx-xxxx" pattern="^\d{3}-\d{2}-\d{4}$"
+                                    message-when-pattern-mismatch="Not a valid SSN"
+                                    message-when-value-missing="SSN is required" onchange={handleSSNChange} required>
+                                </lightning-input>
+
+                            </div>
+                        </span>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div class="">
+                                <lightning-input type="email" name="email" label="Email" placeholder="Email"
+                                    onchange={handleChange} value={userList.email}>
+                                </lightning-input>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div class="input-group">
+                                <lightning-combobox name="race" label="Race" value={userList.race} placeholder="Select"
+                                    onchange={handleChange} options={racePicklist.data.values}>
+                                </lightning-combobox>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div class="input-group">
+                                <lightning-combobox name="ethnicity" label="Ethnicity" value={userList.ethnicity}
+                                    placeholder="Select" onchange={handleChange}
+                                    options={ethnicityPicklist.data.values}>
+                                </lightning-combobox>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div class="input-group">
+                                <lightning-combobox name="primaryLanguage" label="Native Language"
+                                    value={userList.primaryLanguage} placeholder="Select" onchange={handleChange}
+                                    options={nativeLanguagePicklist.data.values}>
+                                </lightning-combobox>
+                            </div>
+
+                        </span>
+                    </div>
+                    <div class="slds-col yesNoButton slds-large-size_6-of-12">
+                        <span>
+                            <div class="">
+                                <lightning-radio-group name="workAuthentication" label="Work Authentication"
+                                    options={radioOptionsCheckboxes} type="button" onchange={handleChange}
+                                    value={userList.workAuthentication}>
+                                </lightning-radio-group>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="slds-grid slds-gutters">
+                    
+                    <div class="slds-col yesNoButton slds-large-size_6-of-12">
+                        <span>
+                            <div class="">
+                                <lightning-radio-group name="veteranEligibleSpouse"
+                                    label="Are you a veteran of the US Armed Forces?" options={radioOptionsCheckboxes2}
+                                    type="button" onchange={handleChange} value={userList.veteranEligibleSpouseBool}>
+                                </lightning-radio-group>
+                            </div>
+                        </span>
+                    </div>
+                  
+                    <div class="slds-col yesNoButton slds-large-size_6-of-12">
+                        <span>
+                            <div class="">
+                                <lightning-radio-group name="disablilityAccomodations"
+                                    label="Do you have a disability, either physical or mental, that is preventing you from participating in the workforce?"
+                                    options={radioOptionsCheckboxes} type="button" onchange={handleChange}
+                                    value={userList.disablilityAccomodations}>
+                                </lightning-radio-group>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <template if:true={userList.disablilityAccomodations}>
+                        <div class="slds-col yesNoButton slds-large-size_6-of-12">
+                            <span>
+                                <div class="">
+                                    <lightning-radio-group name="DiscloseDisability"
+                                        label="Do you wish to disclose a disability?" options={radioOptionsCheckboxes}
+                                        type="button" onchange={handleChange} value={userList.DiscloseDisability}>
+                                    </lightning-radio-group>
+                                </div>
+                            </span>
+                        </div>
+                    </template>
+                    <template if:true={userList.disablilityAccomodations}>
+                        <template if:true={userList.DiscloseDisability}>
+                            <div class="slds-col yesNoButton slds-large-size_6-of-12">
+                                <span>
+                                    <div class="">
+                                        <lightning-radio-group name="DifficultyHearing"
+                                            label="Are you deaf or do you have serious difficulty hearing?"
+                                            options={radioOptionsCheckboxes} type="button" onchange={handleChange}
+                                            value={userList.DifficultyHearing}>
+                                        </lightning-radio-group>
+                                    </div>
+                                </span>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+                <template if:true={userList.disablilityAccomodations}>
+                    <template if:true={userList.DiscloseDisability}>
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col yesNoButton slds-large-size_6-of-12">
+                                <span>
+                                    <div class="">
+                                        <lightning-radio-group name="DifficultySeeing"
+                                            label="Are you blind or do you have serious difficulty seeing even when wearing glasses?"
+                                            options={radioOptionsCheckboxes} type="button" onchange={handleChange}
+                                            value={userList.DifficultySeeing}>
+                                        </lightning-radio-group>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col yesNoButton slds-large-size_6-of-12">
+                                <span>
+                                    <div class="">
+                                        <lightning-radio-group name="PhysicalOrMental"
+                                            label="Because of a physical, mental, or emotional condition, do you have serious difficulty concentrating, remembering, or making decisions?"
+                                            options={radioOptionsCheckboxes} type="button" onchange={handleChange}
+                                            value={userList.PhysicalOrMental}>
+                                        </lightning-radio-group>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col yesNoButton slds-large-size_6-of-12">
+                        <span>
+                            <div class="">
+                                <lightning-radio-group name="currentSchoolStatus" label="Are you Student?"
+                                    options={radioOptionsCheckboxes} type="button" onchange={handleChange}
+                                    value={userList.currentSchoolStatus}>
+                                </lightning-radio-group>
+                            </div>
+                        </span>
+                    </div>
+
+
+                    <div class="slds-col yesNoButton slds-large-size_6-of-12">
+                        <span>
+                            <div class="">
+                                <lightning-radio-group name="selfEmployment" label="Are you Self Employed?"
+                                    options={radioOptionsCheckboxes} type="button" onchange={handleChange}
+                                    value={userList.selfEmployment}>
+                                </lightning-radio-group>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <template if:true={userList.selfEmployment}>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col yesNoButton slds-large-size_6-of-12">
+                            <span>
+                                <div class="">
+                                    <lightning-radio-group name="PublicAssistanceInTheLast6Months"
+                                        label="Are you currently receiving, or have you received, any public assistance in the last 6 months? "
+                                        options={radioOptionsCheckboxes} type="button" onchange={handleChange}
+                                        value={userList.PublicAssistanceInTheLast6Months}>
+                                    </lightning-radio-group>
+                                </div>
+                            </span>
+                        </div>
+
+                        <div class="slds-col yesNoButton slds-large-size_6-of-12">
+                            <span>
+                                <div class="slds-form-element__legend slds-form-element__label">
+                                    <label>Do you have a low income?&nbsp;&nbsp;<a
+                                            href="https://ajc.lincoln.ne.gov/career-planners/low-income-guidance/"
+                                            target="_blank">Low Income Guide</a></label>
+                                    <lightning-radio-group name="DoYouHaveALowIncome" options={radioOptionsCheckboxes}
+                                        type="button" onchange={handleChange} value={userList.DoYouHaveALowIncome}>
+                                    </lightning-radio-group>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </template>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div class="input-group">
+                                <lightning-combobox name="employmentStatus" label="Employment Status"
+                                    placeholder="Select" onchange={handleChange} value={userList.employmentStatus}
+                                    options={employmentStatusPicklist.data.values}>
+                                </lightning-combobox>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="slds-col yesNoButton slds-large-size_6-of-12">
+                        <template if:true={employed}>
+                            <span>
+                                <div class="">
+                                    <lightning-radio-group name="Noticeperiod"
+                                        label="Are you serving notice period or pending military separation?"
+                                        options={radioOptionsCheckboxes} type="button" onchange={handleChange}
+                                        value={userList.Noticeperiod}>
+                                    </lightning-radio-group>
+                                </div>
+                            </span>
+                        </template>
+                    </div>
+                </div>
+                <template if:true={employed}>
+                    <div class="slds-grid slds-gutters">
+
+                        <div class="slds-col yesNoButton slds-large-size_6-of-12">
+                            <span>
+                                <div class="">
+                                    <lightning-radio-group name="Areyouunderemployed"
+                                        label="Are you underemployed either by # of hours or wage earned?"
+                                        options={radioOptionsCheckboxes} type="button" onchange={handleChange}
+                                        value={userList.Areyouunderemployed}>
+                                    </lightning-radio-group>
+                                </div>
+                            </span>
+                        </div>
+
+                        <template if:false={userList.Noticeperiod}>
+                            <div class="slds-col yesNoButton slds-large-size_6-of-12">
+                                <span>
+                                    <div class="">
+                                        <lightning-radio-group name="Areyouhomemaker"
+                                            label="Are you currently a homemaker" options={radioOptionsCheckboxes}
+                                            type="button" onchange={handleChange} value={userList.Areyouhomemaker}>
+                                        </lightning-radio-group>
+                                    </div>
+                                </span>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+                
+            </div>
+        </div>
+    </div>
+    <div class="formControls">
+        <div class="textRight">
+            <button class=" primary_button " data-page='Personal_Information' onclick={handleSave}>Save</button>
+            <button class=" secondary_button " data-page='Personal_Information' onclick={handleNext}>Next</button>
+        </div>
+    </div>
+
+</template>

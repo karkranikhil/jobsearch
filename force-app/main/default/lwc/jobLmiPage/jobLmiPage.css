@@ -1,0 +1,66 @@
+.jobLmiPage .slds-box {
+    border: none;
+}
+.jobLmiPage h3 {
+    font-size: 24px;
+}
+
+.retiringCard {
+    border: 1px solid #a8cbff;
+    border-radius: 50px;
+    padding: 25px 30px;
+    text-align: center;
+    margin: 2%;
+}
+
+.retiringCard h4 {
+    font-size: 20px;
+}
+.retiringCard p {
+    font-size: 14px;
+    color: #545454;
+    margin: 20px 0;
+    width: 98%;
+}
+/* .retiringCard .slds-slider{
+    margin:20px 0;
+    background: #F0F6FF;
+    padding: 10px 0px;
+    border-radius: 10px;
+
+} */
+.exportBtn {
+    --sds-c-icon-color-foreground-default: #3787ff;
+    float: right;
+}
+
+.retiringCard input {
+    width: 100%;
+    margin: 20px;
+}
+.retiringCard .slds-slider .slds-slider__range {
+    background: #3787ff;
+    padding: 10px 0px;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.verticalGap {
+    clear: both;
+    height: 60px;
+}
+
+.demographic {
+    background: #f0f6ff;
+    padding: 10px 0px;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 2%;
+}
+.demographic strong {
+    color: #616161;
+    font-size: 18px;
+    margin-bottom: 20px;
+    display: block;
+}

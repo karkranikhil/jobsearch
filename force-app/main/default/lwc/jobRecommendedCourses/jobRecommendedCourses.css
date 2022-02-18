@@ -1,0 +1,98 @@
+.imgSet{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 180px;
+}
+
+.jobCategoriesList{
+    margin:16px 0px;
+}
+
+.createClass{
+    background: none;
+    border: none;
+    padding-bottom: 7px;
+}
+
+.jobCategoriesList , .jobCategoriesList a{
+    font-size:14px;
+    color:#000;
+    cursor: pointer;
+    margin-right: 2%;
+    display: inline-block;
+}
+
+.jobCategoriesList .all{
+    border: 1px solid #E4E7FF;
+    padding: 6px 20px;
+    border-radius: 20px;
+
+}
+
+.jobCategoriesList span{
+    background:#969696;
+    border-radius: 100px;
+    color:#fff;
+    padding: 3px 9px;
+    float: right;
+    margin-top: -23px;
+    margin-left: 10px;
+
+}
+
+.jobCategoriesList .active span{
+    background:#3787FF!important;
+}
+
+.sortCategories{
+    font-size:14px;
+    color:#000;
+
+}
+
+.sortCategories select{
+    font-size:14px;
+    color:#000;
+    margin:10px;
+    border: none;
+    font-weight: bold;
+}
+
+
+
+.jobCategories {
+    border:1px solid #DCE0F0;
+    margin:0px 0px 30px 0px
+}
+.jobCategories  footer{
+    border-top: 1px solid #DCE0F0;
+    color:#6F6E6E;
+    --sds-c-icon-color-foreground-default: #6F6E6E;
+}
+.jobCategories  .spaceAround{
+    justify-content: space-between;
+}
+
+.jobCategories lightning-icon{
+    margin-right: 10px;
+}
+.jobCategories  .content{
+    margin:20px 0px;
+    font-size: 14px;
+}
+.jobCategories .cardImage{
+    border-radius: 100%;
+    margin-right: 10px;
+    margin-bottom: 8px;
+}
+.jobCategories .slds-card__body b{
+    font-size: 18px!important;
+}
+.jobCategories .slds-card__body{
+    min-height: 100px;
+} 
+
+.jobCategories  footer{
+    border-top: 1px solid #ccc;
+}

@@ -1,0 +1,157 @@
+<template>
+    <div if:true={showSpinner}>
+        <div class="backdrop">
+            <div class="spinner">
+                <lightning-spinner alternative-text="Loading..." variant="brand">
+                </lightning-spinner>
+            </div>
+        </div>
+    </div>
+    <div class="form-content" if:false={showSpinner}>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-large-size_12-of-12">
+                <h3>Job Information
+                    <div>
+                        <lightning-button variant="brand-outline" onclick={handleAdd} label="Add Job"
+                            icon-name="utility:add" class="slds-m-right_small add-job">
+                        </lightning-button>
+                    </div>
+                </h3>
+            </div>
+        </div>
+        <template for:each={jobList} for:item="job" for:index="index">
+            <div class="" key={job.key}>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-large-size_12-of-12 subTitle">
+                        <span> Employer </span>
+                        <template if:true={showDelete}>
+                            <lightning-icon variant="error" onclick={removeRow} alternative-text="Remove"
+                                icon-name="utility:delete" size="small" data-id={job.key}>
+                            </lightning-icon>
+                        </template>
+                    </div>
+                </div>
+                <div class="custom-form-group">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div class="input-group">
+                                    <lightning-input name="title" type="text" label="Title" onchange={handleChange}
+                                        value={job.title} placeholder="Job Title" data-id={job.key}>
+                                    </lightning-input>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div>
+                                    <lightning-combobox name="empType" label="Employment Type" value={job.empType}
+                                    placeholder="Select Employment Type" options={employmentTypeOption.data.values}
+                                    onchange={handleChange} data-id={job.key}>
+                                </lightning-combobox>
+                                </div>
+
+                            </span>
+                        </div> 
+                    </div>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div>
+                                    <lightning-input name="startDate" type="date" label="Start Date"
+                                    value={job.startDate} onchange={handleChange} placeholder="Start Date" data-id={job.key}>
+                                </lightning-input>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div class="input-group">
+                                    <lightning-input name="endDate" type="date" label="End Date" onchange={handleChange}
+                                    value={job.endDate} placeholder="End Date" data-id={job.key} disabled={job.currentlyWorking}>
+                                </lightning-input>
+                                <lightning-input name="currentlyWorking"  class="slds-p-around_medium align-center" type="checkbox" label="Currently Working" value={currentlyWorking} onchange={handleCurrentlyWorking}
+                                         data-id={job.key}>
+                                        </lightning-input>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- <div class="slds-grid slds-gutters">
+                        
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div class="input-group slds-p-top_x-large">
+                                    
+                                   
+                                </div>
+                            </span>
+                        </div>
+                    </div> -->
+                   
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div class="input-group">
+                                    <lightning-input name="goal" type="text" label="Occupational Goal" value={job.goal}
+                                    onchange={handleChange} placeholder="Occupational Goal" data-id={job.key}>
+                                </lightning-input>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div class="input-group">
+                                    <lightning-textarea name="skills" label="Roles and Responsibilities" value={job.skills} 
+                                    onchange={handleChange} placeholder="Roles and Responsibilities" data-id={job.key}>
+                                    </lightning-textarea>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+        
+                    <!--<div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div class="input-group">
+                                    <lightning-input name="duties" type="text" label="Duties" onchange={handleChange}
+                                        value={job.duties} placeholder="List down your duties" data-id={job.key}>
+                                    </lightning-input>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div class="input-group">
+                                    <lightning-input name="skills" type="text" label="Skills" onchange={handleChange}
+                                        value={job.skills} placeholder="List down your Skills" data-id={job.key}>
+                                    </lightning-input>
+                                </div>
+                            </span>
+                        </div>
+                    </div> -->
+                    <!-- <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-large-size_6-of-12">
+                            <span>
+                                <div class="input-group">
+                                   
+                                </div>
+                            </span>
+                        </div>
+                    </div>  -->
+                    <!-- <p><b>Note : You must fill all the mandatory field to proceed further</b></p> -->
+                </div>
+            </div>
+        </template>
+        <div class="formControls">
+            <span onclick={handleBack} class="textBluePrimary" data-page='Job_Information'>
+                <lightning-icon icon-name="utility:back" alternative-text="Approved" title="Approved">
+                </lightning-icon> &nbsp; Back
+            </span>
+            <div class="textRight">
+                <button class=" primary_button " data-page='Job_Information' onclick={handleSave}>Save</button>
+                <button class=" secondary_button " data-page='Job_Information' onclick={handleNext}>Next</button>
+            </div>
+        </div>
+    </div>
+</template>

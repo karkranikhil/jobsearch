@@ -1,0 +1,230 @@
+<template>
+
+    <div class="slds-grid slds-gutters slds-p-bottom_x-large">
+        <div class="slds-grid slds-col slds-size_3-of-12 slds-box extraLinksCard" onclick={handleClick}>
+            <div class="slds-col slds-size_8-of-12">
+                <h4>201</h4>
+                <p>Job Posted</p>
+            </div>
+            <div class="slds-col slds-size_4-of-12">
+                <lightning-icon icon-name="utility:image" class="quoteIcon" alternative-text="Approved"
+                    title="Approved"></lightning-icon>
+            </div>
+        </div>
+
+        <div class="slds-grid slds-col slds-size_3-of-12 slds-box extraLinksCard">
+            <div class="slds-col slds-size_8-of-12">
+                <h4>53</h4>
+                <p>New Applicants</p>
+            </div>
+            <div class="slds-col slds-size_4-of-12">
+                <lightning-icon icon-name="utility:image" class="quoteIcon greenColor" alternative-text="Approved"
+                    title="Approved"></lightning-icon>
+            </div>
+        </div>
+
+        <div class="slds-grid slds-col slds-size_3-of-12 slds-box extraLinksCard">
+            <div class="slds-col slds-size_8-of-12">
+                <h4>53</h4>
+                <p>Response Due</p>
+            </div>
+            <div class="slds-col slds-size_4-of-12">
+                <lightning-icon icon-name="utility:image" class="quoteIcon orangeColor" alternative-text="Approved"
+                    title="Approved"></lightning-icon>
+            </div>
+        </div>
+
+        <div class="slds-grid slds-col slds-size_3-of-12 slds-box extraLinksCard">
+            <div class="slds-col slds-size_8-of-12">
+                <h4>151</h4>
+                <p>Total Applicants</p>
+            </div>
+
+            <div class="slds-col slds-size_4-of-12">
+                <lightning-icon icon-name="utility:image" class="quoteIcon orangeColor" alternative-text="Approved"
+                    title="Approved"></lightning-icon>
+            </div>
+        </div>
+    </div>
+    <div class="slds-grid slds-gutters slds-p-bottom_x-large">
+        <div class="slds-col slds-size_10-of-12 backtoPage" onclick={handleBack}>
+            <strong>Recent Job Posted</strong>
+        </div>
+        <div class="slds-col slds-size_2-of-12  ">
+            <a href="">View all</a>
+        </div>
+    </div>
+    <div class="slds-grid slds-gutters slds-p-bottom_x-large">
+        <div class="mainWraper slds-grid slds-wrap">
+            <template for:each={jobsToShow} for:item="jobs">
+                <div key={jobs.Id} class="slds-col slds-size_6-of-12 popularJobSection">
+                    <div class="slds-col onlymobile">
+                        <img src={google} />
+                        <sub>{jobs.Company__c}, {jobs.Location__c}</sub>
+                        <h4>{jobs.Job_Title__c}</h4>
+                        <span>Posted 15min ago</span>
+                        <div class="time">
+                            <lightning-icon icon-name="utility:case" alternative-text="Approved" title="Approved">
+                            </lightning-icon>
+                            3 - 4 Year experience | {jobs.Employment_Type__c} | {jobs.Salary_Range__c}
+                        </div>
+                        <p>
+                            We are looking for a UX UI Designer for our
+                            design team.
+                        </p>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <div class="slds-grid slds-gutters slds-p-bottom_x-large">
+        <div class="slds-col slds-size_10-of-12 backtoPage" onclick={handleBack}>
+            <strong>Recent Applicants</strong>
+        </div>
+        <div class="slds-col slds-size_2-of-12  ">
+            <a href="">View all</a>
+        </div>
+    </div>
+
+    <lightning-accordion active-section-name="A">
+        <lightning-accordion-section name="A" label="SFDC Developer">
+            <table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered"
+                aria-label="Example table of Opportunities with no row hovers">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Applicant Name">Applicant Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Applied Date">Applied Date</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Status">Status</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Phone">Phone</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Ranking">Ranking</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Resume">Resume</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Action">Action</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={table1Data} for:item="row">
+                        <tr key={row.Id} class="slds-hint-parent">
+                            <td data-label="Applicant Name">
+                                <div class="slds-truncate" title={row.name}>{row.name}</div>
+                            </td>
+                            <td data-label="Applied Date">
+                                <div class="slds-truncate" title={row.AppliedDate}>{row.AppliedDate}</div>
+                            </td>
+                            <td data-label="Status">
+                                <div class="slds-truncate" title={row.Status}>{row.Status}</div>
+                            </td>
+                            <td data-label="Phone">
+                                <div class="slds-truncate" title={row.Phone}>{row.Phone}</div>
+                            </td>
+                            <td data-label="Ranking">
+                                <div class="slds-truncate" title={row.Ranking}>{row.Ranking}</div>
+                            </td>
+                            <td data-label="Resume">
+                                <div class="slds-truncate" title={row.resume}>
+                                    <lightning-icon icon-name="utility:preview" alternative-text="Approved"
+                                        title="Approved"></lightning-icon>
+                                    <a href={row.resume} target="_blank">View</a>
+                                </div>
+                            </td>
+                            <td data-label="Action">
+                                <div class="slds-truncate" title=Action>
+                                    <lightning-button id={row.Id} name="Accept" label="Accept"
+                                        onclick={handleClickAccept} variant="brand" value={row.Id}></lightning-button>
+                                    &nbsp;
+                                    <lightning-button name="Reject" label="Reject" variant="brand"
+                                        onclick={handleClickReject} value={row.Id}></lightning-button>
+                                </div>
+                            </td>
+
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </lightning-accordion-section>
+    </lightning-accordion>
+    <br /><br />
+    <lightning-accordion active-section-name="A">
+        <lightning-accordion-section name="A" label="SFDC Tester">
+            <table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered"
+                aria-label="Example table of Opportunities with no row hovers">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Applicant Name">Applicant Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Applied Date">Applied Date</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Status">Status</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Phone">Phone</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Ranking">Ranking</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Resume">Resume</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Action">Action</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={table2Data} for:item="row">
+                        <tr key={row.Id} class="slds-hint-parent">
+                            <td data-label="Applicant Name">
+                                <div class="slds-truncate" title={row.name}>{row.name}</div>
+                            </td>
+                            <td data-label="Applied Date">
+                                <div class="slds-truncate" title={row.AppliedDate}>{row.AppliedDate}</div>
+                            </td>
+                            <td data-label="Status">
+                                <div class="slds-truncate" title={row.Status}>{row.Status}</div>
+                            </td>
+                            <td data-label="Phone">
+                                <div class="slds-truncate" title={row.Phone}>{row.Phone}</div>
+                            </td>
+                            <td data-label="Ranking">
+                                <div class="slds-truncate" title={row.Ranking}>{row.Ranking}</div>
+                            </td>
+                            <td data-label="Resume">
+                                <div class="slds-truncate" title={row.resume}>
+                                    <lightning-icon icon-name="utility:preview" alternative-text="Approved"
+                                        title="Approved"></lightning-icon>
+                                    <a href={row.resume} target="_blank">View</a>
+                                </div>
+                            </td>
+                            <td data-label="Action">
+                                <div class="slds-truncate" title=Action>
+                                    <lightning-button name="Accept" label="Accept" onclick={handleClickAccept}
+                                        variant="brand" value={row.Id}></lightning-button> &nbsp;
+                                    <lightning-button name="Reject" label="Reject" variant="brand"
+                                        onclick={handleClickReject} value={row.Id}></lightning-button>
+                                </div>
+                            </td>
+
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </lightning-accordion-section>
+    </lightning-accordion>
+</template>

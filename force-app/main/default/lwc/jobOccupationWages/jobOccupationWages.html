@@ -1,0 +1,143 @@
+<template>
+    <!-- <c-job-search></c-job-search> -->
+    <c-job-search onchild={handleSearch}></c-job-search>
+    <div class="mainWraper slds-grid slds-wrap">
+        <div class="pageTitle slds-col slds-size_12-of-12 ">
+            <h1>Map View</h1>
+            <p>Place of Work vs Place of Residence</p>
+        </div>
+    </div>
+    <div class="mainWraper slds-grid slds-wrap">
+        <div class=" slds-grid slds-size_12-of-12 ">
+            <div class=" slds-col slds-size_6-of-12 backtoPage" onclick={handleBack}> <a>
+                    <lightning-icon icon-name="utility:back" class="searchIcon" alternative-text="Approved"
+                        title="Approved"></lightning-icon>Back to LMI (Labor Market Information)
+                </a></div>
+            <div class=" slds-col slds-size_6-of-12 textRight downloadBtn "> <button class="secondary_button">
+                    <lightning-icon icon-name="utility:download" class="searchIcon" alternative-text="Approved"
+                        title="Approved"></lightning-icon>Export
+                </button> </div>
+        </div>
+
+
+
+
+    </div>
+
+    <div class="mainWraper slds-grid slds-wrap">
+        <table>
+            <thead>
+                <th>&nbsp;</th>
+                <template for:each={columns} for:item="item">
+                    <th key={item}>{item}</th>
+                </template>
+
+
+                <!-- <th>Occupation</th>
+                <th>Entry Level</th>
+                <th>Mean</th>
+                <th>Experienced</th>
+                <th>10%</th>
+                <th>25%</th>
+                <th>50%(Median)</th>
+                <th>75%</th>
+                <th>90%</th>
+                <th>USA</th> -->
+
+
+            </thead>
+            <tbody>
+                <template for:each={currentData} for:item="dataVal">
+                    <tr key={dataVal.name}>
+                        <td><input type="checkbox" /></td>
+                        <td>{dataVal.name}</td>
+                        <td>${dataVal.mean}</td>
+                        <td>${dataVal.entryLevel}</td>
+                        <td>${dataVal.experienced}</td>
+                        <td>${dataVal.tenPer}</td>
+                        <td>${dataVal.twentyFivePer}</td>
+                        <td>${dataVal.median}</td>
+                        <td>${dataVal.seventyFivePer}</td>
+                        <td>${dataVal.ninetyPer}</td>
+                        <td>${dataVal.usa}</td>
+                    </tr>
+                </template>
+
+                <!-- <tr>
+                    <td>&nbsp;</td>
+                    <td>Total All Occupations</td>
+                    <td>$34,200</td>
+                    <td>$21,784</td>
+                    <td>$10,453</td>
+                    <td>$12,877</td>
+                    <td>$34,200</td>
+                    <td>$21,784</td>
+                    <td>$10,453</td>
+                    <td>$12,877</td>
+                    <td>$21,784</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+    <div class="slds-m-aroung_small">
+        <div class="slds-grid slds-wrap slds-size_12-of-12 autoWidth floatRight tabelFooter itemsCenter">
+            <span>{currentPage}/{totalPages}</span>
+            <span slot="actions">
+                <lightning-button variant="neutral" class="slds-float_left previousBtn " title="Previous" label=""
+                    icon-name="utility:chevronleft" icon-position="left" onclick={handlePrevious}></lightning-button>
+                <lightning-button variant="neutral" class="slds-float_right nextBtn" title="Next" label=""
+                    icon-name="utility:chevronright" icon-position="right" onclick={handleNext}></lightning-button>
+            </span>
+        </div>
+    </div>
+    <template if:true={showOccupation}>
+        <c-job-lmi-map-view onback={handleBackFromOccupation}></c-job-lmi-map-view>
+    </template>
+    <div class="verticalGap"></div>
+    <c-lmi-extra-links onshowoccupation={handleShowOccupation}></c-lmi-extra-links>
+    <div class="verticalGap"></div>
+    <!-- <c-lmi-extra-links></c-lmi-extra-links> -->
+
+    <!-- <div class="mainWraper slds-grid slds-wrap">
+            <h3>Extra Links</h3>
+            <div class=" slds-grid slds-size_12-of-12 ">
+                <div class=" slds-grid slds-col slds-size_4-of-12 extraLinksCard  ">
+                    <div class=" slds-col slds-size_2-of-12 ">
+                        <lightning-icon icon-name="utility:quote"  class="quoteIcon" alternative-text="Approved" title="Approved"></lightning-icon>
+                    </div>
+                    <div class=" slds-col slds-size_10-of-12 ">
+                        <h4>Occupation Wages</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        <span>2022 Record</span>
+                    </div>
+                </div>
+
+            
+                <div class=" slds-grid slds-col slds-size_4-of-12 extraLinksCard gap">
+                    <div class=" slds-col slds-size_2-of-12 ">
+                        <lightning-icon icon-name="utility:checkin"  class="quoteIcon greenColor" alternative-text="Approved" title="Approved"></lightning-icon>
+                    </div>
+                    <div class=" slds-col slds-size_10-of-12 ">
+                        <h4>Map View</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        <span>2022 Record</span>
+                    </div>
+                </div>
+
+         
+                <div class=" slds-grid slds-col slds-size_4-of-12 extraLinksCard ">
+                    <div class=" slds-col slds-size_2-of-12 ">
+                        <lightning-icon icon-name="utility:case"  class="quoteIcon orangeColor" alternative-text="Approved" title="Approved"></lightning-icon>
+                    </div>
+                    <div class=" slds-col slds-size_10-of-12 ">
+                        <h4>Employment Graphs</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                        <span>2022 Record</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>  -->
+
+</template>

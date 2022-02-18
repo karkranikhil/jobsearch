@@ -1,0 +1,125 @@
+<template>
+    <lightning-spinner alternative-text="Loading..." if:true={showSpinner} variant="brand">
+    </lightning-spinner>
+    <div class="mainWraper slds-wrap slds-grid backButton">
+        <div class="slds-col slds-size_9-of-12">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-4">
+                    <span onclick={handleBack} style="cursor: pointer;">
+                        <lightning-icon icon-name="utility:back" class="backArrow" alternative-text="Approved"
+                            title="Approved">
+                        </lightning-icon> Back
+                    </span>
+                </div>
+                <div class="slds-col slds-size_2-of-4"></div>
+                <div class="slds-col slds-size_1-of-4">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-col slds-size_3-of-12 textRight ">
+            <lightning-button label="Refer Someone" title="Refer Someone" if:false={isGusetUser} onclick={handleRefer}
+                class="slds-m-left_x-small"></lightning-button>
+            <lightning-button label="Save for Later" title="Save for Later action" onclick={handleSaveClick}
+                disabled={onSet} class="slds-m-left_x-small"></lightning-button> &nbsp;
+        </div>
+    </div>
+
+    <div class="mainWraper slds-wrap slds-grid  slds-wrap">
+        <div class="slds-col slds-size_8-of-12 slds-p-around_medium slds-wrap  slds-grid jobDescription ">
+
+            <div class="slds-grid slds-wrap slds-size_12-of-12 alignCenter companyDetails">
+
+                <div class="slds-col slds-size_1-of-12 "> <img src={jobIcon} /> </div>
+                <div class="slds-col slds-size_11-of-12 ">
+                    <sub>Company: {company}</sub>
+                    <h3>{title}</h3>
+                    <sub>Location: {location}</sub>
+                    </br>
+                    <span>Posted 15min ago</span>
+                </div>
+            </div>
+
+            <div class=" slds-grid  slds-wrap slds-size_12-of-12">
+                <div class="slds-col slds-size_4-of-12 rightSpacing">
+                    <lightning-icon icon-name="utility:case" alternative-text="Approved" title="Approved">
+                    </lightning-icon> 3 - 4 Year experience | {jobType}
+                </div>
+                <div class="slds-col slds-size_3-of-12 rightSpacing">
+                    <lightning-icon icon-name="utility:moneybag" alternative-text="Approved" title="Approved">
+                    </lightning-icon> ${wage} USD/Yearly
+                </div>
+                <div class="slds-col slds-size_5-of-12">
+                    <lightning-icon icon-name="utility:checkin" alternative-text="Approved" title="Approved">
+                    </lightning-icon> {location}
+                </div>
+            </div>
+
+            <div class=" slds-grid  slds-wrap slds-size_12-of-12">
+
+                <h3> Key Skills Required</h3>
+                <div class="slds-size_12-of-12">
+                    <template for:each={skills} for:item="skill">
+                        <lightning-badge key={skill.id} label={skill.name}></lightning-badge>
+                    </template>
+                </div>
+            </div>
+
+
+            <div class=" slds-grid  slds-wrap slds-size_12-of-12">
+                <h3>Job Descriptions</h3>
+                <p>{description}</p>
+                <h3>Work Related Experience</h3>
+                <p>{relatedExperience}</p>
+
+                <h3> Responsibilities</h3>
+                <ol class="slds-list_dotted">
+                    <template for:each={responsibilites} for:item="responsibility">
+                        <li key={responsibility.id}>{responsibility.description}</li>
+                    </template>
+                </ol>
+            </div>
+
+        </div>
+        <div class="slds-col slds-size_1-of-12 slds-wrap  slds-grid  centerSpace "> </div>
+        <div class="slds-col slds-size_3-of-12 slds-wrap  slds-grid jobApply  ">
+            <h3> Apply Now </strong></h3>
+            <button class="primary_button" onclick={applyNow}>Apply Now</button>
+        </div>
+    </div>
+
+    <template if:true={isModalOpen}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container job-modal">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Refer Someone</h2>
+                </header>
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning-input type="text" variant="label-stacked" label="Name Of Candidate"
+                        onchange={handleNameChange}></lightning-input>
+                    <lightning-input type="email" variant="label-stacked" onchange={handleEmailChange}
+                        label="Email Of Candidate"></lightning-input>
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer modal-footer">
+                    <button class="slds-button slds-button_neutral slds-m-right_large" onclick={closeModal}
+                        title="Cancel">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={submitDetails} title="Submit">Submit</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+</template>

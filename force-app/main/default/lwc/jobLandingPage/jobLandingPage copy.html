@@ -1,0 +1,482 @@
+<template>
+<!-- <header >
+        <div class="mainWraper  slds-grid slds-size_12-of-12  topnavBar ">
+            <div class="slds-col slds-size_2-of-12 ">
+                 <img src={logo}  onclick={navigateToHome}/> 
+             
+            </div>
+            <div class="slds-col slds-size_6-of-12 2 forMobleorder ">
+                <nav >
+                    <a href="#" class="textBluePrimary">Home</a>
+                    <a href="#">Find a Job</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">My Feed</a>
+                    </nav>
+            </div>
+            <div class="slds-col slds-size_4-of-12 slds-gutters textRight ">
+                <a href="#">Login</a>
+                    <span class="line">|</span>
+                    <a href="#" class="textBluePrimary">Register Now</a>
+            </div>
+            
+        
+
+        </div>
+
+    </header>  -->
+
+    <!-- <div class="mainWraper flashNews bgBlueSecondary">
+        <strong class=" bgBluePrimary slds-col slds-size_2-of-12"> Flash News</strong>
+        <div class="slds-size_8-of-12 newsContent">12:10:2021 - SAM Companies is recognized as the industry’s technology leader in providing geospatial solutions and construction services.
+        </div>
+    </div> -->
+
+    <!-- Be Ready to find your job -->
+    <div class="mainWraper slds-grid  slds-wrap slds-is-relative findingJobsBanner textCenter">
+            <div class="pageTitle slds-col slds-size_12-of-12 "> 
+                <h1>Be Ready to find your&nbsp;
+                    <strong class="primary_textlink">Job</strong> now</h1>
+                    <p>Finding jobs from all around the world. Tell us what you’re looking for and we’ll get work for you.</p>
+            </div>
+         
+        
+            <div class="slds-grid slds-grid_align-center slds-size_12-of-12 displayBlock">
+                <div class="slds-col slds-size_4-of-12 findingJobsSection widthAuto">
+                      <lightning-icon icon-name="utility:case" class="sdsIconColor" alternative-text="Approved" title="Approved"></lightning-icon>
+                    <label>Job title</label>
+                    <input type="text" placeholder="Type your Job title/skill" />
+                </div>
+        
+                <div class="slds-col slds-size_4-of-12  widthAuto findingJobsSection">
+                    <lightning-icon icon-name="utility:checkin"  class="sdsIconColor" alternative-text="Approved" title="Approved"></lightning-icon>
+                    <label>Location</label>
+                    <input type="text" placeholder="Place you want ?" />
+                </div>
+
+                <div class="slds-col slds-size_1-of-12  widthAuto">
+                    <button class="primary_button searchButton">
+                        <lightning-icon icon-name="utility:search"  class="searchSdsIcon" alternative-text="Approved" title="Approved"></lightning-icon>
+                    </button>
+                </div>
+
+            </div>
+
+     
+
+                <div class="slds-col slds-size_12-of-12">
+                    <button class="primary_button slds-size_1-of-12 improveSkillsButton"> 
+                        <lightning-icon icon-name="utility:activity"  alternative-text="Approved" title="Approved"></lightning-icon>
+                        Labour Market Information &nbsp;</button>
+                    <button class="primary_button slds-size_1-of-12 improveSkillsButton">
+                        <lightning-icon icon-name="utility:spinner"  alternative-text="Approved" title="Approved"></lightning-icon>
+                        Improve Your Skills</button>
+                </div>
+           
+       
+    </div> 
+     
+    <div class="divider"></div>
+
+    <!-- Trending Searches -->
+    <div class="exploreJobsBg">
+    
+        <div class="mainWraper slds-grid slds-wrap trendingSearch">
+
+            <div class="slds-col slds-size_1-of-12  rightSpace">
+                <img src={trendingSearches} />
+            </div>
+            <div class="slds-col slds-size_3-of-12 widthAuto">
+                <p>Don’t know where to start?</p>
+                <h1>Trending Searches</h1>
+            </div>
+            <div class="slds-col slds-size_8-of-12 slds-small-size_12-of-12">
+
+                <ul>
+                    <li>UI/UX</li>
+                    <li>Job Title</li>
+                    <li>Job Title</li>
+                    <li>Job Title</li>
+                    <li class="bgBlueSecondary"><a >More</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popular Jobs -->
+    <div class="popularJob bgBlueSecondary">
+
+        <div class="mainWraper slds-wrap slds-grid  slds-wrap">
+            <div class="pageTitle slds-col slds-size_12-of-12 ">
+                <h1>Popular Jobs</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </div>
+            <!-- Google -->
+             <div class="slds-col slds-size_6-of-12 slds-wrap  slds-grid slds-grid_vertical-align-end popularJobSection"> 
+                <div class="slds-col slds-size_9-of-12 onlymobile"> 
+                <img src={google}/>
+                <sub>Google, India</sub>
+                <h4>UX UI Designer</h4>
+                <span>Posted 15min ago</span>
+                <div class="time"> <lightning-icon icon-name="utility:case"  alternative-text="Approved" title="Approved"></lightning-icon> 3 - 4 Year experience | Full Time</div>
+                <p>We are looking for a UX UI Designer for our
+                    design team.</p>
+                </div>
+
+                <div class="slds-col slds-size_3-of-12 onlymobile"> 
+                    <button class="secondary_button">Apply Now</button>
+                </div>
+
+             </div>
+
+
+              <!-- Apple, California -->
+             <div class="slds-col slds-size_6-of-12 slds-wrap  slds-grid slds-grid_vertical-align-end popularJobSection"> 
+                <div class="slds-col slds-size_9-of-12 onlymobile"> 
+                <img src={apple}/>
+                <sub>Apple, California</sub>
+                <h4>Backend Developer</h4>
+                <span>Posted 15min ago</span>
+                <div class="time"><lightning-icon icon-name="utility:case"  alternative-text="Approved" title="Approved"></lightning-icon> 3 - 4 Year experience | Full Time</div>
+                <p>We are looking for a Backend Developer
+                    for our design team.</p>
+                </div>
+
+                <div class="slds-col slds-size_3-of-12 onlymobile"> 
+                    <button class="secondary_button">Apply Now</button>
+                </div>
+
+             </div>
+
+             <!-- Be -->
+             <div class="slds-col slds-size_6-of-12 slds-wrap slds-grid slds-grid_vertical-align-end popularJobSection"> 
+                <div class="slds-col slds-size_9-of-12 onlymobile"> 
+                <img src={be}/>
+                <sub>Be, India</sub>
+                <h4>Front-end Developer</h4>
+                <span>Posted 15min ago</span>
+                <div class="time"><lightning-icon icon-name="utility:case"  alternative-text="Approved" title="Approved"></lightning-icon> 3 - 4 Year experience | Full Time</div>
+                <p>We are looking for a UX UI Designer for our
+                    design team.</p>
+                </div>
+                <div class="slds-col slds-size_3-of-12 onlymobile"> 
+                    <button class="secondary_button">Apply Now</button>
+                </div>
+
+             </div>
+
+              <!-- Windows -->
+             <div class="slds-col slds-size_6-of-12 slds-wrap slds-grid slds-grid_vertical-align-end popularJobSection"> 
+                <div class="slds-col slds-size_9-of-12 onlymobile"> 
+                <img src={window}/>
+                <sub>Window, India</sub>
+                <h4>UI Designer</h4>
+                <span>Posted 15min ago</span>
+                <div class="time"><lightning-icon icon-name="utility:case"  alternative-text="Approved" title="Approved"></lightning-icon> 3 - 4 Year experience | Full Time</div>
+                <p>We are looking for a UX UI Designer for our
+                    design team.</p>
+                </div>
+
+                <div class="slds-col slds-size_3-of-12 onlymobile"> 
+                    <button class="secondary_button">Apply Now</button>
+                </div>
+             </div>
+
+        </div>
+        <div class="slds-grid slds-grid_align-center slds-size_12-of-12">
+            <button class="primary_button slds-col ">View More</button>
+        </div>
+
+    </div>
+
+    <!-- Explore jobs by Category -->
+
+    <div class="mainWraper slds-grid slds-wrap exploreJobs ">
+
+        <div class="pageTitle slds-col slds-size_12-of-12 ">
+            <h1>Explore jobs by Category</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </div>
+
+
+        <div class="slds-col slds-size_3-of-12 exploreJobsSection"> 
+            
+            <lightning-icon icon-name="utility:propagation_policy" class="exploreJobIcon"  alternative-text="Approved" title="Approved"></lightning-icon>
+            <p>Finance Service</p>
+            <span>546 Jobs</span>
+        </div>
+
+
+        <div class="slds-col slds-size_3-of-12 exploreJobsSection"> 
+            <lightning-icon icon-name="utility:propagation_policy"   class="exploreJobIcon" alternative-text="Approved" title="Approved"></lightning-icon>
+            <p>Finance Service</p>
+            <span>546 Jobs</span>
+        </div>
+
+
+        <div class="slds-col slds-size_3-of-12 exploreJobsSection cardActive"> 
+            <lightning-icon icon-name="utility:propagation_policy"   class="exploreJobIcon" alternative-text="Approved" title="Approved"></lightning-icon>
+            <p>Finance Service</p>
+            <span>546 Jobs</span>
+        </div>
+
+
+        <div class="slds-col slds-size_3-of-12 exploreJobsSection"> 
+            <lightning-icon icon-name="utility:propagation_policy"   class="exploreJobIcon" alternative-text="Approved" title="Approved"></lightning-icon>
+            <p>Finance Service</p>
+            <span>546 Jobs</span>
+        </div>
+
+
+
+        <div class="slds-col slds-size_3-of-12 exploreJobsSection "> 
+            <lightning-icon icon-name="utility:propagation_policy"  class="exploreJobIcon" alternative-text="Approved" title="Approved"></lightning-icon>
+            <p>Finance Service</p>
+            <span>546 Jobs</span>
+        </div>
+
+
+
+        <div class="slds-col slds-size_3-of-12 exploreJobsSection"> 
+            <lightning-icon icon-name="utility:propagation_policy"  class="exploreJobIcon" alternative-text="Approved" title="Approved"></lightning-icon>
+            <p>Finance Service</p>
+            <span>546 Jobs</span>
+        </div>
+
+
+        <div class="slds-col slds-size_3-of-12 exploreJobsSection"> 
+            <lightning-icon icon-name="utility:propagation_policy"  class="exploreJobIcon" alternative-text="Approved" title="Approved"></lightning-icon>
+            <p>Finance Service</p>
+            <span>546 Jobs</span>
+        </div>
+
+
+        <div class="slds-col slds-size_3-of-12 exploreJobsSection"> 
+            <lightning-icon icon-name="utility:propagation_policy"  class="exploreJobIcon" alternative-text="Approved" title="Approved"></lightning-icon>
+            <p>Finance Service</p>
+            <span>546 Jobs</span>
+        </div>
+            <div class="slds-grid slds-grid_align-center slds-size_12-of-12">
+            <button class="primary_button slds-col ">View More</button>
+        </div>
+      
+    </div>
+
+    <!-- Reviews platform -->
+    <div class="reviewsPlatform bgBlueSecondary">
+        <div class="mainWraper slds-grid  reviewsPeople slds-wrap">
+            <div class="pageTitle slds-col slds-size_12-of-12 ">
+                <h1><span class="textBluePrimary">Reviews</span> of people who have found jobs through this platform</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </div>
+            
+              <div class="slds-carousel">
+                <div class="slds-carousel__stage">
+                  <div class="slds-carousel__panels" style="transform:translateX(-100%)">
+                    <div id="content-id-01" class="slds-carousel__panel" aria-hidden="false" role="tabpanel" aria-labelledby="indicator-id-01" tabindex="-1">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p><b>Jacica Mentor</b></p>
+                        <p>UI/UX Designer at MTX</p>
+
+                    </div>
+                    <div id="content-id-02" class="slds-carousel__panel" aria-hidden="true" role="tabpanel" aria-labelledby="indicator-id-02" tabindex="0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p><b>Jacica Mentor</b></p>
+                        <p>UI/UX Designer at MTX</p>
+                    </div>
+
+                    <div id="content-id-03" class="slds-carousel__panel" aria-hidden="true" role="tabpanel" aria-labelledby="indicator-id-02" tabindex="0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p><b>Jacica Mentor</b></p>
+                        <p>UI/UX Designer at MTX</p>
+                    </div>
+
+                    <div id="content-id-04" class="slds-carousel__panel" aria-hidden="true" role="tabpanel" aria-labelledby="indicator-id-02" tabindex="0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p><b>Jacica Mentor</b></p>
+                        <p>UI/UX Designer at MTX</p>
+                    </div>
+
+                    <div id="content-id-05" class="slds-carousel__panel" aria-hidden="true" role="tabpanel" aria-labelledby="indicator-id-02" tabindex="0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p><b>Jacica Mentor</b></p>
+                        <p>UI/UX Designer at MTX</p>
+                    </div>
+                  </div>
+                  <ul class="slds-carousel__indicators" role="tablist">
+                    <li class="slds-carousel__indicator" role="presentation">
+                      <a id="indicator-id-01" class="slds-carousel__indicator-action" href="#" role="tab" tabindex="-1" aria-selected="false" aria-controls="content-id-01" title="Visit App Exchange tab">
+                        <span class="slds-avatar slds-avatar_profile-image-large">
+                          </span>
+
+                      </a>
+                    </li>
+                    <li class="slds-carousel__indicator" role="presentation">
+                      <a id="indicator-id-02" class="slds-carousel__indicator-action slds-is-active" href="#" role="tab" tabindex="0" aria-selected="true" aria-controls="content-id-02" title="Click to Customize tab">
+                        <span class="slds-avatar slds-avatar_profile-image-large">
+                        </span>
+                      </a>
+                    </li>
+                    <li class="slds-carousel__indicator" role="presentation">
+                        <a id="indicator-id-03" class="slds-carousel__indicator-action " href="#" role="tab" tabindex="0" aria-selected="true" aria-controls="content-id-03" title="Click to Customize tab">
+                            <span class="slds-avatar slds-avatar_profile-image-large">
+                            </span>
+                        </a>
+                      </li>
+                      <li class="slds-carousel__indicator" role="presentation">
+                        <a id="indicator-id-04" class="slds-carousel__indicator-action " href="#" role="tab" tabindex="0" aria-selected="true" aria-controls="content-id-03" title="Click to Customize tab">
+                            <span class="slds-avatar slds-avatar_profile-image-large">
+                            </span>
+                        </a>
+                      </li>
+                      <li class="slds-carousel__indicator" role="presentation">
+                        <a id="indicator-id-05" class="slds-carousel__indicator-action " href="#" role="tab" tabindex="0" aria-selected="true" aria-controls="content-id-05" title="Click to Customize tab">
+                            <span class="slds-avatar slds-avatar_profile-image-large">
+                            </span>
+                        </a>
+                      </li>
+                  </ul>
+                </div>
+              </div>
+            <div>
+                <ul>
+                    <li><img /></li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <!-- How it work -->
+    <div class="mainWraper slds-grid howitWork slds-wrap">
+        <div class="pageTitle slds-col slds-size_12-of-12 ">
+            <h1>How it work</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </div>
+        <div class="slds-col slds-size_5-of-12 widthAuto "> 
+            <img src={howitwork} />
+        </div>
+        <div class="slds-col slds-size_1-of-12 "> 
+         
+        </div>
+        <div class="slds-col slds-size_6-of-12 widthAuto"> 
+            <ul>
+                <li class="slds-truncate"><img src={pointer}/> Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                <li class="slds-truncate"><img src={pointer}/> Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    <p class="slds-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                </li>
+                <li class="slds-truncate"><img src={pointer}/> Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+                <li class="slds-truncate"><img src={pointer}/> Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                    <p class="slds-truncate"> Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                </li>
+            </ul>
+
+        </div>
+`
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Upload your CV -->
+    <div class="mainWraper slds-grid uploadCV bgBluePrimary">
+      
+        <div class="slds-col slds-size_6-of-12 uploadCVSection">
+            <p>Don’t waste your time and get ready to start finding...</p>
+            <h1>Get match the most valuable jobs, just 
+                drop your CV at this platform</h1>
+                <button>  <lightning-icon icon-name="utility:upload"  class="uploadIcon" alternative-text="Approved" title="Approved"></lightning-icon>Upload your CV</button>
+        </div>
+        <div class="slds-col slds-size_6-of-12 textCenter ">
+            <img src={uploadcbBG} class="bgImg" />
+            <img src={uploadcbCV} class="formobile" />
+        </div>
+    </div>
+
+
+
+    <!-- Keep your self up to date -->
+    <div class="mainWraper slds-grid slds-gutters slds-wrap yourSelf  slds-grid_align-center">
+        <div class="pageTitle slds-col slds-size_12-of-12">
+            <h1>Keep your self up to date</h1>
+            <p>Join our weekly Hirenow digest and be the first one to know about new positions.</p>
+        </div>
+       
+  
+        <div class="slds-col slds-size_5-of-12 yourSelfSection">
+            <lightning-icon icon-name="utility:email"  class="exploreJobIcon" alternative-text="Approved" title="Approved"></lightning-icon>
+            <label>Email Address</label>
+            <input type="text" placeholder="Enter your email address here..." />
+        </div>
+
+        <div class="slds-col slds-size_2-of-12 widthAuto">
+            <button class="primary_button">Subscribe</button>
+        </div>
+
+    </div>
+
+    <footer >
+        <div class="mainWraper slds-grid displayBlock">
+            <div class="slds-col slds-size_7-of-12  helpYou widthAuto forTab">
+                <img src={logo}/>
+                <strong>We are here to help you!</strong>
+                <p>Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.</p>
+                <button class="secondary_button">Contact Support</button>
+            </div>
+
+            <div class="slds-col slds-size_2-of-12 widthAuto forTab">
+                <ul>
+                    <p>Job Categories</p>
+                    <li><a>Finance</a></li>
+                    <li><a>UX/UI Design</a></li>
+                    <li><a>Front-end Development</a></li>
+                    <li><a> Bankend Developer</a></li>
+                    <li><a> Product Designer</a></li>
+                    <a class="primary_textlink">More</a>
+                </ul>
+        </div>
+        <div class="slds-col slds-size_2-of-12 widthAuto forTab">
+            <ul>
+                <p>JUseful Links</p>
+                <li><a>Find a job</a></li>
+                <li><a>About Us</a></li>
+                <li><a>Contact Support</a></li>
+                <li><a>Terms and Conditions</a></li>
+                <li><a>Privacy Policy</a></li>
+               
+            </ul>
+    </div>
+
+        </div>
+   
+
+        <hr class="mainWraper" />
+    
+  
+    <div class="mainWraper slds-grid displayBlock">
+        <div class="slds-col slds-size_6-of-12 widthAuto"> &copy; <a href="#">Workforce</a><span> - 2021 | All rights reserved</span></div>
+        <div class="slds-col slds-size_6-of-12 textRight followUs widthAuto">
+
+            <b>Follow Us : </b>
+            <img src={googleIcons} />
+           <img  src={facebook} />
+           <img src={linkedin} />
+        </div>
+       
+    </div>
+    </footer>
+
+
+
+
+
+</template>

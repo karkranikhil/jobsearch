@@ -1,0 +1,56 @@
+.exploreJobsBg{
+    background: linear-gradient(0deg, rgba(240,246,255,1) 67%, rgba(255,255,255,1) 67%);
+}
+
+.exploreJobsSection,  .exploreJobs .cardActive, .exploreJobs .exploreJobsSection:hover{
+    text-align: left;
+    background: #FFFFFF;
+    border: 2px solid #DBE9FF;
+    border-radius: 6px;
+    padding:20px 24px;
+    margin:0px 16px 20px 0px;
+    width: 23%;
+    cursor:pointer;
+}
+ .exploreJobs .cardActive,  .exploreJobs .exploreJobsSection:hover{
+    color:#fff;
+    background:#3787FF
+}
+.exploreJobs .cardActive span, .exploreJobs .exploreJobsSection:hover span{
+    color:#fff;
+}
+
+.exploreJobsSection img {
+    width:38px;
+    height:38px
+}
+.exploreJobsSection span{
+    color:#818181
+}
+.exploreJobsSection p{
+    font-weight: bolder;
+    margin:8px 0px;
+}
+
+.exploreJobs .exploreJobIcon{
+    --sds-c-icon-color-foreground-default: #3787FF;
+}
+.exploreJobs .exploreJobsSection:hover .exploreJobIcon, .exploreJobs  .cardActive .exploreJobIcon{
+    --sds-c-icon-color-foreground-default: #fff;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .exploreJobsSection{
+        margin: 0px 20px 20px 0px;
+        width: 22%;
+      }
+  
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .exploreJobsSection,  .cardActive{
+        width: auto!important;
+    
+        }
+    
+}

@@ -1,0 +1,105 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+    <div class="mainWraper slds-wrap slds-grid  slds-wrap textCenter">
+        <div class="pageTitle slds-col slds-size_12-of-12 ">
+            <h1>Manage Account</h1>
+        </div>
+        <div class=" slds-wrap  slds-grid slds-col slds-size_12-of-12 slds-align_absolute-center ">
+            <div class="userAccountImage slds-col slds-size_3-of-12 profilePhoto ">
+                <div class="slds-avatar slds-avatar_profile-image-large">
+                    <img src={profileUrl} alt="profile picture">
+                    <lightning-icon icon-name="utility:edit" class="edit" alternative-text="Approved" title="Approved">
+                    </lightning-icon>
+                    <div class="fileUploader">
+                        <lightning-file-upload name="fileUploader" accept={acceptedFormats}
+                            onuploadfinished={handleFileUpload}></lightning-file-upload>
+                    </div>
+                </div>
+                <button class="primary_button" onclick={passwordClick}>Change Password</button>
+            </div>
+        </div>
+        <div class=" slds-wrap  slds-grid slds-col slds-size_12-of-12 ">
+            <div class="slds-col slds-size_12-of-12 manageAccount">
+                <div class="form-content">
+                    <div class="custom-form-group">
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col slds-large-size_6-of-12">
+                                <span>
+                                    <div class="input-group">
+                                        <lightning-input type="text" name="Name" value={getData.Name}
+                                            onchange={handleChange} label="Company Name"
+                                            placeholder="Enter Company Name">
+                                        </lightning-input>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-large-size_6-of-12">
+                                <span>
+                                    <div class="input-group">
+                                        <lightning-input type="text" name="Website" value={getData.Website}
+                                            onchange={handleChange} label="Company Website"
+                                            placeholder="Enter Company Website">
+                                        </lightning-input>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="clearSpace"></div>
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col slds-large-size_6-of-12">
+                                <span>
+                                    <div class="input-group">
+                                        <lightning-input type="text" name="Email" value={getData.Email}
+                                            onchange={handleChange} label="Email Address"
+                                            placeholder="Enter Email Address">
+                                        </lightning-input>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-large-size_6-of-12">
+                                <span>
+                                    <div class="input-group">
+                                        <lightning-input name="Company_Type" label="Company Type"
+                                            value={getData.Company_Type} placeholder="Enter Company Type"
+                                            onchange={handleChange}>
+                                        </lightning-input>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="clearSpace"></div>
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col slds-large-size_6-of-12">
+                                <span>
+                                    <div class="input-group">
+                                        <lightning-input name="Company_Size" label="Company Size"
+                                            value={getData.Company_Size} placeholder="Enter Company Size"
+                                            onchange={handleChange}>
+                                        </lightning-input>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-large-size_6-of-12">
+                                <span>
+                                    <div class="input-group">
+                                        <lightning-input type="text" name="Type" value={getData.Type}
+                                            onchange={handleChange} label="Account Type"
+                                            placeholder="Enter Account Type">
+                                        </lightning-input>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="clearSpace"></div>
+                    </div>
+                </div>
+                <div class="textRight">
+                    <button class=" secondary_button" onclick={handleClearClick}>Clear</button>
+                    <button class=" primary_button" onclick={handleSave}>Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

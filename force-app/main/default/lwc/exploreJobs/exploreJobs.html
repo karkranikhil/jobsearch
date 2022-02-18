@@ -1,0 +1,83 @@
+<template>
+    <div class="mainWraper slds-grid slds-wrap exploreJobs ">
+
+        <div class="pageTitle slds-col slds-size_12-of-12 ">
+            <h1>Explore Jobs by Category</h1>
+        </div>
+
+
+        <button class="slds-col slds-size_3-of-12 exploreJobsSection" name='Finance Service' onclick={handleCategory1}>
+            <lightning-icon icon-name="utility:propagation_policy" class="exploreJobIcon" alternative-text="Approved"
+                title="Approved"></lightning-icon>
+            <p>Finance Service</p>
+            <span>546 Jobs</span>
+        </button>
+
+
+        <button class="slds-col slds-size_3-of-12 exploreJobsSection" name='Bill and Account Collectors'
+            onclick={handleCategory2}>
+            <lightning-icon icon-name="utility:propagation_policy" class="exploreJobIcon" alternative-text="Approved"
+                title="Approved"></lightning-icon>
+            <p>Bill and Account Collectors</p>
+            <span>546 Jobs</span>
+        </button>
+
+
+        <button class="slds-col slds-size_3-of-12 exploreJobsSection"
+            name='Bookkeeping, Accounting, and Auditing Clerks' onclick={handleCategory3}>
+            <lightning-icon icon-name="utility:propagation_policy" class="exploreJobIcon" alternative-text="Approved"
+                title="Approved"></lightning-icon>
+            <p>Bookkeeping, Accounting, and Auditing Clerks</p>
+            <span>546 Jobs</span>
+        </button>
+
+
+        <button class="slds-col slds-size_3-of-12 exploreJobsSection" name='Accountants and Auditors'
+            onclick={handleCategory4}>
+            <lightning-icon icon-name="utility:propagation_policy" class="exploreJobIcon" alternative-text="Approved"
+                title="Approved"></lightning-icon>
+            <p>Accountants and Auditors</p>
+            <span>546 Jobs</span>
+        </button>
+
+
+
+        <button class="slds-col slds-size_3-of-12 exploreJobsSection " name='New Accounts Clerks'
+            onclick={handleCategory5}>
+            <lightning-icon icon-name="utility:propagation_policy" class="exploreJobIcon" alternative-text="Approved"
+                title="Approved"></lightning-icon>
+            <p>New Accounts Clerks</p>
+            <span>546 Jobs</span>
+        </button>
+
+
+
+        <button class="slds-col slds-size_3-of-12 exploreJobsSection" name='Media Programming Directors'
+            onclick={handleCategory6}>
+            <lightning-icon icon-name="utility:propagation_policy" class="exploreJobIcon" alternative-text="Approved"
+                title="Approved"></lightning-icon>
+            <p>Media Programming Directors</p>
+            <span>546 Jobs</span>
+        </button>
+
+
+        <button class="slds-col slds-size_3-of-12 exploreJobsSection" name='Tellers' onclick={handleCategory7}>
+            <lightning-icon icon-name="utility:propagation_policy" class="exploreJobIcon" alternative-text="Approved"
+                title="Approved"></lightning-icon>
+            <p>Tellers</p>
+            <span>546 Jobs</span>
+        </button>
+
+
+        <button class="slds-col slds-size_3-of-12 exploreJobsSection" name='Cashiers' onclick={handleCategory8}>
+            <lightning-icon icon-name="utility:propagation_policy" class="exploreJobIcon" alternative-text="Approved"
+                title="Approved"></lightning-icon>
+            <p>Cashiers</p>
+            <span>546 Jobs</span>
+        </button>
+        <div class="slds-grid slds-grid_align-center slds-size_12-of-12">
+            <button class="primary_button slds-col" onclick={handleViewMore}>View More</button>
+        </div>
+
+    </div>
+</template>

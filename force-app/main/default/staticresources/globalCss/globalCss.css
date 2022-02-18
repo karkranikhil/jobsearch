@@ -1,0 +1,1081 @@
+
+@import "global";
+
+@font-face{
+    font-family: 'Lato', sans-serif;
+    src: url("@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap')") format('TrueType');
+}
+
+/* General */
+
+*, input, a{
+    outline:none!important;
+}
+.mainWraper{
+    width:1440px;
+    margin:0 auto;
+}
+.textBluePrimary{
+    color:#3787FF!important;
+}
+
+.bgBluePrimary{
+    background:#3787FF
+}
+
+.bgBlueSecondary{
+    background:#F0F6FF;
+
+}
+.textRight{
+    text-align: right;
+}
+
+.textCenter{
+    text-align: center;
+}
+.floatRight{
+    float:right
+}
+.autoWidth{
+    width: auto;
+}
+.itemsCenter{
+    align-items: center;
+}
+
+
+.primary_button{
+    padding:5px 5%;
+    background:#3787FF;
+    color:#fff;
+    margin:16px;
+    border:1px solid #3787FF;
+    font-size: 16px;
+    border-radius: 6px;
+}
+.secondary_button{
+    padding:4px 20px;
+    background:#fff;
+    color:#3787FF;
+    margin:16px 0px;
+    border:1px solid #3787FF;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+.secondary_button_outline{
+    padding:4px 20px;
+    background:#3787FF;
+    color:#fff;
+    margin:16px 0px;
+    border:1px solid #fff;
+    font-size: 16px;
+    border-radius: 6px;
+}
+.secondary_button_outline:hover{
+    background:#fff;
+    color:#3787FF;
+}
+.bgBlueSecondary{
+    background:#F0F6FF;
+
+}
+
+
+
+.textRight{
+    text-align: right;
+}
+
+.textBluePrimary{
+    color:#3787FF!important;
+}
+.pageTitle{
+    margin:60px 0px;
+    text-align:center
+}
+.pageTitle p{
+    font-style: 16px;
+    color:#737B7D;
+}
+
+h1{
+    font-size:32px;
+    color:#2B2B2B;
+}
+.clear{
+    clear:both;
+    width:100%;
+}
+.alignCenter{
+    align-items: center;
+}
+
+
+.jobProfileRegister{
+    width: 1440px;
+    margin: 0 auto;
+}
+.jobProfileRegister, .leftTabTitle{
+    margin-bottom: 60px;
+}
+.jobProfileRegister, .leftTabTitle h1{
+    font-size: 24px;
+    color:#000;
+}
+.jobProfileRegister, .leftTabTitle p{
+    font-size: 14px;
+    color:#6B6C7E;
+}
+
+.customForm {
+    background: #F0F6FF;
+    padding: 36px 40px;
+    border: none;
+}
+
+.customForm  .slds-card {
+    border: none;
+    background: none;
+}
+.jobProfileRegister  h3{
+    background:#3787FF;
+    color:#fff;
+    border-radius: 6px;
+    padding:16px 20px;
+    margin: -40px -40px 40px -40px;
+
+}
+.jobProfileRegister  h3 div{
+    float: right;
+    margin-top: -5px;
+}
+.customForm .slds-input , .customForm input{
+    border-color: #DCE0F0;
+    padding: 10px 10px;
+    border-radius: 4px;
+
+}
+
+.customForm  .slds-file-selector{
+    background:#fff;
+    border:1px solid #DCE0F0;
+    border-radius: 4px;
+    width:100%;
+    padding:4px;
+}
+.customForm  .slds-file-selector .slds-button{
+    border:none
+}
+
+
+.customForm .slds-col{
+    margin-bottom: 20px;
+}
+.customForm  .slds-file-selector__dropzone{
+    border:none;
+}
+
+.customForm label, .customForm .slds-form-element__label{
+    color:#6B6C7E!important;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.customForm .formControls lightning-icon{
+    --sds-c-icon-color-foreground-default: #3787FF;
+}
+.customForm .formControls .textBluePrimary{
+    float: left;
+    margin-top: 18px;
+    cursor: pointer;
+}
+.customForm .formControls lightning-icon svg{
+    width: 16px!important;
+}
+
+
+
+.customForm .yesNoButton .slds-radio_button-group{
+    width: 100%;
+    border: none;
+}
+
+
+.customForm .yesNoButton .slds-radio_button-group label{
+    width: 100%;
+    margin: 0px;
+    padding: 6px 0px;
+    text-align: center;
+}
+
+.customForm .slds-radio_button [type=radio]:checked+.slds-radio_button__label{
+    background: #3787FF;
+    color:#fff!important;
+    border:1px solid #3787FF;
+}
+
+.customForm .blankLabel{
+    width: 260px;
+}
+
+.customForm .subTitle{
+    /* background: #3787ff; */
+    padding: 10px;
+    color: #3787ff;
+    font-size: 22px;
+    /* border: 1px solid #e8d5c4; */
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+.customForm .subTitle lightning-icon{
+    float:right
+}
+
+
+
+/* profileDeetails */
+.profileDeetails .slds-icon, .profileDeetails .slds-icon-text-default, .profileDeetails svg, .programReferrals .forwardIcon svg{
+    height: 19px!important;
+}
+
+
+/* My Feed */
+.searchByOccupation .slds-input{
+    background:#DBE9FF;
+    color:#000;
+    border: 1px solid #DBE9FF;
+}
+ .searchByOccupation .searchIcon {
+    --sds-c-icon-color-foreground-default: #3787FF;
+} 
+
+/* Manage Account*/
+
+.userAccountImage img, .userAccountImage .slds-avatar{
+    overflow: hidden;
+    width: 260px;
+    height:260px;
+    background:#DBE9FF;
+    border-radius: 100%;
+    display:block;
+    margin: 0 auto;
+    border: 1px solid #DBE9FF;
+}
+
+/* My Courses */
+
+.showCalendar .slds-tabs_default__nav a{
+    font-size: 18px;
+    margin: 3px;
+}
+
+/*  Notification  */
+.notificationSection{
+    border: 1px solid #D1E4FF;
+    padding: 20px 10px;
+    margin-bottom: -1px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+.notificationSection:hover{
+    background:#F0F6FF;
+}
+.notificationSection span{
+    color:#818181;
+    font-size:12px;
+}
+
+.postedOption .utilityIcon svg{
+    width: 15px;
+}
+
+
+.jobPublish svg{
+    width: 18px;
+    margin-right: 8px;
+}
+.backArrow svg{
+    width:28px;
+    padding-right: 10px;
+ }
+
+ .jobDescription svg, .findingJobsSection svg, .searchIcon svg, .filterListIcon svg{
+    width:28px;
+    padding-right: 10px;
+}
+.searchIcon svg{
+    margin-left: 10px;
+}
+.searchResultData .bgBlueSecondary{
+    background:none;
+}
+
+.searchResultData .pageTitle{
+    display:none;
+}
+.jobLmiPage .slds-th__action{
+    background: #3787FF;
+    color: #fff;
+    --sds-c-icon-color-foreground-default: #fff;
+}
+
+.jobLmiPage .slds-th__action svg{
+    color: #fff;
+}
+.jobLmiPage table, .jobLmiPage .tabelFooter{
+    margin-bottom: 20px;
+}
+
+.jobLmiPage button[title="last"]{
+    display:none
+
+}
+
+.jobLmiPage button[title="previous"]{
+    display:none
+
+}
+
+.jobLmiPage button[title="next"]{
+    width: 6px;
+    overflow: hidden;
+    padding-right: 33px;
+    padding-left: 0px;
+    border-radius: 100px;
+
+}
+.jobLmiPage button[title="first"]{
+    width: 6px;
+    overflow: hidden;
+    padding-right: 33px;
+    padding-left: 0px;
+    border-radius: 100px;
+
+}
+.inputField{
+    margin-top: -25px;
+    border: none;
+    background: none;
+}
+.inputField input{
+    background: none!important;
+    border: none!important;
+    margin-top: -10px;
+}
+
+.searchIcon button{
+    border: none!important;
+}
+
+.exportBtn svg{
+    width: 20px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+
+.jobLmiPage button[title="Next"]{
+    border-radius: 100px;
+    margin: 0px 5px;
+    padding: 1px 8px 1px 2px!important;
+    background:#3787FF;
+    --sds-c-icon-color-foreground-default: #fff!important;
+
+}
+
+.jobLmiPage button[title="Previous"]{
+    border-radius: 100px;
+    margin: 0px 5px;
+    padding: 1px 2px 3px 7px!important;
+    background:#F3F3F3;
+    --sds-c-icon-color-foreground-default: #999!important;
+
+}
+
+.jobLmiPage button[title="Next"] svg{
+    --sds-c-icon-color-foreground-default: #fff!important;
+}
+
+/* .jobLmiPage .slds-scrollable_y{
+    width: 1440px!important;
+} */
+
+.popularJobSection .time svg{
+    width: 18px;
+    margin-right: 5px;
+    margin-top: -6px;
+}
+
+.manageAccount label{
+    float:left;
+    margin-bottom: 8px;
+}
+.profilePhoto .edit svg{
+    width:18px!important;
+ }
+ 
+
+ .uiTabset{
+    width: 1440px;
+    margin: 0 auto;
+ }
+
+
+.slds-spinner_container {
+    position: fixed;
+}
+.desiredOccupation {
+    outline:none!important;
+}
+.desiredOccupation .slds-form-element__control {
+    background: #fff;
+    border: 1px solid #D4D4D4;
+    border-radius: 4px;
+    padding: 10px 22px;
+    line-height: 30px;
+    width: 99%;
+
+}
+
+.desiredOccupationList {
+    background: #fff;
+    padding: 8px 20px;
+    width: 99%;
+    display: block;
+    box-shadow: var(--lwc-shadowDropDown,0 2px 3px 0 rgba(0, 0, 0, 0.16));
+}
+.desiredOccupationList [role="option"]{
+    cursor: pointer;
+}
+.desiredOccupationList .searchListField{
+    margin: 6px 0px;
+    display: block;   
+}
+
+*{
+    outline:none!important
+}
+
+.cursorPointer .slds-form-element__control{
+    cursor: pointer;
+}
+.contactUs{
+    margin: 0 auto;
+    text-align:left;
+}
+.contactUs .slds-input, .contactUs textarea,.contactUs .slds-combobox__input {
+    background: #F0F6FF!important;
+    border: 1px solid #DBE9FF;
+    padding: 6px 16px;
+    /* margin-bottom:20px; */
+    text-align:left;
+}
+
+.contactUsDetails{
+    background: #3787FF;
+    color:#fff;
+    padding: 26px 16px;
+    --sds-c-icon-color-foreground-default: #fff!important;
+    margin-top:20px;
+}
+.contactUsDetails p{
+    margin-top:16px;
+}
+.contactUsDetails label{
+    margin-top: 20px;
+}
+
+.contactUs .slds-dropdown{
+    text-align:left;
+    top: 40px;
+}
+
+
+--slds-c-slider-thumb-color-foreground{
+    color:	#0176d3
+
+}
+.slds-form-element__control{
+    --slds-c-slider-track-color-background:#f3f3f3!important;
+    --slds-c-slider-thumb-color-foreground-active:#014486!important;
+
+--slds-c-slider-thumb-color-foreground-focus:	#014486!important;
+
+--slds-c-slider-thumb-color-foreground-hover:#014486!important;
+
+--slds-c-slider-track-color-background:#f3f3f3!important;
+
+}
+
+/* Employer Section */
+.employerBanner{
+    align-items: center;
+    margin: 4% 0px;
+}
+.employerBanner h1{
+    font-weight: bold;
+    font-size: 45px;
+    font-size: 45px;
+    line-height: 56px;
+}
+
+.employerBanner p{
+    margin:20px 0px;
+}
+
+.employerBanner button{
+    margin-left: 0px;
+}
+.employerBanner img{
+    margin-right: 10%;
+}
+
+.jobseekers,.contentCenter{
+    justify-content: center;
+}
+
+.jobseekers h3{
+    justify-content: center;
+    font-size:20px;
+    font-weight:bold;
+    margin-top: 16px;
+}
+.employerSection .pageTitle{
+    justify-content: center;
+}
+
+
+.employerSection .pageTitle p{ 
+    font-size:18px;
+}
+
+.employerSection .showcaseCard{
+    align-items: center;
+    margin:5% 0px;
+}
+
+.employerSection .showcaseCard h2{
+    font-size: 25px;
+}
+
+.employerSection .showcaseCard p{
+    margin:20px 0px 0px 0px;
+}
+
+
+
+.employerSection .showcaseCard li{
+    display: inline-block;
+    width: 40%;
+    margin:16px 0px 0px 0px
+
+}
+.employerSection .showcaseCard lightning-icon svg{
+    width: 20px;
+    margin-right: 10px;
+}
+
+.employerSection .showcaseCard img{
+    width: -webkit-fill-available;
+}
+
+.employerSection .showcaseCard .contentArea{
+    padding-left: 5%;
+}
+
+.employerSection  .howItWork{
+    justify-content: center;
+    text-align: center;
+    position:relative;
+}
+.employerSection .howItWork h2{
+    margin: 8px 0px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.employerSection .howItWork p{
+    padding: 0px 10%;
+}
+
+.employerSection .howItWork img{
+    z-index: 1;
+    position: relative;
+}
+.employerSection .howItWork span{
+    color: #fff;
+    background: #424B5A;
+    padding: 6px 10px;
+    border-radius: 100px;
+    margin-bottom: -22px;
+    display: block;
+    width: 30px;
+    margin-left: 95px;
+    z-index: 9;
+    position: relative;
+}
+.employerSection .divider{
+    clear:both;
+    margin:20% 0px;
+}
+
+ .nextHire{
+    color: #fff;
+    padding: 4% 0px;
+    position:relative;
+    transform: scale(var(--ggs,1));
+    overflow: hidden;
+}  /*
+ .nextHire::before{
+     content:" ";
+     position:absolute;
+     top:0px;
+     left:0px;
+     width:200px;
+     height:200px;
+     border-top: 60px solid transparent;
+     border-bottom: 60px solid transparent;
+     border-left: 60px solid green;
+ }
+*/
+
+.nextHire:after {
+    content:'';
+    position:absolute;  
+      height: 12px;
+    width: 14%;
+    background: #fff;
+    transform: rotate(65deg);
+    top: 130px;
+    left: -90px;
+    opacity: 0.2;
+    
+}
+.arrowRight
+{
+      position: absolute; 
+      width: 0; 
+      height: 10px; 
+      line-height: 0; 
+      border: 60px dashed #fff; 
+      border-bottom-color: #000; 
+      right:10px;
+      top: 10px; 
+      border-left-style: solid; 
+      border-right:none; 
+      border-top-color: transparent; 
+      border-bottom-color: transparent;
+      transform: rotate( -90deg);
+      opacity: 0.2;
+}
+.arrowRight:after {
+         content:'';
+         position:absolute;
+         width: 0;
+         height: 0;
+         border: 43px dashed #3786ff;
+    right: 10px;
+    top: -43px;
+         
+          border-left-style: solid; 
+          border-right: none; 
+          border-top-color: transparent; 
+          border-bottom-color: transparent;
+}
+
+
+ .nextHire h1{
+    color: #fff;
+}
+
+.nextHire .mainWraper{
+    align-items: center;
+}
+
+.nextHire button{
+    width: 200px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 20px!important;
+    
+}
+
+.documentUploads{
+    background: #F0F6FF;
+    border: 1px solid #DBE9FF;
+    padding: 3% 0px;
+}
+
+.documentUploads h2{
+    font-size: 22px;
+    font-weight: bold;
+    padding-left: 9%;
+}
+
+.documentUploads h3{
+    font-weight: bold;
+}
+.documentUploads .slds-file-selector_files{
+    width: 100%;
+    background: #fff;
+}
+
+.documentUploads .slds-file-selector__dropzone{
+    border: none;
+    background: #fff;
+    width: 100%;
+}
+
+
+.documentUploads .slds-assistive-text, .documentUploads .slds-form-element__label{
+    display:none;
+}
+
+.documentUploads .documentSection{
+    margin: 2% 0px;
+}
+.documentUploads lightning-button{
+    margin: 2% 9%;
+}
+
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .mainWraper, .uiTabset{
+        margin:0 auto;
+        width:auto;
+        padding: 0px 1rem!important;
+    }
+    .pageTitle {
+        margin: 30px 0px;
+        line-height: normal
+    }
+    .widthAuto{
+        width:100%;
+    }
+    .primary_button{
+        width: 100%;
+    }
+    .pageTitle p{
+        font-size: 16px;
+    }
+    .pageTitle h1{
+        font-size: 26px;
+    }
+    .onlymobile{
+        width: 100%;
+    }
+    .forTab{
+        width: 33%;
+    }
+
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .mainWraper,.jobProfileRegister, .uiTabset{
+        margin:0 auto;
+        width:100%;
+        padding: 0px 2rem!important;
+    }
+    .pageTitle{
+        margin: 30px 0px;
+    }
+    .widthAuto{
+        width: auto;
+    }
+    .onlymobile{
+        width: 100%;
+    }
+    .forTab{
+        width: 33%;
+    }
+    .jobProfileRegister{
+        padding:20px!important;
+        }
+    
+
+}
+
+
+@media screen and (min-width:1024px) and (max-width: 1440px) {
+    .mainWraper,.jobProfileRegister,  .uiTabset{
+        margin: 0 auto!important;
+        width:-webkit-fill-available!important;
+        /* padding:0px 60px!important; */
+        padding: 0px 2rem!important;
+    }
+    
+    .jobProfileRegister{
+    padding-top: 30px!important;
+    }
+
+    .blueColor {
+        color:blue;
+    }
+    .greenColor {
+        color:green;
+    }
+    .redColor {
+        color:red;
+    }
+    .my-button-text {
+        opacity: 1.0;
+        visibility: visible;
+    }
+    .my-button-text:hover {
+        opacity: 1.0;
+        visibility: visible;
+    }
+    .redIconColor{
+            fill : #FF0000;
+            color: red;
+        }
+        .documentSection .fileName {
+            width: 74%!important;
+        }
+        .documentUploads h2 {
+            margin-top: 20px;
+        }
+        .trendingSearch li{
+            margin-bottom: 10px;
+        }
+
+        .userAccountImage img, .userAccountImage .slds-avatar {
+            width: 180px;
+            height: 180px;
+        }
+        .profilePhoto lightning-icon {
+            bottom: 80px!important;
+            right: 55px!important;
+        }
+
+        .cLogin_Theme .backgroundBgcolor:after{
+            display:none
+        }
+        .cLogin_Theme .slds-box {
+            padding: 2rem 2rem!important;
+            width: 100%;
+            margin: 5% auto!important;
+        }
+        .employerBanner .textCenter{
+            width: 80%;
+        }
+        .employerSection .showcaseCard {
+            align-items: center;
+            justify-content: center;
+        }
+}
+
+/* Mounika's code */
+.add-education .slds-button_outline-brand:hover {
+    background-color:#fff;
+    border-color: none;
+}
+.add-education  .slds-button_outline-brand:active, .add-education .slds-button_outline-brand:focus {
+    background-color:#fff;
+    border-color: none;
+}
+.add-job .slds-button_outline-brand:hover, .add-job .slds-button_outline-brand:active, .add-job .slds-button_outline-brand:focus {
+    background-color:#fff;
+    border-color: none;
+}
+input[aria-readonly="true"][lightning-baseCombobox_baseCombobox] {
+    cursor: pointer;
+}
+.contact-us lightning-primitive-icon{
+    top: 0px;
+    position: absolute;
+}
+.findingJobsSection svg.slds-button__icon {
+    position: absolute;
+    top: -2px;
+    left: 0px;
+}
+.document-upload .slds-card__header.slds-grid {
+    padding: 0;
+    margin: 0;
+}
+.manageAccount .slds-input {
+    padding: 6px;
+}
+.manageAccount label.slds-form-element__label.slds-no-flex{
+    font-size: 14px;
+}
+.contactUs label.slds-form-element__label{
+    font-size: 14px;
+}
+.list-option {
+    padding: 10px;
+}
+.job-location .searchListRegion {
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    left: 0;
+    z-index: 3;
+    max-height: 250px;
+    overflow: auto;
+}
+.desiredOccupation .slds-input {
+    padding: 0 8px;
+}
+.address .slds-form-element__row:first-child [lightning-inputaddress_inputaddress] > label {
+    display: none;
+}
+/*Gaurav CSS for Login/Register Page*/
+.comm-page-custom-employer-registration .slds-input, .comm-page-custom-register-page .slds-input {
+    padding: 7px 10px;
+    border: 1px solid rgba(55, 135, 255, 0.3);
+    margin-top: 10px;
+}
+
+.comm-page-custom-employer-registration .slds-input:focus, .comm-page-custom-register-page .slds-input:focus{
+    border: 1px solid #3787FF;
+}
+
+.comm-page-custom-employer-registration .slds-input, .comm-page-custom-register-page .slds-input{
+    border: 1px solid rgba(55, 135, 255, 0.3);
+}
+.comm-page-custom-employer-registration .slds-p-around_large.slds-box.slds-m-around_large, .comm-page-custom-register-page .slds-p-around_large.slds-box.slds-m-around_large{
+    padding: 3rem 6rem !important;
+}
+.blockView.slds-grid {
+    display: block;
+}
+.comm-page-custom-register-page .slds-align_absolute-center {
+    display: block;
+}
+
+.comm-page-custom-register-page lightning-input{width: 100% !important;}
+
+.comm-page-custom-employer-registration lightning-button, .comm-page-custom-register-page lightning-button{
+    padding: 12px !important;
+    display: block;
+    margin: 0;
+}
+
+.cLogin_Theme button
+/* button.slds-button.slds-button_brand, .comm-page-custom-register-page button.slds-button.slds-button_brand */{
+    display: block;
+    width: 100%;
+    padding: 13px;
+    background: #3787FF;
+}
+.slds-button.slds-button_brand{
+    background: #3787FF;  
+}
+.slds-einstein-header__actions{
+    position: absolute;
+    right: 10px;
+    top: 17px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 40px 20px;
+}
+
+.modal-footer .slds-button.slds-button_brand,  
+    .modal-footer .slds-button.slds-button_neutral {
+    width: unset;
+    padding: 2px 40px;
+}
+.job-modal .slds-form-element__label {
+    font-size: 15px;
+}
+.job-modal .slds-input {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.changePasswordpage{
+ justify-content: center;
+ text-align:left;
+}
+
+.changePasswordBox{
+    justify-content: center;
+    border: 2px solid #3787FF;
+    box-sizing: border-box;
+    box-shadow: 18px 17px 19px rgba(196, 191, 191, 0.25);
+    border-radius: 4px;
+    padding: 10%;
+}
+
+.changePasswordBox .input-group{
+    margin: 16px 0px;
+}
+.changePasswordBox input{
+    padding: 8px 16px;
+}
+.changePasswordBox .primary_button{
+    margin-right: 0px;
+}
+.changePasswordBox  label{
+    float: left;
+}
+.helpYou strong{
+    width: 100%;
+}
+
+.documentSection article{
+margin:10px 0px;
+background: #c5d7f4;
+border: none;
+}
+.documentSection .fileName{
+    float: left;
+    width: 80%;
+    padding-left: 10px;
+}
+.documentSection .deleteIcon{
+    margin-right:10px;
+}
+.fileActions{
+    text-align: right;
+    width: auto;
+    margin-top: -10px;
+}
+
+
+.documentSection .deleteIcon svg{
+    fill: #000;
+    width: 20px;
+    height: 20px;
+}
+.documentSection .previewIcon svg{
+    /* fill: #3787FF; */
+    fill: #000;
+    width: 20px;
+    height: 20px;
+}
+.documentSection .slds-icon-action-delete, .documentSection  .slds-icon-action-preview{
+    background: #fff;
+    padding: 4px;
+    margin: 4px;
+}
+
+
+
+.documentSection  slot{
+    width: 100%;
+    cursor: pointer;
+}
+
+.searchResultData .mainWraper{
+    padding:0px!important;
+}
+
+.searchByOccupation lightning-icon{
+    margin-right: 10px;
+}
+
+.manageAccount .primary_button{
+    margin-right: 0px;
+}
+
+.extraLinksCard lightning-icon{
+    float: left;
+}

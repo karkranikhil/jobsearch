@@ -1,0 +1,889 @@
+@font-face{
+    font-family: 'Lato', sans-serif;
+    src: url("@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap')") format('TrueType');
+
+
+}
+
+body{
+    padding:0px;
+    margin:0px;
+    font-family: 'Lato', sans-serif;
+    background:#fff;
+}
+
+*{
+    outline:none
+}
+
+.textBluePrimary{
+    color:#3787FF!important;
+}
+
+.bgBluePrimary{
+    background:#3787FF
+}
+
+.bgBlueSecondary{
+    background:#F0F6FF;
+
+}
+
+.textRight{
+    text-align: right;
+}
+.textCenter{
+    text-align:center
+}
+
+h1{
+    font-size:32px;
+    color:#2B2B2B;
+}
+
+.pageTitle{
+    margin:60px 0px;
+    text-align:center
+}
+.pageTitle p{
+    font-style: 16px;
+    color:#737B7D;
+}
+
+.primary_button{
+    padding:5px 5%;
+    background:#3787FF;
+    color:#fff;
+    margin:16px;
+    border:1px solid #3787FF;
+    font-size: 16px;
+    border-radius: 6px;
+}
+.secondary_button{
+    padding:4px 20px;
+    background:#fff;
+    color:#3787FF;
+    margin:16px 0px;
+    border:1px solid #3787FF;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+.primary_textlink{
+    color:#3787FF
+}
+
+.divider{
+    clear:both;
+    margin:30px 0px;
+
+}
+.mainWraper{
+     width: 1440px; 
+    margin: 0 auto;
+}
+.rightSpace{
+    margin-right: 20px;
+}
+
+
+
+/* Header */
+
+header{
+    position: sticky;
+    top: 0px;
+    /* width: 100%; */
+    left: 0;
+    right: 0px;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    color:#373F41;
+    display:flex;
+    border-bottom:1px solid #DBE9FF;
+    background: #fff;
+    z-index: 1;
+   
+}
+
+
+header .topnavBar{
+    padding: 0px 16px;
+    align-items: center;
+    height:80px; 
+   
+}
+
+
+header  a{ 
+    color:#373F41;
+    padding-left: 5%;
+    font-weight: 500;
+}
+
+
+header  .active{ 
+    color:#3787FF!important;
+}
+header .line{
+    color: #3787FF;
+    opacity: 0.4;
+    padding-left: 5%;
+
+}
+
+
+/* Flash News */
+/* 
+.flashNews{
+    border:3px solid #DBE9FF;
+    color:#000;
+    margin-top: 36px;
+    
+}
+ .flashNews strong{
+    padding: 20px;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    font-weight: 900;
+    border-radius: 4px;
+    margin: -3px;
+}
+.flashNews span{
+    padding-left: 3%;
+} */
+
+.newsContent{
+    width: 82%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    padding-left: 2%;
+    line-height: 10px;
+
+}
+
+/* Trending Search */
+.trendingSearchBg{
+    /* background: linear-gradient(0deg, rgba(240,246,255,1) 67%, rgba(255,255,255,1) 67%); */
+    background: linear-gradient( 0deg, rgba(240,246,255,1) 67%, rgb(255 255 255 / 0%) 67%);
+}
+.trendingSearch{
+    background: #FFFFFF;
+    border: 2px solid #E4E7FF;
+    box-shadow: 18px 17px 19px rgba(167, 167, 167, 0.25);
+    border-radius: 6px;
+    position:relative;
+    padding:30px;
+    align-items: center;
+}
+.trendingSearch::before{
+    content:" ";
+    position:absolute;
+    top:0px;
+    left: 0px;
+    background: #3787FF;
+    border: 2px solid #E4E7FF;
+    box-sizing: border-box;
+    box-shadow: 18px 17px 19px rgba(167, 167, 167, 0.25);
+    border-radius: 6px;
+    height: 8px;
+    width: 100%;
+}
+
+.trendingSearch img{
+    width:140px;
+    height:140px;
+}
+.trendingSearch p{
+    color:#A6A1A1;
+    font-size:20px;
+}
+.trendingSearch h1{
+    font-weight: bolder;
+}
+
+.trendingSearch li{
+    border: 1px solid #DBE9FF;
+    border-radius: 23px;
+    display: inline-block;
+    padding: 1% 3%;
+    margin-right: 1%;
+    cursor:pointer;
+}
+
+
+
+/* Popular Jobs */
+.popularJobSection{
+    background: #FFFFFF;
+    border: 2px solid #DBE9FF;
+    border-radius: 6px;
+    margin:0px 16px 20px 0px;
+    color:#2B2B2B;
+    font-size:16px;
+    padding:40px 30px;
+    width: 48%;
+}
+
+.popularJobSection img{
+    width:45px;
+    height:45px;
+    margin:10px 16px 0px 0px;
+    float:left
+}
+
+.popularJobSection .time img{
+    width:25px;
+    height:25px;
+    margin:3px 16px 0px 0px;
+
+}
+.popularJobSection h4{
+    font-weight: bold;
+    font-size:20px;
+}
+.popularJobSection span, .popularJobSection .time{
+    color:#818181;
+    font-size:14px;
+}   
+.popularJobSection .time{
+    margin-top: 20px;
+}
+
+.popularJobSection button{
+    margin:0px;
+}
+
+
+
+/* Be Ready to find your  */
+
+/* .gradient{
+    content:" ";
+    position:absolute;
+    right:0px;
+    background: linear-gradient(180deg, #B7D4FF 0%, rgba(245, 247, 251, 0) 100%);
+    transform: rotate(180deg);
+    width:50%;
+    height: 110%;
+   
+} */
+
+.findingJobsBanner{
+    align-items: center;
+}
+
+.findingJobsBanner p{
+    color:#2b2b2b;
+    margin:20px 0px;
+    font-size:17px;
+}
+.findingJobsSection{
+    border: 2px solid #DBE9FF;
+    padding: 10px;
+    box-shadow: 18px 17px 19px rgb(167 167 167 / 25%);
+    border-radius: 4px;
+    margin:30px 10px;
+    text-align:left;
+}
+
+
+.findingJobsSection label{
+    font-weight: bold;
+}
+.findingJobsSection input{
+    clear: both;
+    width: -webkit-fill-available;
+    margin-left: 44px;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 6px 0px;
+}
+.findingJobsSection button{
+    box-shadow: 18px 17px 19px rgb(167 167 167 / 25%);
+    border-radius: 4px;
+    padding: 20px 20%;
+    margin: 30px 0px;
+}
+
+.findingJobsSection .sdsIconColor {
+    --sds-c-icon-color-foreground-default: #3787FF;
+    width: 24px;
+    height: 24px;
+    margin-right: 20px;
+}
+
+ .searchSdsIcon{
+    --sds-c-icon-color-foreground-default: #fff;
+}
+
+.improveSkillsButton{
+    --sds-c-icon-color-foreground-default: #fff;
+    display: inline-grid;
+    padding: 10px;
+    height: 102px;
+    width: 150px;
+}
+.searchButton{
+    height: 78px;
+    width: 60px;
+    padding: 0px;
+    margin-top: 30px;
+    margin-left: -30px;
+}
+.improveSkills button{
+    --sds-c-icon-color-foreground-default: #fff;
+    
+}
+
+.time svg{
+    width: 20px;
+}
+
+
+/* Explore Jobs*/
+.exploreJobsBg{
+    background: linear-gradient(0deg, rgba(240,246,255,1) 67%, rgba(255,255,255,1) 67%);
+}
+
+.exploreJobsSection,  .exploreJobs .cardActive, .exploreJobs .exploreJobsSection:hover{
+    background: #FFFFFF;
+    border: 2px solid #DBE9FF;
+    border-radius: 6px;
+    padding:20px 24px;
+    margin:0px 16px 20px 0px;
+    width: 23%;
+    cursor:pointer;
+}
+ .exploreJobs .cardActive,  .exploreJobs .exploreJobsSection:hover{
+    color:#fff;
+    background:#3787FF
+}
+.exploreJobs .cardActive span, .exploreJobs .exploreJobsSection:hover span{
+    color:#fff;
+}
+
+.exploreJobsSection img {
+    width:38px;
+    height:38px
+}
+.exploreJobsSection span{
+    color:#818181
+}
+.exploreJobsSection p{
+    font-weight: bolder;
+    margin:8px 0px;
+}
+
+.exploreJobs .exploreJobIcon{
+    --sds-c-icon-color-foreground-default: #3787FF;
+}
+.exploreJobs .exploreJobsSection:hover .exploreJobIcon, .exploreJobs  .cardActive .exploreJobIcon{
+    --sds-c-icon-color-foreground-default: #fff;
+}
+
+
+
+/* reviews Platform */
+.reviewsPeople .slds-carousel__panel{
+    position:relative;
+}
+.reviewsPeople .slds-carousel__panel::before{
+    content: "";
+    position: absolute;
+    left: 40px;
+    height: 100%;
+    background: #3787FF;
+    width: 4px;
+    top: 0px;
+    border-radius: 6px;
+    
+}
+
+.reviewsPeople .slds-carousel__panel::after{
+    content: "";
+    position: absolute;
+    left: 44px;
+    height: 100%;
+    background: #F0F6FF;
+    width: 40px;
+    top: 0px;
+    border-radius: 6px;
+    
+}
+.reviewsPlatform .slds-carousel__panel{
+    background: #FFFFFF;
+    border: 2px solid #DBE9FF;
+    box-shadow: 18px 17px 19px rgba(167, 167, 167, 0.25);
+    border-radius: 6px;
+    padding:30px 10px;
+    text-align: center;
+}
+.reviewsPlatform .slds-carousel__panel p{
+    margin:10px auto;
+    width:80%;
+    font-size: 18px;
+    color: #5A5A5A;
+    font-weight: 400;
+}
+
+.reviewsPlatform .slds-carousel__indicator li {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    text-align: center;
+    margin: 5px 10px;
+}
+.reviewsPlatform li a{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+.reviewsPlatform li .slds-is-active{
+    width: 82px;
+    height: 82px;
+    filter: drop-shadow(4px 4px 24px rgba(0, 0, 0, 0.15));
+    overflow: hidden;
+    border: 3px solid #3787FF;
+}
+
+.reviewsPlatform  .slds-avatar {
+    width: 100%;
+    height: 100%;
+}
+/* how it Work */
+
+.howitWork{
+    align-items: center;
+}
+
+.howitWork img{
+    width:100%;
+    height:430px;
+}
+
+.howitWork li{
+    font-weight:bolder;
+    font-size: 18px;
+    margin:0px 0px 50px 0px
+
+}
+
+.howitWork li img{
+    width:24px;
+    height:24px;
+    margin-right: 20px;
+}
+
+.howitWork li p{
+    color: #737B7D;
+    font-size: 14px;
+    margin-top: 15px;
+    font-weight: normal;
+    margin-left: 50px;
+
+}
+
+
+
+/* uploadCV */
+.uploadCV{
+    padding:60px;
+    color:#fff;
+    height: 480px;
+    align-items: center;
+    position: relative;
+}
+
+.uploadCV h1{
+   font-weight:bolder;
+   color:#fff;
+   margin-top: 20px;
+}
+
+.uploadCV p{
+    font-size: 21px;
+ }
+
+ .uploadCV button{
+    margin: 30px 0px;
+    color: #fff;
+    padding: 6px 5%;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background: none;
+    font-size: 14px;
+ }
+
+ .uploadCV .bgImg{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+ }
+ .uploadCV .uploadIcon{
+    --sds-c-icon-color-foreground-default: #fff;
+    margin-right: 20px;
+    margin-left: -20px;
+ }
+
+/* yourSelf*/
+
+.yourSelf .yourSelfSection{
+    border: 2px solid #DBE9FF;
+    padding: 10px;
+    box-shadow: 18px 17px 19px rgb(167 167 167 / 25%);
+    border-radius: 4px;
+    margin:30px 0px;
+}
+.yourSelfSection img{
+    width:24px;
+    height:24px;
+    margin:0px 20px;
+}
+
+.yourSelfSection label{
+    font-weight:bold;
+}
+
+.yourSelfSection input{
+    clear: both;
+    width: -webkit-fill-available;
+    margin-left: 62px;
+    border: none;
+    background: none;
+    outline:none
+}
+
+.yourSelf button{
+    box-shadow: 18px 17px 19px rgba(167, 167, 167, 0.25);
+    border-radius: 4px;
+    padding:25px 20%;
+    margin:30px 0px;
+}
+
+.yourSelf .exploreJobIcon{
+    --sds-c-icon-color-foreground-default: #3787FF;
+    margin-right: 13px;
+    margin-left: 20px;
+}
+
+
+
+/* footer */
+footer{
+    background:#F8F8F8;
+    padding:80px 0px 26px 0px;
+    margin-top:120px;
+    color:#2B2B2B;
+
+}
+
+footer hr{
+    padding:0px;
+    height:1px;
+    border:none;
+    background:#C6C6C6;
+    font-size:16px;
+    margin: 20px auto;
+}
+
+footer .helpYou img{
+    margin:10px 0px;
+    width:122px;
+    height:42px;
+    float: left;
+}
+
+footer .helpYou p{
+    margin:10px 0px;
+    width:122px;
+    height:42px;
+}
+footer .helpYou strong{
+    float: left;
+    clear: both;
+    margin: 10px 0px;
+}
+
+footer .helpYou p{
+    clear: both;
+    width: 45%;
+    margin: 20px 0px;
+}
+
+footer ul li{
+    margin:20px 0px;
+}
+
+footer ul p{
+    font-weight: bold;
+}
+
+footer ul li a{
+    font-size:14px;
+    color:#2B2B2B;
+}
+footer .followUs img{
+    margin: 8px;
+    width: 24px;
+    height: 24px;
+}
+
+
+
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .pageTitle{
+        margin: 30px 0px;
+    }
+    .searchButton{
+        margin-left: 8px;
+    }
+
+    .onlymobile{
+        width: 100%;
+    }
+    .forTab{
+        width: 33%;
+    }
+    .trendingSearch p,.trendingSearch h1{
+        width: max-content;
+    }
+    .popularJobSection{
+        margin: 0px 14px 20px 0px;
+    }
+    .popularJobSection button{
+        margin-top:16px;
+    }
+    .popularJobSection h4{
+        white-space: pre;
+    }
+  .exploreJobsSection{
+    margin: 0px 20px 20px 0px;
+    width: 22%;
+  }
+  .reviewsPlatform .slds-carousel__panel{
+    width: 70%;
+  }
+  .reviewsPlatform .slds-carousel__panel p{
+    width: 70%;
+    font-size: 14px;
+  }
+  .howitWork img{
+    width:100%;
+    height:auto;
+    }
+    .howitWork li{
+        margin: 0px 0px 20px 0px;
+    }
+    .uploadCV{
+        height:auto; 
+    }
+    .uploadCV h1{
+        font-size: 24px;
+    }
+    .uploadCV .formobile{
+        width: 240px;
+    }
+    .uploadCV button{
+        padding: 6px 12%;
+    }
+    footer{
+        margin-top: 20px;
+    }
+
+    footer .helpYou p{
+        width: 93%;
+    }
+    footer li{
+        margin: 10px 0px;
+    }
+
+ 
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .pageTitle {
+        margin: 30px 0px;
+        line-height: normal
+    }
+
+    .pageTitle p{
+        font-size: 16px;
+    }
+    .pageTitle h1{
+        font-size: 26px;
+    }
+
+    .displayBlock{
+        display: block;
+    }
+    .widthAuto{
+        width: auto;
+    }
+    .onlymobile{
+        width: inherit;
+    }
+    /* findingJob */
+    .searchButton{
+        width: 93%;
+        margin: 10px 0px;
+        padding: 0px;
+    }
+
+
+    /* Trending Search  */
+    .trendingSearch p{
+        font-size: 16px;
+    }
+    .trendingSearch h1{
+        font-size: 26px;
+    }
+    .trendingSearch li{
+        display: block;
+        text-align: center;
+        margin: 16px 0px;
+    }
+    .trendingSearch img{
+        display:none
+    }
+
+    /* Popular Job Section */
+    .popularJobSection{
+        width: 100%;
+    }
+    .popularJobSection p{
+        margin: 16px 0px;
+    }
+ 
+    /* Explore Jobs  */
+    .exploreJobsSection,  .cardActive{
+     
+    width: auto!important;
+
+    }
+
+    /* Reviews People */
+    .reviewsPeople .slds-carousel{
+        width: -webkit-fill-available;
+    }
+
+    .reviewsPeople .slds-carousel__panel::after{
+        content:"";
+        width: 20px;
+        left: 5px;
+    }
+
+    .reviewsPeople .slds-carousel__panel::before{
+        content:"";
+        left: 0px;
+    }
+    .reviewsPlatform li a{
+        width: 50px;
+        height: 50px;
+    }
+    .reviewsPlatform li .slds-is-active{
+        width: 50px;
+        height: 50px;
+    }
+    
+
+    /* Howit Work */
+    .howitWork img{
+        width: 57%;
+        height: auto;
+    }
+    .howitWork ul{
+        width: 80%;
+    }
+    .howitWork li{
+        font-size: 14px;
+        margin: 0px 0px 20px 0px;
+    }
+   
+    /* Upload CV */
+
+    .uploadCV{
+        height:auto;
+        padding: 20px;
+    }
+    .uploadCVSection{
+        width:100%
+    }
+    .uploadCV h1{
+        font-size: 24px;
+    }
+
+    .uploadCV .formobile{
+        display:none
+    }
+
+    .uploadCV  button{
+        width: 100%;
+    }
+
+    /* Your Self */
+    .yourSelf .yourSelfSection{
+        width: 100%;
+        margin: 0px 0px;
+    }
+    .yourSelf .yourSelfSection button{
+        margin: 0px 0px!important;
+    }
+
+    /* Footer */
+    footer{
+        padding: 40px 0px 26px 0px;
+        margin-top: 20px;
+    }
+    footer .primary_textlink{
+        display: none;
+    }
+    footer .textRight{
+        text-align:left;
+    }
+
+/* 
+    .flashNews strong{
+        padding: 20px 0px;
+    } 
+ 
+    .improveSkillsButton{
+        width: 120px;
+        font-size: 14px;
+    }
+
+    .popularJobSection button{
+        margin:10px 0px;
+    }
+  
+    .mobileDisplayBlock{
+        display: block;
+    }
+    .siteforceContentArea{
+        padding: 0px;
+    }
+
+
+
+    .flashNews{
+        margin-top: 1px;
+    }
+    .flashNews{
+        line-height: 20px;
+        overflow: auto;
+        white-space:normal;
+        display: inline-block;
+    } 
+*/
+
+}

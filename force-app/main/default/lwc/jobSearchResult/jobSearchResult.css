@@ -1,0 +1,16 @@
+.filterSection{
+    margin:20px 0px;
+    font-size: 18px;
+    color:#2B2B2B
+
+}
+
+.filterSection select{
+    border:1px solid #E4E7FF;
+    padding:10px 15px;
+    color:#2B2B2B;
+    margin-right: 16px;
+    --sds-c-icon-color-foreground-default: #000;
+    border-radius: 6px;
+    font-size: 14px;
+}

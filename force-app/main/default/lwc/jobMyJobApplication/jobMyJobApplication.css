@@ -1,0 +1,94 @@
+.jobCategorys{
+    justify-content: space-between;
+    display: flex;
+}
+
+.jobCategorys a{
+    background: #F0F6FF;
+    border: 1px solid #DBE9FF;
+    padding: 5px 3%;
+    text-align: center;
+    color: #3787FF;
+    margin: 10px 20px 0px 0px;
+    border-radius: 4px;
+    vertical-align: middle;
+    line-height: 30px;
+}
+.postedOption{
+    position: relative;
+    --sds-c-icon-color-foreground-default: #3787FF;
+    border:1px solid #3787FF;
+    width: 160px;
+    border-radius: 4px;
+    margin-top: 10px;
+    height: 40px;
+}
+
+.jobCategorys select{
+    float: revert;
+    border:none;
+    padding: 0px 2%;
+    background: #fff;
+    color: #3787FF;
+    border-radius: 4px;
+    margin-top: 10px;
+    appearance: none;
+    margin-left: 10px;
+}
+.utilityIcon{
+    padding-left: 18px;
+}
+
+
+.jobPublish{
+    border:1px solid #DBE9FF;
+    margin:20px 0px
+
+}
+.jobPublish header{
+    background:#F0F6FF;
+    border-bottom: 1px solid #DBE9FF;
+    padding: 10px 30px;
+    align-items: center;
+    font-size: 14px;
+    color:#0E0E0E;
+}
+.jobPublish header img{
+    width:32px;
+}
+.jobPublish footer{
+    border-top: 1px solid #DBE9FF;
+    padding: 10px 30px;
+    text-align: right;
+}
+.jobPublish footer span{
+    padding-left: 60px;
+    cursor: pointer;
+
+}
+
+.jobPublish .green{
+    color:#0EAB0B;
+}
+
+.jobPublishDetails span{
+    width:30%;
+    padding-right: 2%;
+    margin: 10px 0px;
+    display: inline-block;
+}
+
+.jobPublishDetails span b{
+    padding-left:10px;
+
+}
+.bodySection{
+    padding: 20px 30px;
+}
+.totalJobs{
+    color:#818181;
+    --sds-c-icon-color-foreground-default: #818181;
+    display: inline-block;
+    margin-top: 14px;
+
+}

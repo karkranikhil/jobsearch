@@ -1,0 +1,106 @@
+.reviewsPeople .slds-carousel__panel{
+    position:relative;
+}
+.reviewsPeople .slds-carousel__panel::before{
+    content: "";
+    position: absolute;
+    left: 40px;
+    height: 100%;
+    background: #3787FF;
+    width: 4px;
+    top: 0px;
+    border-radius: 6px;
+    
+}
+
+.reviewsPeople .slds-carousel__panel::after{
+    content: "";
+    position: absolute;
+    left: 44px;
+    height: 100%;
+    background: #F0F6FF;
+    width: 40px;
+    top: 0px;
+    border-radius: 6px;
+    
+}
+.reviewsPlatform .slds-carousel__panel{
+    background: #FFFFFF;
+    border: 2px solid #DBE9FF;
+    box-shadow: 18px 17px 19px rgba(167, 167, 167, 0.25);
+    border-radius: 6px;
+    padding:30px 10px;
+    text-align: center;
+}
+.reviewsPlatform .slds-carousel__panel p{
+    margin:10px auto;
+    width:80%;
+    font-size: 18px;
+    color: #5A5A5A;
+    font-weight: 400;
+}
+
+.reviewsPlatform .slds-carousel__indicator li {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    text-align: center;
+    margin: 5px 10px;
+}
+.reviewsPlatform li a{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+.reviewsPlatform li .slds-is-active{
+    width: 82px;
+    height: 82px;
+    filter: drop-shadow(4px 4px 24px rgba(0, 0, 0, 0.15));
+    overflow: hidden;
+    border: 3px solid #3787FF;
+}
+
+.reviewsPlatform  .slds-avatar {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .reviewsPlatform .slds-carousel__panel{
+        width: 70%;
+      }
+      .reviewsPlatform .slds-carousel__panel p{
+        width: 70%;
+        font-size: 14px;
+      }
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+    .reviewsPeople .slds-carousel{
+        width: -webkit-fill-available;
+    }
+
+    .reviewsPeople .slds-carousel__panel::after{
+        content:"";
+        width: 20px;
+        left: 5px;
+    }
+
+    .reviewsPeople .slds-carousel__panel::before{
+        content:"";
+        left: 0px;
+    }
+    .reviewsPlatform li a{
+        width: 50px;
+        height: 50px;
+    }
+    .reviewsPlatform li .slds-is-active{
+        width: 50px;
+        height: 50px;
+    }
+}

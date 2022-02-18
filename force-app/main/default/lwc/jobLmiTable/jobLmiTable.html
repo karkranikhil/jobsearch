@@ -1,0 +1,15 @@
+<template>
+    <lightning-datatable key-field="Id" data={currentData} hide-checkbox-column={hideCheckbox} columns={columns}>
+    </lightning-datatable>
+    <div class="slds-m-aroung_small">
+        <div class="slds-grid slds-wrap slds-size_12-of-12 autoWidth floatRight tabelFooter itemsCenter">
+            <span>{currentPage}/{totalPages}</span>
+            <span slot="actions">
+                <lightning-button variant="neutral" class="slds-float_left previousBtn " title="Previous" label=""
+                    icon-name="utility:chevronleft" icon-position="left" onclick={handlePrevious}></lightning-button>
+                <lightning-button variant="neutral" class="slds-float_right nextBtn" title="Next" label=""
+                    icon-name="utility:chevronright" icon-position="right" onclick={handleNext}></lightning-button>
+            </span>
+        </div>
+    </div>
+</template>

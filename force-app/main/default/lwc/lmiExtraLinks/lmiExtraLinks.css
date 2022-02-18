@@ -1,0 +1,45 @@
+h3{
+    color:#000;
+    font-size: 24px;
+    margin:20px 0px;
+}
+
+.extraLinksCard{
+    background: #FFFFFF;
+    border: 1px solid #A8CBFF;
+    padding:30px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 1%;
+}
+.extraLinksCard:hover, .extraLinksCard:hover p, .extraLinksCard:hover span, .extraLinksCard:hover h4{
+    background: #3787FF;
+    color:#fff;
+}
+
+.extraLinksCard h4{
+    color:#000;
+    font-size:18px;
+}
+.extraLinksCard p{
+    color:#545454;
+    font-size:14px;
+    margin:16px 0px
+}
+.extraLinksCard span{
+    color:#3787FF;
+    font-size:14px;
+}
+
+.extraLinksCard .quoteIcon{
+    --sds-c-icon-color-foreground-default: #fff;
+    background: #7C00B6;
+    border-radius: 6px;
+    padding:10px;
+}
+.greenColor{
+    background: #00CD9C!important;
+}
+.orangeColor{
+    background: #D3BE00!important;
+}

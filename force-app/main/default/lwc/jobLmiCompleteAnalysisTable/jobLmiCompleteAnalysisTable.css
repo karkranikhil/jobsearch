@@ -1,0 +1,50 @@
+.customSelect select {
+    padding-right: 1.25rem;
+    min-height: inherit;
+    line-height: normal;
+    height: 1.4rem;
+}
+.customSelect label {
+    margin-top: 0.1rem;
+}
+.customSelect .slds-select_container::before {
+    border-bottom: 0;
+}
+.customInput {
+    width: 3rem;
+    height: 1.4rem;
+    text-align: center;
+    border: 1px solid #dddbda;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.tabelFooter .previousBtn button{
+    border-radius: 100%;
+    padding: 1px 10px 1px 2px;
+    background: #ccc;
+    border: none;
+    --sds-c-icon-color-foreground-default: #000;
+    margin: 0px 10px;
+}
+
+.tabelFooter .nextBtn button{
+    border-radius: 100%;
+    padding: 1px 10px 1px 2px;
+    background: #3787FF;
+    border: none;
+    --sds-c-icon-color-foreground-default: #fff;
+    margin: 0px 10px;
+}
+
+.exportBtn{
+    --sds-c-icon-color-foreground-default: #3787FF;
+    float:right;
+
+}
+
+.tabelFooter button{
+    border-radius: 100px;
+    margin: 0px 10px;
+}
+.THIS .slds-th__action .slds-th__action-button { display: none; }

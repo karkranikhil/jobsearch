@@ -1,0 +1,171 @@
+.filterSection{
+    /*margin:20px 0px;*/
+    font-size: 18px;
+    color:#2B2B2B
+
+}
+
+.filterSection select{
+    border:1px solid #E4E7FF;
+    padding:10px 15px;
+    color:#2B2B2B;
+    margin-right: 16px;
+    --sds-c-icon-color-foreground-default: #000;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.pageSideBar{
+    border-left: 4px solid #DCE0F0;
+    padding-left: 16px;
+    position: relative;
+    margin-top: 20px;
+    font-size:16px;
+}
+
+.pageSideBar li{
+    margin: 0px 0px 30px 0px;
+    cursor: pointer;
+    color: #6B6C7E;
+}
+
+.pageSideBar li.active{
+    color:#3787FF;
+    position: relative;
+}
+
+.pageSideBar li.active{
+    color:#3787FF;
+    border-left: 4px solid #3787FF;
+    padding-left: 16px;
+    margin-left: -20px
+}
+
+.pageSideBar li:hover{
+    color:#000;
+    font-weight: bold;
+}
+
+.popularJobSection{
+    background: #FFFFFF;
+    border: 2px solid #DBE9FF;
+    border-radius: 6px;
+    margin:0px 16px 20px 0px;
+    color:#2B2B2B;
+    font-size:16px;
+    padding:30px 18px;
+    cursor: pointer;
+    min-height: 270px;
+    width: 390px;
+}
+.popularJobSection:hover{
+    box-shadow: 18px 17px 19px rgba(167, 167, 167, 0.25);
+    border: 2px solid #3787FF;
+}
+
+.popularJobSection img{
+    width:45px;
+    height:45px;
+    margin:10px 16px 0px 0px;
+    float:left
+}
+.popularJobSection p{
+    margin-top:10px;
+    min-height: 50px;
+}
+.popularJobSection .time img{
+    width:25px;
+    height:25px;
+    margin:3px 16px 0px 0px;
+
+}
+.popularJobSection h4{
+    font-weight: bold;
+    font-size:20px;
+    white-space: nowrap;
+}
+.popularJobSection span, .popularJobSection .time{
+    color:#818181;
+    font-size:14px;
+}   
+.popularJobSection .time{
+    margin-top: 20px;
+}
+
+.popularJobSection button{
+    margin:0px;
+}
+.extraLinksCard{
+    border: 1px solid #BDBDBD;
+    margin-right: 3%;
+    align-items: center;
+    border-radius: 6px;
+    padding: 1%;
+    height: 80px;
+    width: 17rem;
+}
+
+.extraLinksCard h4{
+    font-size: 16px;
+    font-weight: bold;
+}
+.jobPosted{
+    justify-content: space-between;
+}
+
+.recentApplicantsTable{
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+    padding: 10px;
+}
+.recentApplicantsTable thead th{
+    background: #f0f0f0;
+    padding: 16px;
+    color: #000;
+}
+.recentApplicantsTable  td{
+padding: 16px;
+}
+
+.recentApplicantsTable lightning-button button{
+    background: none!important;
+    border: none!important;
+    margin-top: -9px!important;
+}
+
+h3{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .popularJobSection{
+        margin: 0px 14px 20px 0px;
+    }
+    .popularJobSection button{
+        margin-top:16px;
+    }
+    .popularJobSection h4{
+        white-space: pre;
+    }
+
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .popularJobSection{
+        width: 100%;
+    }
+    .popularJobSection p{
+        margin: 16px 0px;
+    }
+
+    .my-button-text {
+        opacity: 1.0;
+        visibility: visible;
+    }
+    .my-button-text:hover {
+        opacity: 1.0;
+        visibility: visible;
+    }
+
+}

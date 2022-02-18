@@ -1,0 +1,107 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner></lightning-spinner>
+    </template>
+    <div class="form-content">
+        <h3 class="sub-section slds-m-bottom_large">Goals Information</h3>
+        <div class="custom-form-group">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+                        <div class="">
+                            <!-- <lightning-record-edit-form object-api-name="Contact" id="createContact" >
+                                <lightning-input-field field-name="Region__c" value={preferredLocation} 
+                                placeholder="Enter Preferred Location" name="preferredLocation" label="Preferred Location" onchange={handleChange}> </lightning-input-field>
+                            </lightning-record-edit-form> -->
+
+                            <lightning-input label="Preferred Location" type="search" onchange={handleSearch}
+                                placeholder="Enter Region here" value={selectedRegionName}
+                                class="inputField desiredOccupation">
+                            </lightning-input>
+
+                            <template if:true={regions}>
+                                <div class="searchList">
+                                    <template for:each={regions} for:item="region">
+                                        <c-record-list key={region.Id} record={region} onselect={handleSelectRegion}
+                                            iconname={iconname} fieldname={searchfield}
+                                            class="searchListField desiredOccupationList">
+                                        </c-record-list>
+                                    </template>
+                                </div>
+                            </template>
+
+                        </div>
+                    </span>
+                </div>
+                <!-- <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+                        <div class="" if:true={showCombobox}>
+                            <lightning-combobox name="requiredWages" value={requiredWages} label="Required Wages"
+                                placeholder="Select Required Wages" options={wagesPicklist.data.values}
+                                onchange={handleChange} class="cursorPointer">
+                            </lightning-combobox>
+                        </div>
+                    </span>
+                </div> -->
+                <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+                        <div class="">
+                            <!-- <lightning-input type="text" name="desiredOccupation" value={desiredOccupation} onchange={handleChange} label="Desired Occupation"
+                                placeholder="Enter Desired Occupation">
+                            </lightning-input> -->
+                            <lightning-input label="Desired Occupation" type="search" onkeyup={handleKeyChange}
+                                placeholder="Enter Desired Occupation" value={selectedTitleName} onfocus={setShowTitles}
+                                class="inputField desiredOccupation">
+                            </lightning-input>
+
+
+                            <template if:true={showTitles}>
+                                <template if:true={titles}>
+                                    <div class="searchList">
+                                        <template for:each={titles} for:item="title" for:index="index">
+                                            <c-record-list key={title} record={title} onselect={handleSelectTitle}
+                                                class="searchListField desiredOccupationList" iconname={iconname}
+                                                fieldname={searchfield}>
+                                            </c-record-list>
+
+                                        </template>
+                                    </div>
+                                </template>
+                            </template>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+                        <div class="" if:true={showCombobox}>
+                            <lightning-combobox name="requiredWages" value={requiredWages} label="Required Wages"
+                                placeholder="Select Required Wages" options={wagesPicklist.data.values}
+                                onchange={handleChange} class="cursorPointer">
+                            </lightning-combobox>
+                        </div>
+                    </span>
+                </div>
+
+                <div class="slds-col slds-large-size_6-of-12">
+                    <span>
+
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- <p><b>Note :</b> You must fill all the mandatory field to proceed further</p> -->
+    </div>
+    <div class="formControls">
+        <span onclick={handleBack} class="textBluePrimary" data-page='Goal_Information'>
+            <lightning-icon icon-name="utility:back" alternative-text="Approved" title="Approved"></lightning-icon>
+            &nbsp;&nbsp;Back
+        </span>
+        <div class="textRight">
+            <button class=" primary_button " data-page='Goal_Information' onclick={handleSubmit}>Submit</button>
+        </div>
+    </div>
+
+</template>

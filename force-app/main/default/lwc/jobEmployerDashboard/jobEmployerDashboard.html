@@ -1,0 +1,313 @@
+<template>
+
+
+    <div class="slds-grid slds-gutters slds-p-bottom_x-large jobPosted">
+
+        <div class="slds-grid slds-col slds-warp slds-size_2-of-12 extraLinksCard " onclick={handleClick}>
+
+            <div class="slds-col slds-size_8-of-12 ">
+                <h4>201</h4>
+                <p>Job Posted</p>
+            </div>
+            <div class="slds-col slds-size_4-of-12">
+                <img src={jobPosted} />
+            </div>
+
+        </div>
+
+        <div class="slds-grid slds-col slds-warp slds-size_2-of-12 extraLinksCard ">
+
+            <div class="slds-col slds-size_8-of-12">
+                <h4>53</h4>
+                <p>New Applicants</p>
+            </div>
+            <div class="slds-col slds-size_4-of-12">
+                <img src={activeJob} />
+            </div>
+
+        </div>
+
+        <div class="slds-grid slds-warp slds-col slds-size_2-of-12 extraLinksCard ">
+            <div class="slds-col slds-size_8-of-12">
+                <h4>53</h4>
+                <p>Response Due</p>
+            </div>
+            <div class="slds-col slds-size_4-of-12">
+                <img src={inactiveJob} />
+            </div>
+        </div>
+
+        <div class="slds-grid sslds-warp slds-col slds-size_2-of-12 extraLinksCard ">
+
+            <div class="slds-col slds-size_8-of-12">
+                <h4>151</h4>
+                <p>Total Applicants</p>
+            </div>
+
+            <div class="slds-col slds-size_4-of-12">
+                <img src={totalJob} />
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="slds-grid slds-gutters slds-p-bottom_x-large">
+
+        <div class="slds-col slds-size_11-of-12 ">
+
+            <h3>Recent Job Postings
+
+
+            </h3>
+        </div>
+
+        <div class="slds-col slds-size_2-of-12 ">
+
+
+
+            <a href="" class="textRight">View all</a>
+
+        </div>
+
+    </div>
+
+    <div class="slds-grid slds-gutters slds-p-bottom_x-large">
+        <div class=" slds-grid slds-wrap">
+
+            <template for:each={jobsToShow} for:item="jobs">
+                <div key={jobs.Id} class="slds-col slds-size_4-of-12 popularJobSection">
+                    <div class="slds-col onlymobile">
+                        <img src={jobIcon} />
+                        <sub>{jobs.Company__c} , {jobs.Location__c}</sub>
+                        <h4>{jobs.Job_Title__c}</h4>
+                        <span>Posted 15min ago</span>
+                        <div class="time">
+                            <lightning-icon icon-name="utility:case" alternative-text="Approved" title="Approved">
+                            </lightning-icon>
+                            3 - 4 Year experience | {jobs.Employment_Type__c} | {jobs.Salary_Range__c}
+                        </div>
+                        <p>
+                        <lightning-formatted-rich-text value={jobs.Job_Description__c}></lightning-formatted-rich-text></p>
+                    </div>
+                </div>
+            </template>
+
+
+        </div>
+    </div>
+
+    <div class="slds-grid slds-gutters slds-p-bottom_x-large">
+
+        <div class="slds-col slds-size_7-of-12 ">
+
+            <h3>Recent Applicants
+            </h3>
+        </div>
+
+
+        <div class="slds-col slds-size_5-of-12 textRight filterSection">
+            <span class="slds-p-around_medium">
+                <lightning-icon icon-name="utility:filterList" class="filterListIcon" alternative-text="Approved"
+                    title="Approved"></lightning-icon> Filter Jobs By
+            </span>
+
+            <select>
+                <option>SFDC Developer</option>
+                <option>SFDC Tester</option>
+            </select>
+
+        </div>
+
+
+    </div>
+
+    <lightning-accordion active-section-name="A">
+        <lightning-accordion-section name="A" label="SFDC Developer">
+            <table class="slds-table recentApplicantsTable "
+                aria-label="Example table of Opportunities with no row hovers">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Applicant Name">Applicant Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Applied Date">Applied Date</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Status">Status</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Phone">Phone</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Ranking">Ranking</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Resume">Resume</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="LinkedIn Profile">LinkedIn Profile</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Next Round Scheduled Date">Next Round Scheduled Date</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Action">Action</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={devApplicantsList} for:item="row">
+                        <tr key={row.applicantId} class="slds-hint-parent">
+                            <td data-label="Applicant Name">
+                                <div class="slds-truncate" title={row.name}>{row.applicantName}</div>
+                            </td>
+                            <td data-label="Applied Date">
+                                <div class="slds-truncate" title={row.AppliedDate}>{row.appliedDate}</div>
+                            </td>
+                            <td data-label="Status">
+                                <div class="slds-truncate " title={row.Status}>{row.status}</div>
+                            </td>
+                            <td data-label="Phone">
+                                <div class="slds-truncate" title={row.Phone}>{row.phone}</div>
+                            </td>
+                            <td data-label="Ranking">
+                                <div class="slds-truncate" title={row.Ranking}>{row.ranking}</div>
+                            </td>
+                            <td data-label="Resume">
+                                <div class="slds-truncate my-button-text" title={row.resume}>
+
+                                    <a href={row.resume} target="_blank">
+                                        <lightning-icon icon-name="utility:preview" alternative-text="Preview"
+                                            title="Preview"></lightning-icon>
+                                    </a>
+                                </div>
+                            </td>
+                            <td data-label="LinkedIn">
+                                <div class="slds-truncate my-button-text" title="LinkedIn" if:true={row.showLinkedIn}>
+
+                                    <a href={row.linkedin} target="_blank">View </a>
+
+                                </div>
+                                <div class="slds-truncate" if:false={row.showLinkedIn}>
+                                    NA
+                                </div>
+                            </td>
+
+                            <td data-label="Next Round Scheduled Date">
+                                <div class="slds-truncate" title={row.nextRound}>{row.nextRound}</div>
+                            </td>
+                            <td data-label="Action">
+                                <div class="slds-truncate my-button-text" title=Action>
+                                    <lightning-button-icon variant="brand" icon-name="action:approval"
+                                        alternative-text="Move to next round" title="Move to next round"
+                                        onclick={handleClickAccept} value={row.applicantId}></lightning-button-icon>
+                                    &nbsp; &nbsp;
+                                    <lightning-button-icon variant="destructive-text" class="redIconColor"
+                                        icon-name="action:close" alternative-text="Reject" title="Reject"
+                                        onclick={handleClickReject} value={row.applicantId}></lightning-button-icon>
+                                </div>
+                            </td>
+
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </lightning-accordion-section>
+    </lightning-accordion>
+    <lightning-accordion active-section-name="B">
+        <lightning-accordion-section name="B" label="SFDC Tester">
+            <table class="slds-table recentApplicantsTable "
+                aria-label="Example table of Opportunities with no row hovers">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Applicant Name">Applicant Name</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Applied Date">Applied Date</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Status">Status</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Phone">Phone</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Ranking">Ranking</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Resume">Resume</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="LinkedIn Profile">LinkedIn Profile</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Next Round Scheduled Date">Next Round Scheduled Date</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Action">Action</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={testerApplicantsList} for:item="row">
+                        <tr key={row.applicantId} class="slds-hint-parent">
+                            <td data-label="Applicant Name">
+                                <div class="slds-truncate" title={row.name}>{row.applicantName}</div>
+                            </td>
+                            <td data-label="Applied Date">
+                                <div class="slds-truncate" title={row.AppliedDate}>{row.appliedDate}</div>
+                            </td>
+                            <td data-label="Status">
+                                <div class="slds-truncate" title={row.Status}>{row.status}</div>
+                            </td>
+                            <td data-label="Phone">
+                                <div class="slds-truncate" title={row.Phone}>{row.phone}</div>
+                            </td>
+                            <td data-label="Ranking">
+                                <div class="slds-truncate" title={row.Ranking}>{row.ranking}</div>
+                            </td>
+                            <td data-label="Resume">
+                                <div class="slds-truncate my-button-text" title={row.resume}>
+
+                                    <a href={row.resume} target="_blank">
+                                        <lightning-icon icon-name="utility:preview" alternative-text="Preview"
+                                            title="Preview"></lightning-icon>
+                                    </a>
+                                </div>
+                            </td>
+                            <td data-label="LinkedIn">
+                                <div class="slds-truncate my-button-text" title="LinkedIn" if:true={row.showLinkedIn}>
+
+                                    <a href={row.linkedin} target="_blank">View </a>
+
+                                </div>
+                                <div class="slds-truncate" if:false={row.showLinkedIn}>
+                                    NA
+                                </div>
+                            </td>
+
+                            <td data-label="Next Round Scheduled Date">
+                                <div class="slds-truncate" title={row.nextRound}>{row.nextRound}</div>
+                            </td>
+                            <td data-label="Action">
+                                <div class="slds-truncate my-button-text" title=Action>
+                                    <lightning-button-icon variant="brand" icon-name="action:approval"
+                                        alternative-text="Move to next round" title="Move to next round"
+                                        onclick={handleClickAccept} value={row.applicantId}></lightning-button-icon>
+                                    &nbsp; &nbsp;
+                                    <lightning-button-icon class="redIconColor" variant="destructive-text"
+                                        icon-name="action:close" alternative-text="Reject" title="Reject"
+                                        onclick={handleClickReject} value={row.applicantId}></lightning-button-icon>
+                                </div>
+                            </td>
+
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </lightning-accordion-section>
+    </lightning-accordion>
+</template>

@@ -1,0 +1,82 @@
+.uploadCV{
+    padding:60px;
+    color:#fff;
+    height: 480px;
+    align-items: center;
+    position: relative;
+    margin:0 auto;
+    width:1440px;
+}
+
+.uploadCV h1{
+    font-size:32px;
+   font-weight:bolder;
+   color:#fff;
+   margin-top: 20px;
+}
+
+.uploadCV p{
+    font-size: 21px;
+ }
+
+ .uploadCV button{
+    margin: 30px 0px;
+    color: #fff;
+    padding: 6px 5%;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background: none;
+    font-size: 14px;
+ }
+
+ .uploadCV .bgImg{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+ }
+ .uploadCV .uploadIcon{
+    --sds-c-icon-color-foreground-default: #fff;
+    margin-right: 20px;
+    margin-left: -20px;
+ }
+
+
+ @media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .uploadCV{
+        height:auto; 
+        width:auto
+    }
+    .uploadCV h1{
+        font-size: 24px;
+    }
+    .uploadCV .formobile{
+        width: 240px;
+    }
+    .uploadCV button{
+        padding: 6px 12%;
+    }
+ }
+
+ @media screen and (min-width: 320px) and (max-width: 767px) {
+
+    .uploadCV{
+        height:auto;
+        padding: 20px;
+        width:auto
+    }
+    .uploadCVSection{
+        width:100%
+    }
+    .uploadCV h1{
+        font-size: 24px;
+    }
+
+    .uploadCV .formobile{
+        display:none
+    }
+
+    .uploadCV  button{
+        width: 100%;
+    }
+ }

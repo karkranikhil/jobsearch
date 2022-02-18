@@ -1,0 +1,183 @@
+.pageSideBar{
+    border-left: 4px solid #DCE0F0;
+    padding-left: 16px;
+    position: relative;
+    margin-top: 20px;
+    font-size:16px;
+}
+
+.pageSideBar li{
+    margin: 0px 0px 30px 0px;
+    cursor: pointer;
+    color: #6B6C7E;
+}
+
+.pageSideBar li.active{
+    color:#3787FF;
+    position: relative;
+}
+
+.pageSideBar li.active{
+    color:#3787FF;
+    border-left: 4px solid #3787FF;
+    padding-left: 16px;
+    margin-left: -20px
+}
+
+.pageSideBar li:hover{
+    color:#000;
+    font-weight: bold;
+}
+
+.popularJobSection{
+    background: #FFFFFF;
+    border: 2px solid #DBE9FF;
+    border-radius: 6px;
+    margin:0px 16px 20px 0px;
+    color:#2B2B2B;
+    font-size:16px;
+    padding:40px 30px;
+    width: 48%;
+    cursor: pointer;
+}
+.popularJobSection:hover{
+    box-shadow: 18px 17px 19px rgba(167, 167, 167, 0.25);
+    border: 2px solid #3787FF;
+}
+
+.popularJobSection img{
+    width:45px;
+    height:45px;
+    margin:10px 16px 0px 0px;
+    float:left
+}
+.popularJobSection p{
+    margin-top:10px;
+    min-height: 50px;
+}
+.popularJobSection .time img{
+    width:25px;
+    height:25px;
+    margin:3px 16px 0px 0px;
+
+}
+.popularJobSection h4{
+    font-weight: bold;
+    font-size:20px;
+    white-space: nowrap;
+}
+.popularJobSection span, .popularJobSection .time{
+    color:#818181;
+    font-size:14px;
+}   
+.popularJobSection .time{
+    margin-top: 20px;
+}
+
+.popularJobSection button{
+    margin:0px;
+}
+
+
+
+.employerPostaJob .input-group{
+    margin: 0px 0px 20px 0px;
+}
+
+.employerPostaJob label, .employerPostaJob .slds-form-element__label{
+    font-weight: normal!important;
+}
+.employerPostaJob h3{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 3%;
+}
+
+.employerPostaJob  .clearSpace{
+    margin-top: 2%;
+}
+
+.customForm{
+    border-top: 5px solid #3787FF;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .popularJobSection{
+        margin: 0px 14px 20px 0px;
+    }
+    .popularJobSection button{
+        margin-top:16px;
+    }
+    .popularJobSection h4{
+        white-space: pre;
+    }
+
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .popularJobSection{
+        width: 100%;
+    }
+    .popularJobSection p{
+        margin: 16px 0px;
+    }
+}
+
+
+:host {
+    --slider-width: 300px;
+    --slider-height: 10px;
+    --slider-top-position: 2.5px;
+    --range-width: 20px;
+    --range-left-position: 20px;
+    --thumb-height: 15px;
+    --thumb-width: 15px;
+    --thumb-left-position:30px;
+    --thumb-active-color: #1b5297;
+}
+
+.slider {
+    border-radius: 5px;
+    background: #E0E0E0;
+    background: linear-gradient(left top, #E0E0E0, #c57777);
+    width: var( --slider-width );
+    height: var( --slider-height );
+    margin: var( --slider-top-position );
+  }
+
+  .range {
+    position: relative;
+    width: var( --range-width );
+    height: var( --slider-height );
+    left: calc( var( --range-left-position ) + var( --thumb-width )/2 );
+    background: rgb(0, 195, 255);
+    cursor: pointer;
+  }
+
+  .thumb {
+    position: relative;
+    width: var( --thumb-width );
+    height: var( --thumb-height );
+    border-radius: 50%;
+    background: var( --thumb-active-color );
+    cursor: pointer;
+    left: var( --thumb-left-position );
+  }
+
+  .start {
+    top: calc( ( var( --slider-height ) + var( --slider-top-position ) + var( --thumb-height )*0) * -1);
+  }
+  .end {
+    top: calc( ( var( --slider-height ) + var( --slider-top-position ) + var( --thumb-height )*1) * -1);
+  }
+  .add-event.secondary_button:active,  .add-event.secondary_button:focus{
+    background-color: #3787FF;
+    color: #fff;
+  }
+  .add-event {
+      font-size: 18px;
+  }
+  .add-event .secondary_button {
+    padding: 6px 60px;
+  }

@@ -1,0 +1,49 @@
+<template>
+    <div class="container">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1">
+                <div class="slds-p-around_medium" style="padding: 65px 10px 90px;">
+                    <div class="slds-align_absolute-center"> 
+                        <p class="header1"><span class="header2">Register</span> your account to find or post a job</p>
+                    </div>
+                    <div class="slds-align_absolute-center"> 
+                        <p class="spanclass">Select the job seeker  or Employer for registration</p>
+                    </div>
+                </div>
+            </div>
+            <div style={BackgroundImage} class="slds-col slds-size_1-of-1 section2">
+                <div class="slds-grid slds-wrap" style="justify-content: center;position: absolute;width: 100%;top: 50%;left: 50%;transform: translate(-50%, -50%);">
+                    <div class="slds-col slds-size_1-of-2 slds-p-around_large">
+                        <div class="slds-box box1 slds-p-around_large" onclick={handleEmployeeLogin}>
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_1-of-3">
+                                    <img class="img1" src={employerimg}>
+                                </div>
+                                <div class="slds-col slds-size_2-of-3">
+                                    <p class="cardTitle">Employer</p>
+                                    <p class="cardBody">I am a potential employer 
+                                        currently seeking candidates.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-p-around_large">
+                        <div class="slds-box box2 slds-p-around_large" onclick={handleJobLogin}>
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_1-of-3">
+                                    <img class="img1" src={jobimage}>
+                                </div>
+                                <div class="slds-col slds-size_2-of-3">
+                                    <p class="cardTitle">Job Seeker</p>
+                                    <p class="cardBody">I am a candidate, currently 
+                                        seeking employment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</template>

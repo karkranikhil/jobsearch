@@ -1,0 +1,95 @@
+.popularJobSection{
+    background: #FFFFFF;
+    border: 2px solid #DBE9FF;
+    border-radius: 6px;
+    margin:0px 16px 20px 0px;
+    color:#2B2B2B;
+    font-size:16px;
+    padding:40px 30px;
+    width: 48%;
+    cursor: pointer;
+    min-height: 300px;
+    max-height: 300px;
+}
+.popularJobSection:hover{
+    box-shadow: 18px 17px 19px rgba(167, 167, 167, 0.25);
+    border: 2px solid #3787FF;
+}
+
+.popularJobSection img{
+    /* width:45px;
+    height:45px; */
+    margin:10px 16px 0px 0px;
+    float:left
+}
+.popularJobSection p{
+    margin-top:10px;
+    min-height: 50px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.popularJobSection .time img{
+    width:25px;
+    height:25px;
+    margin:3px 16px 0px 0px;
+
+}
+.popularJobSection h4{
+    font-weight: bold;
+    font-size:20px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+}
+.popularJobSection span, .popularJobSection .time{
+    color:#818181;
+    font-size:14px;
+}   
+.popularJobSection .time{
+    margin-top: 20px;
+}
+
+.popularJobSection button{
+    margin:0px;
+}
+
+.knowmoreButton{
+    align-items: end;
+    display: grid;
+}
+.popularJobSection sub{
+    font-size: 14px;
+    margin: 10px 0px;
+
+}
+.postedTime{
+    margin-top: 10px;
+    display: block;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .popularJobSection{
+        margin: 0px 14px 20px 0px;
+    }
+    .popularJobSection button{
+        margin-top:16px;
+    }
+    .popularJobSection h4{
+        white-space: pre;
+    }
+
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .popularJobSection{
+        width: 100%;
+    }
+    .popularJobSection p{
+        margin: 16px 0px;
+    }
+}

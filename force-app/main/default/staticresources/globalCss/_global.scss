@@ -1,0 +1,103 @@
+@font-face{
+    font-family: 'Lato', sans-serif;
+    src: url("@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap')") format('TrueType');
+}
+
+/* General */
+*, input, a{
+    outline:none!important;
+}
+.mainWraper{
+    width:1440px;
+    margin:0 auto;
+}
+.textBluePrimary{
+    color:#3787FF!important;
+}
+
+.bgBluePrimary{
+    background:#3787FF
+}
+
+.bgBlueSecondary{
+    background:#F0F6FF;
+
+}
+.textRight{
+    text-align: right;
+}
+
+.textCenter{
+    text-align: center;
+}
+.floatRight{
+    float:right
+}
+.autoWidth{
+    width: auto;
+}
+.itemsCenter{
+    align-items: center;
+}
+.primary_button{
+    padding:5px 5%;
+    background:#3787FF;
+    color:#fff;
+    margin:16px;
+    border:1px solid #3787FF;
+    font-size: 16px;
+    border-radius: 6px;
+}
+.secondary_button{
+    padding:4px 20px;
+    background:#fff;
+    color:#3787FF;
+    margin:16px 0px;
+    border:1px solid #3787FF;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+.secondary_button_outline{
+    padding:4px 20px;
+    background:#3787FF;
+    color:#fff;
+    margin:16px 0px;
+    border:1px solid #fff;
+    font-size: 16px;
+    border-radius: 6px;
+}
+.secondary_button_outline:hover{
+    background:#fff;
+    color:#3787FF;
+}
+.bgBlueSecondary{
+    background:#F0F6FF;
+}
+
+.textRight{
+    text-align: right;
+}
+
+.textBluePrimary{
+    color:#3787FF!important;
+}
+.pageTitle{
+    margin:60px 0px;
+    text-align:center
+}
+.pageTitle p{
+    font-style: 16px;
+    color:#737B7D;
+}
+h1{
+    font-size:32px;
+    color:#2B2B2B;
+}
+.clear{
+    clear:both;
+    width:100%;
+}
+.alignCenter{
+    align-items: center;
+}

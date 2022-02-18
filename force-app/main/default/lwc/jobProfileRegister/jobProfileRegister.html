@@ -1,0 +1,167 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <div if:true={showSpinner}>
+        <div class="backdrop">
+            <div class="spinner">
+                <lightning-spinner alternative-text="Loading..." variant="brand">
+                </lightning-spinner>
+            </div>
+        </div>
+    </div>
+    <div class="slds-grid slds-wrap slds-p-top--large set-margin jobProfileRegister">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-12 slds-large-size_3-of-12 sticky-container">
+            <div class="leftTabTitle">
+                <h1>Registration Form</h1>
+                <p>Complete Registration Process</p>
+            </div>
+            <c-job-profile-sidebar stage-num={stageNo} onchild={handleStageChange} onsidebarclick={handleSidebarClick}>
+            </c-job-profile-sidebar>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_9-of-12 slds-large-size_9-of-12 customForm">
+            <div class="slds-card card-margin">
+                <template if:true={isStage1}>
+                    <c-job-personal-details onchild={handleStageChange}></c-job-personal-details>
+                </template>
+
+                <!-- <div class="formControls">
+
+                    <span onclick={handleBack} class="textBluePrimary">
+                        <lightning-icon icon-name="utility:back"   alternative-text="Approved" title="Approved"></lightning-icon>  Back
+                    </span>
+                    <div class="textRight">
+                        <button class=" primary_button " data-page='Personal_Information'
+                            onclick={handleSave}>Save</button>
+                        <button class=" secondary_button " data-page='Personal_Information'
+                            onclick={validatePageData}>Next</button>
+                    </div>
+                </div> -->
+
+                <!-- <div class="controls">
+                    <div style=" display:flex; justify-content: flex-end;"
+                        class="slds-m-left_small slds-m-right_small slds-m-bottom_medium">
+                        <button class="slds-button slds-float--none  primary_button action-button"
+                            data-page='Personal_Information' onclick={handleSave}>Save</button>
+                        <button class="slds-button slds-float--none  secondary_button action-button"
+                            data-page='Personal_Information' onclick={validatePageData}>Next</button>
+                    </div>
+                </div> -->
+            </div>
+            <!-- <div class="slds-card card-margin" if:true={showContactInformation}> -->
+            <template if:true={isStage2}>
+                <div class="slds-card card-margin"></div>
+                <c-job-contact-information onchild={handleStageChange}></c-job-contact-information>
+            </template>
+
+            <!-- <div class="formControls">    
+                   
+                 <span onclick={handleBack} class="textBluePrimary" data-page='Contact_Information'>
+                        <lightning-icon icon-name="utility:back"   alternative-text="Approved" title="Approved"></lightning-icon>  Back
+                    </span> 
+                   <div class="textRight">
+                        <button class=" primary_button " data-page='Contact_Information' onclick={handleSave}>Save</button>
+                        <button class=" secondary_button " data-page='Contact_Information' onclick={validatePageData}>Next</button>
+                    </div>
+                </div> -->
+            <!-- 
+                <div class="controls">
+                    <div style=" display:flex;
+                          justify-content: flex-start;"
+                        class="slds-m-left_small slds-m-left_small slds-m-bottom_medium">
+                        <lightning-button variant="base" data-page='Contact_Information' onclick={handleBack}
+                            label="<- Back" title="Back" class="slds-m-right_small">
+                        </lightning-button>
+                    </div>
+
+                    <div style=" display:flex;
+                          justify-content: flex-end;"
+                        class="slds-m-left_small slds-m-right_small slds-m-bottom_medium">
+                        <button class="slds-button slds-float--none  primary_button action-button"
+                        data-page='Contact_Information' onclick={handleSave}>Save</button>
+                        <button class="slds-button slds-float--none  secondary_button action-button"
+                            data-page='Contact_Information' onclick={validatePageData}>Next</button>
+                    </div>
+                </div> -->
+
+
+            <!-- <div class="slds-card card-margin" if:true={showEducationDetails}> -->
+            <template if:true={isStage3}>
+                <div class="slds-card card-margin">
+                    <c-job-education-details onchild={handleStageChange}></c-job-education-details>
+                </div>
+            </template>
+            <!-- <div class="formControls">
+
+                <span onclick={handleBack} class="textBluePrimary" data-page='Education_Details'>
+                    <lightning-icon icon-name="utility:back" alternative-text="Approved" title="Approved">
+                    </lightning-icon> Back
+                </span>
+                <div class="textRight">
+                    <button class=" primary_button " data-page='Education_Details' onclick={handleSave}>Save</button>
+                    <button class=" secondary_button " data-page='Education_Details'
+                        onclick={validatePageData}>Next</button>
+                </div>
+            </div> -->
+            <!-- <div class="controls">
+                    <div style=" display:flex;
+                          justify-content: flex-start;"
+                        class="slds-m-left_small slds-m-left_small slds-m-bottom_medium">
+                        <lightning-button variant="base" data-page='Education_Details' onclick={handleBack}
+                            label="<- Back" title="Back" class="slds-m-right_small">
+                        </lightning-button>
+                    </div>
+                    <div style=" display:flex;
+                          justify-content: flex-end;"
+                        class="slds-m-left_small slds-m-right_small slds-m-bottom_medium">
+
+                        <button class="slds-button slds-float--none  primary_button action-button"
+                        data-page='Education_Details' onclick={handleSave}>Save</button>
+                        <button class="slds-button slds-float--none  secondary_button action-button"
+                            data-page='Education_Details' onclick={validatePageData}>Next</button>
+                    </div>
+                </div> -->
+            <!-- </div> -->
+            <!-- <div class="slds-card card-margin" if:true={showJobInformation}> -->
+            <template if:true={isStage4}>
+                <div class="slds-card card-margin">
+                    <c-job-job-information onchild={handleStageChange}></c-job-job-information>
+                </div>
+            </template>
+
+            <template if:true={isStage5}>
+                <div class="slds-card card-margin">
+                    <c-job-goals-information onchild={handleStageChange}></c-job-goals-information>
+                </div>
+            </template>
+
+            <!-- <div class="formControls">
+
+                <span onclick={handleBack} class="textBluePrimary" data-page='Job_Information'>
+                    <lightning-icon icon-name="utility:back" alternative-text="Approved" title="Approved">
+                    </lightning-icon> Back
+                </span>
+                <div class="textRight">
+                    <button class=" primary_button " data-page='Job_Information' onclick={handleSave}>Save</button>
+                    <button class=" secondary_button " data-page='Job_Information'
+                        onclick={validatePageData}>Next</button>
+                </div>
+            </div> -->
+            <!-- <div class="controls">
+                    <div style=" display:flex;
+                          justify-content: flex-start;"
+                        class="slds-m-left_small slds-m-left_small slds-m-bottom_medium">
+                        <lightning-button variant="base" data-page='Job_Information' onclick={handleBack}
+                            label="<- Back" title="Back" class="slds-m-right_small">
+                        </lightning-button>
+                    </div>
+                    <div style=" display:flex; justify-content: flex-end;"
+                        class="slds-m-left_small slds-m-right_small slds-m-bottom_medium">
+                        <button class="slds-button slds-float--none  primary_button action-button primary_button"
+                        data-page='Job_Information' onclick={handleSave}>Save</button>
+                        <button class="slds-button slds-float--none  secondary_button action-button"
+                            data-page='Job_Information' onclick={validatePageData}>Next</button>
+                    </div>
+                </div> -->
+            <!-- </div> -->
+        </div>
+    </div>
+</template>

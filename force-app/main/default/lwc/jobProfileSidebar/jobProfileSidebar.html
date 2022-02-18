@@ -1,0 +1,42 @@
+<template>
+
+    <!-- <template if:true={isStage1}>
+        <ol class="pageSideBar">
+            <li value="1" class="active" onclick={handleUserClicks}>Personal Details</li>
+            <li value="2" onclick={handleUserClicks}>Contact Information</li>
+            <li value="3" onclick={handleUserClicks}>Education</li>
+            <li value="4" onclick={handleUserClicks}>Job Information</li>
+        </ol>
+    </template>
+    <template if:true={isStage2}>
+        <ol class="pageSideBar">
+            <li value="1" onclick={handleUserClicks}>Personal Details</li>
+            <li value="2" class="active" onclick={handleUserClicks}>Contact Information</li>
+            <li value="3" onclick={handleUserClicks}>Education</li>
+            <li value="4" onclick={handleUserClicks}>Job Information</li>
+        </ol>
+    </template>
+    <template if:true={isStage3}>
+        <ol class="pageSideBar">
+            <li value="1" onclick={handleUserClicks}>Personal Details</li>
+            <li value="2" onclick={handleUserClicks}>Contact Information</li>
+            <li value="3" class="active" onclick={handleUserClicks}>Education</li>
+            <li value="4" onclick={handleUserClicks}>Job Information</li>
+        </ol>
+    </template>
+    <template if:true={isStage4}>
+        <ol class="pageSideBar">
+            <li value="1" onclick={handleUserClicks}>Personal Details</li>
+            <li value="2" onclick={handleUserClicks}>Contact Information</li>
+            <li value="3" onclick={handleUserClicks}>Education</li>
+            <li value="4" class="active" onclick={handleUserClicks}>Job Information</li>
+        </ol>
+    </template> -->
+    <ol class="pageSideBar">
+        <li value="1" class={isActive1} onclick={handleUserClicks}>Personal Details</li>
+        <li value="2" class={isActive2} onclick={handleUserClicks}>Contact Information</li>
+        <li value="3" class={isActive3} onclick={handleUserClicks}>Education</li>
+        <li value="4" class={isActive4} onclick={handleUserClicks}>Job Information</li>
+        <li value="5" class={isActive5} onclick={handleUserClicks}>Goals</li>
+    </ol>
+</template>

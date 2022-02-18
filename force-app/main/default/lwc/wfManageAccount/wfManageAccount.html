@@ -1,0 +1,89 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+    <div class="mainWraper slds-wrap slds-grid  slds-wrap textCenter">
+        <div class="pageTitle slds-col slds-size_12-of-12 ">
+            <h1>Manage Account</h1>
+        </div>
+
+        <div class=" slds-wrap  slds-grid slds-col slds-size_12-of-12 ">
+            <div class="userAccountImage slds-col slds-size_3-of-12 profilePhoto">
+                <div class="slds-avatar slds-avatar_profile-image-large">
+
+                    <img src={profileUrl} alt="profile picture">
+                    <lightning-icon icon-name="utility:edit" class="edit" alternative-text="Approved" title="Approved">
+                    </lightning-icon>
+                    <div class="fileUploader">
+                        <lightning-file-upload name="fileUploader" accept={acceptedFormats}
+                            onuploadfinished={handleFileUpload}></lightning-file-upload>
+                    </div>
+                </div>
+
+                <button class="primary_button" onclick={passwordClick}>Change Password</button>
+            </div>
+            <div class="slds-col slds-size_9-of-12 manageAccount">
+                <div class="form-content">
+                    <div class="custom-form-group">
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col slds-large-size_6-of-12">
+                                <span>
+                                    <div class="input-group">
+                                        <lightning-input type="text" name="firstName" value={firstName}
+                                            onchange={handleChange} label="First Name" placeholder="Enter First Name">
+                                        </lightning-input>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-large-size_6-of-12">
+                                <span>
+                                    <div class="input-group">
+                                        <lightning-input type="text" name="lastName" value={lastName}
+                                            onchange={handleChange} label="Last Name" placeholder="Enter Last Name">
+                                        </lightning-input>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="clearSpace"></div>
+
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col slds-large-size_6-of-12">
+                                <span>
+                                    <div class="input-group">
+                                        <lightning-input type="text" name="emailAdrress" value={emailAddress}
+                                            onchange={handleChange} label="Email Address"
+                                            placeholder="Enter Email Address">
+                                        </lightning-input>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-large-size_6-of-12">
+                                <span>
+                                    <div class="input-group">
+                                        <lightning-input type="text" name="phoneNo" value={phoneNo}
+                                            onchange={handleChange} label="Phone Number"
+                                            placeholder="Enter Phone Number">
+                                        </lightning-input>
+                                    </div>
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="clearSpace">
+
+                        </div>
+                    </div>
+                    <div class="textRight">
+                        <button class=" secondary_button" onclick={handleClearClick}>Clear</button>
+                        <button class=" primary_button" onclick={handleSave}>Save</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</template>

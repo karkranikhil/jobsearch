@@ -1,0 +1,216 @@
+<template>
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+    <div>
+        <div>
+            <h3>
+                Education
+
+                <div>
+                    <lightning-button variant="brand-outline" onclick={addRow} label="Add More Education"
+                        icon-name="utility:add" class="slds-m-top_medium add-education"></lightning-button>
+                </div>
+            </h3>
+
+        </div>
+
+        <template for:each={educationList} for:item="education" for:index="index">
+            <div key={education.key}>
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-large-size_12-of-12 subTitle">
+                        <span>Education Qualification</span>
+                        <template if:true={showDelete}>
+                            <a>
+                                <lightning-icon variant="error" onclick={removeRow} alternative-text="Remove"
+                                    icon-name="utility:delete" size="small" data-id={education.key}></lightning-icon>
+                            </a>
+                        </template>
+                    </div>
+
+
+                </div>
+
+
+                <div class="slds-grid slds-gutters">
+                    <!-- <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div if:true={showCombobox}>
+                                <lightning-combobox name="levelOfEducation" label="Level of Education"
+                                    value={education.levelOfEducation} data-id={education.key}
+                                    placeholder="Enter Highest Education" options={levelOptions.data.values}
+                                    onchange={handleOnChange}>
+                                </lightning-combobox>
+                            </div>
+                        </span>
+                    </div> -->
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div if:true={showCombobox}>
+                                <lightning-combobox name="degree" label="Degree" value={education.degree}
+                                    data-id={education.key} placeholder="Select Degree"
+                                    options={degreeOptions.data.values} onchange={handleOnChange}>
+                                </lightning-combobox>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div if:true={showCombobox}>
+                                <lightning-combobox name="educationType" label="Education Type"
+                                    value={education.educationType} data-id={education.key}
+                                    placeholder="Select Education" options={educationTypeOptions.data.values}
+                                    onchange={handleOnChange}>
+                                </lightning-combobox>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+
+                    <div class="slds-col slds-large-size_3-of-12">
+                        <span>
+                            <div>
+                                <lightning-input type="date" label="Start Date" name="startDate" data-id={education.key}
+                                    value={education.startDate} placeholder="Enter Start Date" onchange={handleOnChange}
+                                    required>
+                                </lightning-input>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="slds-col slds-large-size_3-of-12">
+                        <span>
+                            <div>
+                                <lightning-input type="date" label="End Date" name="endDate" value={education.endDate}
+                                    placeholder="Enter End Date" data-id={education.key} onchange={handleOnChange}
+                                    disabled={education.currentlyPursuing} required>
+                                </lightning-input>
+                                <lightning-input name="currentlyPursuing" class="slds-p-around_medium align-center"
+                                    type="checkbox" label="Currently Pursuing" checked={education.currentlyPursuing}
+                                    onchange={handleOnChange} data-id={education.key}>
+                                </lightning-input>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div if:true={showCombobox}>
+                                <lightning-combobox name="schoolCollegeUniversity" label="School / College / University"
+                                    value={education.schoolCollegeUniversity} data-id={education.key}
+                                    placeholder="Select School / College / University"
+                                    options={schoolOptions.data.values} onchange={handleOnChange}>
+                                </lightning-combobox>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <!-- <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div>
+                                <p>&nbsp;</p>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div class="input-group">
+                                <lightning-input name="currentlyPursuing" class="slds-p-around_medium align-center"
+                                    type="checkbox" label="Currently Pursuing" checked={education.currentlyPursuing}
+                                    onchange={handleOnChange} data-id={education.key}>
+                                </lightning-input>
+
+                            </div>
+                        </span>
+                    </div>
+                </div> -->
+
+                <div class="slds-grid slds-gutters">
+
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <!-- <lightning-file-upload label="Upload Certification" name="certificatonUpload"
+                                data-id={education.key} accept={acceptedFormats} record-id=""
+                                onuploadfinished={handleUploadFinished} multiple>
+                            </lightning-file-upload> -->
+                            <lightning-input type="file" accept={acceptedFormats} label="Upload Certification"
+                                name="certificatonUploadData" data-id={education.key} onchange={handleFileUpload}>
+                            </lightning-input>
+                            <div class="slds-m-top_small">{education.certificatonUploadData.fileName}
+                                <lightning-button variant="brand-outline" label="Preview" title="Preview"
+                                    data-id={education.key} onclick={handlePreviewFile} class="slds-m-left_x-small">
+                                </lightning-button>
+                                <lightning-button variant="destructive" label="Delete" title="Delete"
+                                    data-id={education.key} onclick={handleDeleteFile} class="slds-m-left_x-small">
+                                </lightning-button>
+                            </div>
+
+                        </span>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12">
+                        <span>
+                            <div>
+                                <lightning-textarea label="Description" placeholder="Enter Description..."
+                                    onchange={handleOnChange} value={education.description} name="description"
+                                    data-id={education.key}>
+                                </lightning-textarea>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+
+                    <!-- <div class="slds-col slds-large-size_6-of-12" if:true={education.certificatonUploadData.showFiles}>
+                        <span>
+                            <div>
+                                <lightning-card title="" icon-name="">
+                                    <ul class="slds-m-around_medium">
+                                        <li key={education.certificatonUploadData.fileName}>
+                                            {education.certificatonUploadData.fileName}
+                                            <lightning-button variant="brand-outline" label="Preview" title="Preview"
+                                                data-id={education.key} onclick={handlePreviewFile}
+                                                class="slds-m-left_x-small"></lightning-button>
+                                            <lightning-button variant="destructive" label="Delete" title="Delete"
+                                                data-id={education.key} onclick={handleDeleteFile}
+                                                class="slds-m-left_x-small"></lightning-button>
+                                        </li>
+                                    </ul>
+                                </lightning-card>
+                            </div>
+                        </span>
+                    </div> -->
+
+                </div>
+
+            </div>
+        </template>
+
+        <!-- <div>
+            <strong>
+                Note: You must fill all the mandatory fields to proceed further
+            </strong>
+        </div> -->
+    </div>
+    <div class="formControls">
+
+        <span onclick={handleBack} class="textBluePrimary" data-page='Education_Details'>
+            <lightning-icon icon-name="utility:back" alternative-text="Approved" title="Approved">
+            </lightning-icon> &nbsp; Back
+        </span>
+        <div class="textRight">
+            <button class=" primary_button " data-page='Education_Details' onclick={handleSave}>Save</button>
+            <button class=" secondary_button " data-page='Education_Details' onclick={handleNext}>Next</button>
+        </div>
+    </div>
+    <!-- <div class="">
+        <lightning-button variant="base" onclick={anything} label="<- Back" title="Back" class="slds-m-right_small">
+        </lightning-button>
+        <lightning-button variant="brand" onclick={anything} label="Save" title="Save" class="slds-m-right_small">
+        </lightning-button>
+        <lightning-button variant="brand-outline" label="Next" title="Next" name="next" class="slds-m-right_small"
+            onclick={anything}>
+        </lightning-button>
+    </div> -->
+
+</template>

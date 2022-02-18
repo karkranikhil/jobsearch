@@ -1,0 +1,72 @@
+<template>
+    <header>
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+        <div class="mainWraper  slds-grid slds-size_12-of-12  topnavBar ">
+            <div class="slds-col slds-size_2-of-12 forMobile">
+                <img src={logo} onclick={navigateToHome} class="headerLogo" />
+
+            </div>
+            <div class="slds-col slds-size_5-of-12 2 hideforMobile ">
+                <nav>
+                    <a href="/eportal/s" class="textBluePrimary">Home</a>
+                    <!-- <a href="#">Find a Job</a> -->
+                    <a href="/eportal/s/contact-us">Contact Us</a>
+                    <a href="/eportal/s/employer-dashboard">Dashboard</a>
+                    <!-- <a href="#">My Feed</a> -->
+                </nav>
+            </div>
+
+            <div class="slds-col slds-size_5-of-12 slds-gutters textRight profileHeader ">
+                <!-- <template if:true={showProfile}>
+                    <a href="/s/profile-register" class="textBluePrimary">Complete your Profile</a>
+                </template> -->
+                <!-- <span class="line">|</span>&nbsp; -->
+                <lightning-icon icon-name="utility:notification" class="notificationIcon" alternative-text="Approved"
+                    onclick={handleNotification} title="Approved"></lightning-icon>
+                <span class="notificationPoint"></span>
+                <span class="line">|</span>
+                <template if:false={isGuest}>
+                    <a href="/eportal/s/employer-manage-account" class="userName">{name}</a>
+                    <span class="dropdown">
+                        <span class="slds-avatar  profileImage dropbtn">
+                            <img src={profileUrl} alt="profile picture">
+                        </span>
+                        <span class="dropdown-content">
+                            <!-- <a href="/eportal/s/employer-dashboard">Dashboard</a> -->
+                            <!-- <a href="/s/job-application">My Jobs</a> -->
+                            <a href="/eportal/s/employer-manage-account">Manage Account</a>
+                            <!-- <a href="/s/my-documents">My Document</a> -->
+                            <template if:false={isGuest}>
+                                <a href={logoutLink}>Logout</a>
+                            </template>
+                        </span>
+                        <!-- <span class="userCount">3</span> -->
+                    </span>
+                </template>
+                <template if:true={isGuest}>
+                    <a href="/eportal/s/login" class="userName">Login / Sign Up</a>
+                </template>
+
+                <span class="line">|</span>&nbsp;
+                <a href="/s" class="userName">Job Seeker / Find Job</a>
+            </div>
+
+            <div class="mobileNav">
+                <lightning-icon icon-name="utility:list" alternative-text="Approved" title="Approved"></lightning-icon>
+            </div>
+        </div>
+
+    </header>
+    <div class=" mainWraper">
+        <div class=" flashNews bgBlueSecondary ">
+            <strong class="slds-col slds-size_1-of-12 primary_button"> Flash News</strong>
+            <div class="slds-size_8-of-12 newsContent">12:10:2021 - SAM Companies is recognized as the industry’s
+                technology leader in providing geospatial solutions and construction services.
+            </div>
+        </div>
+    </div>
+
+
+</template>

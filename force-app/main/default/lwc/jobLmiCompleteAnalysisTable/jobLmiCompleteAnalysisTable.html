@@ -1,0 +1,42 @@
+<template>
+    <div class="slds-m-aroung_small slds-align_absolute-center" style="display: none;">
+        <lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner>
+        <div slot="actions">
+        </div>
+    </div>
+    <div class="slds-m-aroung_small">
+        <div class="slds-grid slds-wrap slds-size_12-of-12  itemsCenter">
+            <div class="slds-grid slds-wrap slds-size_6-of-12  ">
+                Total items {totalRecords}
+            </div>
+            <div class="slds-size_6-of-12   ">
+                <button class="secondary_button exportBtn" onclick={download}>
+                    <lightning-icon icon-name="utility:download" alternative-text="Approved" title="Approved">
+                    </lightning-icon>Export
+                </button>
+            </div>
+        </div>
+        <template if:true={showTable}>
+            <lightning-datatable key-field="Id" data={recordsToDisplay} hide-checkbox-column columns={columns}>
+            </lightning-datatable>
+        </template>
+
+        <div class="slds-grid slds-wrap slds-size_12-of-12 autoWidth floatRight tabelFooter itemsCenter">
+            <span>
+                {pageNo} / {totalPages}<template if:true={end}>
+                    - {endRecord}/{startRecord} &nbsp;
+                </template>
+                <template if:false={end}>
+                    &nbsp; of {totalRecords}
+                </template>
+            </span>
+
+            <span slot="actions">
+                <lightning-button variant="neutral" class="slds-float_left previousBtn " title="Previous" label=""
+                    icon-name="utility:chevronleft" icon-position="left" onclick={handleClick}></lightning-button>
+                <lightning-button variant="neutral" class="slds-float_right nextBtn" title="Next" label=""
+                    icon-name="utility:chevronright" icon-position="right" onclick={handleClick}></lightning-button>
+            </span>
+        </div>
+    </div>
+</template>

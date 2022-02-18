@@ -1,0 +1,43 @@
+<template>
+  <div if:true={isLoading}>
+    <lightning-spinner alternative-text="Loading..." variant="brand">
+    </lightning-spinner>
+  </div>
+  <div if:false={isLoading}>
+    <!-- Be Ready to find your job -->
+    <c-finding-Jobs-Banner></c-finding-Jobs-Banner>
+
+
+    <div class="divider"></div>
+
+    <!-- Trending Searches -->
+    <c-trending-Search></c-trending-Search>
+
+
+    <!-- Popular Jobs -->
+    <c-popular-Jobs jobs={jobs} onviewmore={viewMore}></c-popular-Jobs>
+
+    <!-- <c-recommended-jobs></c-recommended-jobs> -->
+    <c-popular-jobs jobs={recommendedJobs} total-jobs="4" is-recommended-jobs="true"></c-popular-jobs>
+
+    <!-- Explore jobs by Category -->
+    <c-explore-Jobs></c-explore-Jobs>
+
+
+    <!-- Reviews platform -->
+    <c-reviews-Platform></c-reviews-Platform>
+
+
+    <!-- How it work -->
+    <c-how-It-Work></c-how-It-Work>
+
+
+    <div class="divider"></div>
+
+
+    <!-- Keep your self up to date -->
+    <c-keep-yourself></c-keep-yourself>
+
+
+  </div>
+</template>

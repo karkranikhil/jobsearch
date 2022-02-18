@@ -1,0 +1,31 @@
+<template>
+    <div class="mainWraper slds-grid slds-wrap">
+        <div class="pageTitle slds-col slds-size_12-of-12 ">
+            <h1>Map View</h1>
+            <p>Place of Work vs Place of Residence</p>
+        </div>
+    </div>
+    <div class="mainWraper slds-grid slds-wrap">
+        <div class=" slds-grid slds-size_12-of-12 ">
+            <div class=" slds-col slds-size_6-of-12 backtoPage" onclick={handleBack}> <a>
+                    <lightning-icon icon-name="utility:back" class="searchIcon" alternative-text="Approved"
+                        title="Approved"></lightning-icon>Back to LMI (Labor Market Information)
+                </a></div>
+            <div class=" slds-col slds-size_6-of-12 textRight downloadBtn "> <button class="secondary_button">
+                    <lightning-icon icon-name="utility:download" class="searchIcon" alternative-text="Approved"
+                        title="Approved"></lightning-icon>Export
+                </button> </div>
+        </div>
+
+
+
+
+    </div>
+
+    <div class="mainWraper slds-grid slds-wrap">
+
+        <img src={chartImagesUrl}>
+
+    </div>
+
+</template>

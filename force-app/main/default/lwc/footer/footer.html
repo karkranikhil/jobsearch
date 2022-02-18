@@ -1,0 +1,62 @@
+<template>
+    
+    <footer >
+        <div class="mainWraper slds-grid displayBlock">
+            <div class="slds-col slds-size_6-of-12  helpYou widthAuto forTab">
+                <img src={logo}/>
+                <strong>We are here to help you!</strong>
+                <p>The more you tell us the more we can help!</p>
+                <button class="secondary_button" onclick={handleContact}>Contact Support</button>
+            </div>
+
+            <div class="slds-col slds-size_3-of-12 widthAuto forTab">
+                <ul>
+                    <p>Job Categories</p>
+                    <!-- <li><a>Finance</a></li>
+                    <li><a>UX/UI Design</a></li>
+                    <li><a>Front-end Development</a></li>
+                    <li><a> Bankend Developer</a></li>
+                    <li><a> Product Designer</a></li> -->
+                    <li onclick={handlechange} data-name="Cashiers"> Cashiers</li>
+                    <li onclick={handlechange} data-name="Tellers">Tellers</li>
+                    <li onclick={handlechange} data-name="Sales Engineers">Sales Engineers</li>
+                    <li onclick={handlechange} data-name="Software Developers">Software Developers</li>
+                    <li onclick={handlechange} data-name="" class="primary_textlink"><a >More</a></li>
+                    <!-- <a class="primary_textlink">More</a> -->
+                </ul>
+        </div>
+        <div class="slds-col slds-size_3-of-12 widthAuto forTab">
+            <ul>
+                <p>Useful Links</p>
+                <li><a href="/s/job-search">Find a job</a></li>
+                <li><a>About Us</a></li>
+                <li><a href="/s/job-contact-us">Contact Support</a></li>
+                <li><a>Terms and Conditions</a></li>
+                <li><a>Privacy Policy</a></li>
+               
+            </ul>
+    </div>
+
+        </div>
+   
+        <div  class="mainWraper" >
+            <hr/>
+        </div>
+
+    
+  
+    <div class="mainWraper slds-grid displayBlock">
+        <div class="slds-col slds-size_6-of-12 widthAuto"> &copy; <a href="#">Workforce</a><span> - 2022 | All rights reserved</span></div>
+        <div class="slds-col slds-size_6-of-12 textRight followUs widthAuto">
+
+            <b>Follow Us : </b>
+            <img src={googleIcons} />
+           <img  src={facebook} />
+           <img src={linkedin} />
+        </div>
+       
+    </div>
+    </footer>
+
+
+</template>

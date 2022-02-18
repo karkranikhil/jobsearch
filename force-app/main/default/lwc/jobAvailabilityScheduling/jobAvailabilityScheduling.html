@@ -1,0 +1,119 @@
+<template>
+    <div class="slds-var-m-around_medium">
+        <div class="slds-align_absolute-center slds-text-heading_medium ">
+            <div class="slds-grid slds-text-align_center slds-wrap">
+                <div class="slds-col slds-size_12-of-12">
+                    <img src={congratImage}>
+                </div>
+                <div class="slds-col slds-size_12-of-12  slds-text-heading_large slds-text-color_success">
+                    Congratulations!
+                </div>
+            </div>
+        </div>
+        <div class="slds-text-body_small ">
+            <div class="slds-grid slds-wrap">
+                <!-- <div class="slds-col slds-size_8-of-12 slds-var-m-around_medium">
+                    <p>Hello,</p>
+                    <p>I'm Tim!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dicta harum voluptatibus,
+                        repellendus ea neque suscipit cum reiciendis voluptate similique rem ducimus unde explicabo
+                        eveniet eaque obcaecati, veritatis repellat nihil!</p>
+                </div> -->
+                <div
+                    class="slds-col slds-size_12-of-12 slds-text-heading_medium slds-text-align_center slds-var-m-around_medium">
+                    <p><strong>Please share you availability</strong></p>
+                    <button class="slds-button" onclick={openModal}>Sheduling Availability</button> |
+                    <button class="slds-button">Decline</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <template if:true={showModal}>
+        <section role="dialog" tabindex="-1" aria-label="Meaningful description of the modal content" aria-modal="true"
+            class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+                        <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                        </svg>
+                        <span class="slds-assistive-text">Cancel and close</span>
+                    </button> -->
+                <div class="slds-modal__content slds-p-around_medium slds-modal__content_headless "
+                    id="modal-content-id-1">
+                    <h2>Scheduling Availability</h2>
+                    <div class="slds-text-align_right">
+                        <lightning-icon icon-name="utility:close" onclick={closeModal}></lightning-icon>
+                    </div>
+                    <div class="slds-box" style="background-color: #e7e7e7;">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_6-of-12">
+                                <p>Name</p>
+                                <p><strong>{applicantInfo.Name}</strong></p>
+                            </div>
+                            <div class="slds-col slds-size_6-of-12">
+                                <p>Job Title</p>
+                                <p><strong>{applicantInfo.JobTitle}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <lightning-input type="date" label="Select date and time availability for next meet"
+                        placeholder="Select Date" value={scheduledDate} onchange={handleDateChange}></lightning-input>
+                    <p>Available times for <lightning-formatted-date-time value={scheduledDate}>
+                        </lightning-formatted-date-time>
+                    </p>
+                    <button class={currentClass9} onclick={schedule} name="9">9:00 AM</button>
+                    <button class={currentClass10} onclick={schedule} name="10">10:00 AM</button>
+                    <button class={currentClass11} onclick={schedule} name="11">11:00 AM</button>
+                    <button class={currentClass12} onclick={schedule} name="12">12:00 PM</button>
+                    <button class={currentClass1} onclick={schedule} name="1">1:00 PM</button>
+                    <button class={currentClass2} onclick={schedule} name="2">2:00 PM</button>
+                    <button class={currentClass3} onclick={schedule} name="3">3:00 PM</button>
+                    <button class={currentClass4} onclick={schedule} name="4">4:00
+                        PM</button>
+                    <button class={currentClass5} onclick={schedule} name="5">5:00
+                        PM</button>
+                    <button class={currentClass6} onclick={schedule} name="6">6:00
+                        PM</button>
+                </div>
+                <div class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" aria-label="Cancel and close"
+                        onclick={closeModal}>Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={handleSave}>Save</button>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+    <template if:true={showModalSuccess}>
+        <section role="dialog" tabindex="-1" aria-label="Meaningful description of the modal content" aria-modal="true"
+            class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse">
+                        <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                        </svg>
+                        <span class="slds-assistive-text">Cancel and close</span>
+                    </button> -->
+                <div class="slds-modal__content slds-p-around_medium slds-modal__content_headless"
+                    id="modal-content-id-2">
+                    <div class="slds-text-color_success">
+                        <lightning-icon icon-name="action:approval"></lightning-icon>
+                        <h2>Scheduling Availability</h2>
+                    </div>
+                    <div class="slds-text-align_right">
+                        <lightning-icon icon-name="utility:close" onclick={closeModalSuccess}></lightning-icon>
+                    </div>
+                    <p>You had successfully sent your availability on: {resultDateTime}</p>
+
+
+                </div>
+                <div class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" aria-label="Cancel and close"
+                        onclick={closeModalSuccess}>Cancel</button>
+                    <button class="slds-button slds-button_brand">OK</button>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+</template>
